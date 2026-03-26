@@ -1,0 +1,30 @@
+% ============================================================
+%  PHỤ LỤC
+%  Bao gồm: số liệu, mã chương trình, hình ảnh bổ sung, v.v.
+% ============================================================
+
+\section*{Phụ lục A: Mã nguồn chương trình}
+
+[Đặt mã nguồn quan trọng tại đây. Ví dụ:]
+
+\begin{verbatim}
+# Python – Ví dụ huấn luyện mô hình
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
+df = pd.read_csv("data.csv")
+X = df.drop("target", axis=1)
+y = df["target"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42)
+
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+print("Accuracy:", model.score(X_test, y_test))
+\end{verbatim}
+
+\section*{Phụ lục B: Dữ liệu bổ sung}
+
+[Các bảng số liệu chi tiết, kết quả thực nghiệm bổ sung, v.v.]

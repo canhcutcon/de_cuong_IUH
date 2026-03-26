@@ -1,0 +1,123 @@
+% ============================================================
+%  CHƯƠNG 3: ÁP DỤNG KẾT QUẢ NGHIÊN CỨU
+% ============================================================
+
+\section{Dữ liệu nghiên cứu}
+
+\subsection{Mô tả tập dữ liệu}
+
+[Mô tả chi tiết tập dữ liệu sử dụng: nguồn gốc, số lượng mẫu, các đặc trưng
+(features), phân bố nhãn, giai đoạn thu thập.]
+
+% Ví dụ bảng mô tả dữ liệu
+\begin{table}[h!]
+\centering
+\fontsize{13pt}{14.95pt}\selectfont
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{4cm}|X|}
+\hline
+\textbf{Thuộc tính}     & \textbf{Giá trị} \\
+\hline
+Số lượng mẫu            & xx,xxx bản ghi \\
+\hline
+Số lượng đặc trưng      & xx đặc trưng \\
+\hline
+Giai đoạn dữ liệu       & Từ YYYY đến YYYY \\
+\hline
+Nguồn dữ liệu           & [Tên nguồn / URL] \\
+\hline
+Tỷ lệ train/val/test    & 70\% / 15\% / 15\% \\
+\hline
+\end{tabularx}
+\caption{Mô tả tổng quan tập dữ liệu}
+\label{tab:mo_ta_du_lieu}
+\end{table}
+
+\subsection{Tiền xử lý dữ liệu}
+
+[Mô tả các bước làm sạch và chuẩn bị dữ liệu:]
+
+\begin{enumerate}
+  \item \textbf{Xử lý giá trị thiếu (Missing values):} [phương pháp áp dụng]
+  \item \textbf{Xử lý ngoại lệ (Outliers):} [phương pháp áp dụng]
+  \item \textbf{Chuẩn hóa đặc trưng (Normalization):} [Min-Max / Z-score...]
+  \item \textbf{Mã hóa biến phân loại (Encoding):} [One-hot / Label encoding...]
+\end{enumerate}
+
+% -------------------------------------------
+\section{Phương pháp đề xuất}
+
+\subsection{Kiến trúc mô hình}
+
+[Mô tả chi tiết kiến trúc mô hình / thuật toán đề xuất.
+Hình \ref{fig:kien_truc_mo_hinh} mô tả kiến trúc tổng thể của hệ thống.]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{placeholder_architecture}
+  \caption{Kiến trúc mô hình đề xuất}
+  \label{fig:kien_truc_mo_hinh}
+\end{figure}
+
+\subsection{Quá trình huấn luyện}
+
+[Mô tả các siêu tham số (hyperparameters), optimizer, learning rate schedule,
+điều kiện dừng huấn luyện (early stopping), v.v.]
+
+% -------------------------------------------
+\section{Thực nghiệm và đánh giá}
+
+\subsection{Thiết lập thực nghiệm}
+
+[Nêu môi trường phần cứng/phần mềm, thư viện sử dụng, cấu hình GPU/CPU,
+số lần lặp (epochs), batch size, v.v.]
+
+\subsection{Độ đo đánh giá}
+
+[Định nghĩa các độ đo sử dụng để đánh giá mô hình:]
+
+\begin{equation}
+  \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+  \label{eq:accuracy}
+\end{equation}
+
+\begin{equation}
+  F_1 = 2 \cdot \frac{\text{Precision} \times \text{Recall}}
+                      {\text{Precision} + \text{Recall}}
+  \label{eq:f1}
+\end{equation}
+
+\subsection{Kết quả thực nghiệm}
+
+[Trình bày kết quả so sánh giữa mô hình đề xuất và các baseline.
+Bảng \ref{tab:ket_qua} tổng hợp kết quả thực nghiệm.]
+
+\begin{table}[h!]
+\centering
+\fontsize{13pt}{14.95pt}\selectfont
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|}
+\hline
+\textbf{Phương pháp}    & \textbf{Accuracy} & \textbf{Precision}
+                        & \textbf{Recall}   & \textbf{F1-Score} \\
+\hline
+Baseline 1 (Random Forest) & 0.XXX & 0.XXX & 0.XXX & 0.XXX \\
+\hline
+Baseline 2 (XGBoost)       & 0.XXX & 0.XXX & 0.XXX & 0.XXX \\
+\hline
+\textbf{Mô hình đề xuất}   & \textbf{0.XXX} & \textbf{0.XXX}
+                            & \textbf{0.XXX} & \textbf{0.XXX} \\
+\hline
+\end{tabularx}
+\caption{So sánh kết quả giữa mô hình đề xuất và các phương pháp baseline}
+\label{tab:ket_qua}
+\end{table}
+
+\subsection{Phân tích kết quả}
+
+[Phân tích và giải thích các kết quả đã đạt được. Sử dụng biểu đồ confusion matrix,
+ROC curve, SHAP values (nếu có) để minh họa.]
+
+% -------------------------------------------
+\section{Tóm tắt chương}
+
+[Tóm tắt những kết quả chính đã trình bày và liên hệ với mục tiêu nghiên cứu
+đã đề ra ở phần Mở đầu.]

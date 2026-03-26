@@ -1,0 +1,91 @@
+% ============================================================
+%  CHƯƠNG 1: TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU
+%  Heading 1: Times New Roman 14pt, đậm, in hoa
+%  Được gọi từ main.tex với \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+% ============================================================
+
+\section{Giới thiệu tổng quan}
+% Heading 2: Times New Roman 13pt, đậm
+
+[Giới thiệu tổng quan về lĩnh vực nghiên cứu. Nêu tầm quan trọng của chủ đề
+và xu hướng phát triển hiện nay.]
+
+% -------------------------------------------
+\subsection{Tiểu mục thứ nhất}
+% Heading 3: Times New Roman 13pt, đậm nghiêng
+
+[Nội dung tiểu mục. Văn bản nội dung sử dụng Times New Roman 13pt, giãn dòng 1.5,
+căn lề hai bên, thụt đầu dòng 1cm.]
+
+\subsubsection{Tiểu mục thứ hai}
+% Heading 4: Times New Roman 13pt, nghiêng
+
+[Nội dung tiểu mục thứ hai. Đây là cấp sâu nhất được sử dụng (tối đa 4 chữ số: 1.1.1.1).]
+
+% -------------------------------------------
+\section{Tổng quan các công trình nghiên cứu}
+
+\subsection{Các nghiên cứu trong nước}
+
+[Tổng hợp và phân tích các công trình trong nước có liên quan. Mỗi công trình cần:
+tên tác giả, năm công bố, phương pháp sử dụng, kết quả đạt được, hạn chế.]
+
+\subsection{Các nghiên cứu ngoài nước}
+
+[Tổng hợp các công trình quốc tế tiêu biểu, ưu tiên các bài báo trong 5 năm gần nhất
+được đăng trên các tạp chí/hội nghị uy tín (Scopus, ISI).
+Có thể trích dẫn theo chuẩn IEEE: \cite{example_ref1}, \cite{example_ref2}.]
+
+% Ví dụ bảng tổng hợp nghiên cứu
+\begin{table}[h!]
+\centering
+\fontsize{13pt}{14.95pt}\selectfont
+\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}X|
+                               >{\raggedright\arraybackslash}X|c|}
+\hline
+\textbf{STT} & \textbf{Nghiên cứu} & \textbf{Phương pháp chính} & \textbf{Năm} \\
+\hline
+1 & Tác giả A và cộng sự -- Mô tả ngắn nội dung nghiên cứu
+  & RandomForest, XGBoost & 2022 \\
+\hline
+2 & Tác giả B và cộng sự -- Mô tả ngắn nội dung nghiên cứu
+  & LSTM, Transformer     & 2023 \\
+\hline
+3 & Tác giả C và cộng sự -- Mô tả ngắn nội dung nghiên cứu
+  & BERT, GPT             & 2024 \\
+\hline
+\end{tabularx}
+\caption{Tóm tắt các nghiên cứu liên quan}
+\label{tab:tong_quan_nghien_cuu}
+\end{table}
+
+\subsection{Nhận xét và khoảng trống nghiên cứu}
+
+[Đánh giá ưu điểm và hạn chế của các nghiên cứu trên.
+Xác định rõ \textbf{research gap} mà luận văn này sẽ giải quyết.]
+
+% -------------------------------------------
+\section{Ví dụ chèn hình ảnh}
+
+[Hình \ref{fig:quy_trinh_nghien_cuu} minh họa quy trình nghiên cứu tổng quát
+của luận văn.]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{placeholder_figure}  % thay bằng file ảnh thực tế
+  \caption{Quy trình nghiên cứu tổng quát}
+  \label{fig:quy_trinh_nghien_cuu}
+\end{figure}
+
+% -------------------------------------------
+\section{Ví dụ công thức toán học}
+
+[Công thức \eqref{eq:rmse} trình bày độ đo RMSE được sử dụng để đánh giá mô hình:]
+
+\begin{equation}
+  \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( \hat{y}_i - y_i \right)^2}
+  \label{eq:rmse}
+\end{equation}
+
+Trong đó: $\hat{y}_i$ là giá trị dự đoán; $y_i$ là giá trị thực tế;
+$n$ là số lượng mẫu trong tập kiểm tra.

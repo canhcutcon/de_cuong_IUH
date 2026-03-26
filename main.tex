@@ -1,0 +1,493 @@
+%==============================================================
+%  ĐỀ CƯƠNG LUẬN VĂN THẠC SĨ – TRƯỜNG ĐH CÔNG NGHIỆP TP.HCM
+%  Dựa trên: PL2 - Mẫu định dạng đề cương LVTS (IUH)
+%  Biên soạn LaTeX: Template Version 1.0
+%  Compile: XeLaTeX (khuyến nghị) hoặc LuaLaTeX
+%==============================================================
+
+\documentclass[12pt, a4paper, oneside]{report}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+
+%--- Encoding & Font ---
+\usepackage{fontspec}                    % XeLaTeX/LuaLaTeX
+\setmainfont{Times New Roman}           % Font chính: Times New Roman 13pt
+\newfontfamily\headingfont{Times New Roman}
+
+%--- Ngôn ngữ Tiếng Việt ---
+\usepackage{polyglossia}
+\setmainlanguage{vietnamese}
+\setotherlanguage{english}
+
+%--- Trang & Lề ---
+% Chuẩn IUH: Trái 3.5cm, Phải 2cm, Trên 3cm, Dưới 3cm
+\usepackage[
+  top    = 3.0cm,
+  bottom = 3.0cm,
+  left   = 3.5cm,
+  right  = 2.0cm,
+  headheight = 15pt
+]{geometry}
+
+%--- Giãn dòng ---
+\usepackage{setspace}
+% Content style: 1.5 lines (IUH quy định)
+% Headings: 1.15 lines (xử lý trong titlesec)
+
+%--- Màu sắc ---
+\usepackage[dvipsnames, table]{xcolor}
+\definecolor{iuhBlue}{RGB}{0, 70, 127}
+
+%--- Tiêu đề phần & Mục lục ---
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{tocloft}
+
+%--- Bảng ---
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{makecell}
+
+%--- Hình ảnh ---
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{{figures/}}
+
+%--- Caption ---
+\usepackage{caption}
+
+%--- Toán học ---
+\usepackage{amsmath, amssymb}
+
+%--- Danh sách ---
+\usepackage{enumitem}
+
+%--- Header / Footer ---
+\usepackage{fancyhdr}
+
+%--- Tài liệu tham khảo IEEE ---
+\usepackage[numbers, sort&compress]{natbib}
+\bibliographystyle{IEEEtran}
+
+%--- Hyperlink ---
+\usepackage[
+  hidelinks,
+  unicode,
+  bookmarks=true,
+  bookmarksnumbered=true
+]{hyperref}
+\usepackage{bookmark}
+
+%--- Appendix ---
+\usepackage[toc, page]{appendix}
+
+%--- Khác ---
+\usepackage{emptypage}      % trang trắng không có header/footer
+\usepackage{indentfirst}    % Thụt đầu dòng sau heading
+
+% ============================================================
+% THÔNG TIN ĐỀ TÀI – CHỈNH SỬA TẠI ĐÂY
+% ============================================================
+\newcommand{\TenDeTaiVI}{Tên đề tài luận văn thạc sĩ (Tiếng Việt)}
+\newcommand{\TenDeTaiEN}{Title of Master's Thesis (English)}
+\newcommand{\HoTenHV}{Họ và tên học viên}
+\newcommand{\MSHV}{MSHV000000}
+\newcommand{\LopHV}{CH.XX.XXX}
+\newcommand{\KhoaHoc}{20XX -- 20XX}
+\newcommand{\ChuyenNganh}{Khoa học máy tính}
+\newcommand{\MaCN}{8480101}
+\newcommand{\SDTHocVien}{0900 000 000}
+\newcommand{\EmailHocVien}{hocvien@example.com}
+\newcommand{\DiaChiHV}{Địa chỉ liên hệ của học viên}
+\newcommand{\TenGVHD}{PGS.TS. Họ và tên}
+\newcommand{\SDTGiangVien}{0900 000 001}
+\newcommand{\EmailGiangVien}{giangvien@iuh.edu.vn}
+\newcommand{\CoQuanGVHD}{Trường Đại học Công nghiệp TP.HCM}
+\newcommand{\DiaChiGVHD}{12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM}
+\newcommand{\NamBaoVe}{2025}
+
+% ============================================================
+% ĐỊNH DẠNG CHAPTER (CHƯƠNG) – HEADING 1
+% Font: Times New Roman 14pt, đậm, in hoa
+% Spacing Before: 24pt, After: 24pt, Line spacing: 1.15
+% ============================================================
+\titleformat{\chapter}[display]
+  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering\MakeUppercase}
+  {CHƯƠNG \thechapter}        % dòng đầu: "CHƯƠNG 1"
+  {0pt}                       % khoảng cách giữa số chương và tên
+  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{24pt}{24pt}
+
+% Chapter không đánh số (MỞ ĐẦU, KẾT LUẬN, v.v.)
+\titleformat{name=\chapter, numberless}[block]
+  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering\MakeUppercase}
+  {}
+  {0pt}
+  {}
+\titlespacing*{name=\chapter, numberless}{0pt}{24pt}{24pt}
+
+% ============================================================
+% ĐỊNH DẠNG SECTION – HEADING 2
+% Font: Times New Roman 13pt, đậm
+% Spacing Before: 6pt, After: 12pt, Line spacing: 1.15
+% ============================================================
+\titleformat{\section}
+  {\fontsize{13pt}{14.95pt}\selectfont\bfseries}
+  {\thesection}
+  {0.5em}
+  {}
+\titlespacing*{\section}{0pt}{6pt}{12pt}
+
+% ============================================================
+% ĐỊNH DẠNG SUBSECTION – HEADING 3
+% Font: Times New Roman 13pt, đậm nghiêng
+% Spacing Before: 6pt, After: 12pt, Line spacing: 1.15
+% ============================================================
+\titleformat{\subsection}
+  {\fontsize{13pt}{14.95pt}\selectfont\bfseries\itshape}
+  {\thesubsection}
+  {0.5em}
+  {}
+\titlespacing*{\subsection}{0pt}{6pt}{12pt}
+
+% ============================================================
+% ĐỊNH DẠNG SUBSUBSECTION – HEADING 4
+% Font: Times New Roman 13pt, nghiêng
+% Spacing Before: 6pt, After: 12pt, Line spacing: 1.15
+% ============================================================
+\titleformat{\subsubsection}
+  {\fontsize{13pt}{14.95pt}\selectfont\itshape}
+  {\thesubsubsection}
+  {0.5em}
+  {}
+\titlespacing*{\subsubsection}{0pt}{6pt}{12pt}
+
+% Đánh số tối đa 4 chữ số (xxx.x.x.x)
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% ============================================================
+% ĐỊNH DẠNG NỘI DUNG – CONTENT STYLE
+% Font: Times New Roman 13pt, Spacing Before 10pt, After 0pt
+% Line spacing: 1.5, không thụt đầu, căn lề hai bên
+% ============================================================
+\setlength{\parindent}{1cm}   % Thụt đầu dòng (indentfirst)
+\setlength{\parskip}{10pt}    % Spacing Before paragraph ≈ 10pt
+
+% Font kích thước 13pt với giãn dòng 1.5 (= 13 × 1.5 = 19.5pt)
+\AtBeginDocument{
+  \fontsize{13pt}{19.5pt}\selectfont
+}
+
+% ============================================================
+% CAPTION – Hình & Bảng
+% Font: Times New Roman 13pt, căn giữa
+% Spacing Before: 6pt, After: 12pt, Line spacing: 1.15
+% Hình x.y (caption dưới hình)
+% Bảng x.y (caption trên bảng)
+% ============================================================
+\captionsetup{
+  font       = {bf, fontsize={13pt}{14.95pt}},
+  labelsep   = space,
+  justification = centering,
+  skip       = 6pt,
+  position   = below       % mặc định; bảng dùng \captionsetup[table]{position=above}
+}
+
+% Đổi "Figure" → "Hình" và "Table" → "Bảng"
+\captionsetup[figure]{
+  name    = {Hình},
+  labelfmt = {\thechapter.\arabic{figure}},
+  position = below
+}
+\captionsetup[table]{
+  name    = {Bảng},
+  labelfmt = {\thechapter.\arabic{table}},
+  position = above
+}
+
+% Đặt lại bộ đếm figure/table theo chapter
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+% ============================================================
+% CÔNG THỨC – đánh số dạng (x-y)
+% ============================================================
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+\counterwithin{equation}{chapter}
+
+% ============================================================
+% MỤC LỤC – định dạng
+% ============================================================
+\renewcommand{\contentsname}{\centering MỤC LỤC}
+\renewcommand{\listfigurename}{\centering DANH MỤC HÌNH ẢNH}
+\renewcommand{\listtablename}{\centering DANH MỤC BẢNG BIỂU}
+\renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}
+
+% Chương trong TOC: in hoa, đậm
+\titlecontents{chapter}[0em]
+  {\bfseries\MakeUppercase}
+  {CHƯƠNG \thecontentslabel\quad}
+  {}
+  {\titlerule*[0.5em]{.}\contentspage}
+
+\titlecontents{section}[1.5em]
+  {}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.5em]{.}\contentspage}
+
+\titlecontents{subsection}[3em]
+  {}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.5em]{.}\contentspage}
+
+\titlecontents{subsubsection}[4.5em]
+  {}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.5em]{.}\contentspage}
+
+% ============================================================
+% HEADER & FOOTER
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape\leftmark}
+\fancyhead[R]{\small\itshape Đề cương LVTS}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% Trang đầu chapter: plain (chỉ số trang ở dưới)
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% ============================================================
+% DANH SÁCH – BULLET STYLE
+% Font: 13pt, Spacing Before/After: 0pt, Line spacing: 1.5
+% ============================================================
+\setlist[itemize]{
+  topsep   = 0pt,
+  itemsep  = 0pt,
+  parsep   = 0pt,
+  leftmargin = 1.5em
+}
+\setlist[enumerate]{
+  topsep   = 0pt,
+  itemsep  = 0pt,
+  parsep   = 0pt,
+  leftmargin = 1.5em
+}
+
+%==============================================================
+%  BẮT ĐẦU TÀI LIỆU
+%==============================================================
+\begin{document}
+\fontsize{13pt}{19.5pt}\selectfont
+
+%--------------------------------------------------------------
+%  TRANG BÌA (Roman page numbering bắt đầu từ i)
+%--------------------------------------------------------------
+\pagenumbering{roman}
+\setcounter{page}{0}
+
+\begin{titlepage}
+\begin{center}
+
+% Tiêu đề Bộ / Trường
+{\fontsize{13pt}{16pt}\selectfont\bfseries BỘ CÔNG THƯƠNG}\\[4pt]
+{\fontsize{14pt}{16pt}\selectfont\bfseries
+  TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH}
+
+\vspace{0.4cm}
+\rule{14cm}{1pt}
+
+% Logo trường
+\vspace{0.4cm}
+\includegraphics[width=3cm]{logo_IUH}   % Đặt file logo_IUH.png vào thư mục figures/
+\vspace{0.4cm}
+
+% Tên học viên
+{\fontsize{14pt}{17pt}\selectfont\bfseries\MakeUppercase{\HoTenHV}}
+
+\vspace{0.6cm}
+
+% Tên đề tài
+\begin{minipage}{13cm}
+  \centering
+  {\fontsize{14pt}{20pt}\selectfont\bfseries\MakeUppercase{\TenDeTaiVI}}
+\end{minipage}
+
+\vspace{0.5cm}
+
+% Chuyên ngành
+{\fontsize{13pt}{16pt}\selectfont
+  Chuyên ngành: \ChuyenNganh\\[4pt]
+  Mã chuyên ngành: \MaCN}
+
+\vspace{1.0cm}
+
+% Loại văn bản
+{\fontsize{14pt}{17pt}\selectfont\bfseries ĐỀ CƯƠNG LUẬN VĂN THẠC SĨ}
+
+\vfill
+
+% Địa điểm và năm
+{\fontsize{13pt}{16pt}\selectfont\bfseries
+  \MakeUppercase{thành phố hồ chí minh, năm \NamBaoVe}}
+
+\end{center}
+\end{titlepage}
+
+%--------------------------------------------------------------
+%  TRANG THÔNG TIN CHUNG
+%--------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+
+\begin{center}
+  {\fontsize{14pt}{17pt}\selectfont\bfseries THÔNG TIN CHUNG}
+\end{center}
+
+\vspace{1cm}
+\setlength{\parskip}{0pt}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\textbf{Họ và tên học viên} & : \HoTenHV \hfill \textbf{MSHV:} \MSHV \\[6pt]
+\textbf{Lớp}               & : \LopHV   \hfill \textbf{Khóa:} \KhoaHoc \\[6pt]
+\textbf{Chuyên ngành}      & : \ChuyenNganh \\[6pt]
+\textbf{Mã chuyên ngành}   & : \MaCN \\[6pt]
+\textbf{SĐT}               & : \SDTHocVien \\[6pt]
+\textbf{Email}             & : \EmailHocVien \\[6pt]
+\textbf{Địa chỉ liên hệ}  & : \DiaChiHV \\[12pt]
+\textbf{Tên đề tài}        & : \TenDeTaiVI \\[12pt]
+\textbf{Người hướng dẫn}   & : \TenGVHD \\[6pt]
+\textbf{SĐT}               & : \SDTGiangVien \\[6pt]
+\textbf{Email}             & : \EmailGiangVien \\[6pt]
+\textbf{Cơ quan công tác}  & : \CoQuanGVHD \\[6pt]
+\textbf{Địa chỉ liên hệ}  & : \DiaChiGVHD \\[6pt]
+\end{tabularx}
+
+\vfill
+
+\begin{flushright}
+\textit{Tp. Hồ Chí Minh, ngày \hspace{1cm} tháng \hspace{1cm} năm 20\ldots}
+\end{flushright}
+
+\vspace{1.5cm}
+
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X
+                              >{\centering\arraybackslash}X}
+\textbf{Người hướng dẫn}             & \textbf{Học viên} \\[2pt]
+\textit{(Ký và ghi rõ họ tên)}       & \textit{(Ký và ghi rõ họ tên)} \\[3cm]
+\TenGVHD                             & \HoTenHV \\
+\end{tabularx}
+
+\setlength{\parskip}{10pt}
+
+%--------------------------------------------------------------
+%  MỤC LỤC
+%--------------------------------------------------------------
+\newpage
+\tableofcontents
+
+%--------------------------------------------------------------
+%  DANH MỤC HÌNH ẢNH
+%--------------------------------------------------------------
+\newpage
+\listoffigures
+
+%--------------------------------------------------------------
+%  DANH MỤC BẢNG BIỂU
+%--------------------------------------------------------------
+\newpage
+\listoftables
+
+%--------------------------------------------------------------
+%  DANH MỤC TỪ VIẾT TẮT
+%--------------------------------------------------------------
+\newpage
+\chapter*{DANH MỤC TỪ VIẾT TẮT}
+\addcontentsline{toc}{chapter}{DANH MỤC TỪ VIẾT TẮT}
+\input{chapters/abbreviations}
+
+%--------------------------------------------------------------
+%  MỞ ĐẦU (không đánh số chương, nhưng có trong TOC)
+%--------------------------------------------------------------
+\newpage
+\pagenumbering{arabic}    % Số trang Arabic bắt đầu từ MỞ ĐẦU
+\setcounter{page}{1}
+
+\chapter*{MỞ ĐẦU}
+\addcontentsline{toc}{chapter}{MỞ ĐẦU}
+\input{chapters/mo_dau}
+
+%--------------------------------------------------------------
+%  CHƯƠNG 1: TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU
+%--------------------------------------------------------------
+\chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+\input{chapters/chuong1}
+
+%--------------------------------------------------------------
+%  CHƯƠNG 2: CƠ SỞ LÝ THUYẾT
+%--------------------------------------------------------------
+\chapter{CƠ SỞ LÝ THUYẾT}
+\input{chapters/chuong2}
+
+%--------------------------------------------------------------
+%  CHƯƠNG 3: ÁP DỤNG KẾT QUẢ NGHIÊN CỨU
+%--------------------------------------------------------------
+\chapter{ÁP DỤNG KẾT QUẢ NGHIÊN CỨU}
+\input{chapters/chuong3}
+
+%--------------------------------------------------------------
+%  KẾT LUẬN VÀ KIẾN NGHỊ
+%--------------------------------------------------------------
+\chapter*{KẾT LUẬN VÀ KIẾN NGHỊ}
+\addcontentsline{toc}{chapter}{KẾT LUẬN VÀ KIẾN NGHỊ}
+\input{chapters/ket_luan}
+
+%--------------------------------------------------------------
+%  DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ
+%--------------------------------------------------------------
+\chapter*{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}
+\addcontentsline{toc}{chapter}{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}
+\input{chapters/cong_trinh}
+
+%--------------------------------------------------------------
+%  TÀI LIỆU THAM KHẢO (IEEE style)
+%--------------------------------------------------------------
+\renewcommand{\bibsection}{%
+  \chapter*{\bibname}
+  \addcontentsline{toc}{chapter}{\bibname}
+}
+\bibliography{refs/references}
+
+%--------------------------------------------------------------
+%  PHỤ LỤC
+%--------------------------------------------------------------
+\appendix
+\chapter*{PHỤ LỤC}
+\addcontentsline{toc}{chapter}{PHỤ LỤC}
+\input{chapters/phu_luc}
+
+%--------------------------------------------------------------
+%  LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN
+%--------------------------------------------------------------
+\chapter*{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}
+\addcontentsline{toc}{chapter}{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}
+\input{chapters/ly_lich}
+
+\end{document}
