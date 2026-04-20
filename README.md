@@ -96,3 +96,14 @@ xelatex main.tex
 - **Số trang tối đa** (phần chính): 100 trang
 
 # de_cuong_IUH
+
+PDF output: 43 trang, không có lỗi fatal.
+
+▎ Lưu ý: Project dùng fontspec nên phải compile bằng xelatex (không phải pdflatex). Nếu dùng Overleaf, vào
+▎ Settings → Compiler → chọn XeLaTeX.
+
+✻ Cogitated for 15m 9s
+
+※ recap: Implemented the thesis outline plan into all LaTeX chapters of de_cuong_IUH, producing a 43-page
+PDF. Next: compile using xelatex (not pdflatex) — set Overleaf compiler to XeLaTeX if needed. (disable
+recaps in /config)

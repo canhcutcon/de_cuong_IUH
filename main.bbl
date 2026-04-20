@@ -1,0 +1,209 @@
+\begin{thebibliography}{10}
+
+\bibitem{chandola2009anomaly}
+Varun Chandola, Arindam Banerjee, and Vipin Kumar.
+\newblock Anomaly detection: A survey.
+\newblock {\em ACM Computing Surveys}, 41(3):1--58, 2009.
+
+\bibitem{liu2008isolation}
+Fei~Tony Liu, Kai~Ming Ting, and Zhi-Hua Zhou.
+\newblock Isolation forest.
+\newblock In {\em Proceedings of the 8th IEEE International Conference on Data
+  Mining (ICDM)}, pages 413--422. IEEE, 2008.
+
+\bibitem{breunig2000lof}
+Markus~M. Breunig, Hans-Peter Kriegel, Raymond~T. Ng, and J{\"o}rg Sander.
+\newblock {LOF}: Identifying density-based local outliers.
+\newblock In {\em Proceedings of the ACM SIGMOD International Conference on
+  Management of Data}, pages 93--104. ACM, 2000.
+
+\bibitem{sakurada2014anomaly}
+Mayu Sakurada and Takehisa Yairi.
+\newblock Anomaly detection using autoencoders with nonlinear dimensionality
+  reduction.
+\newblock pages 4--11, 2014.
+
+\bibitem{kingma2014vae}
+Diederik~P. Kingma and Max Welling.
+\newblock Auto-encoding variational bayes.
+\newblock In {\em Proceedings of the 2nd International Conference on Learning
+  Representations (ICLR)}, Banff, Canada, 2014.
+
+\bibitem{tuli2022tranad}
+Shreshth Tuli, Giuliano Casale, and Nicholas~R. Jennings.
+\newblock {TranAD}: Deep transformer networks for anomaly detection in
+  multivariate time series data.
+\newblock In {\em Proceedings of the VLDB Endowment}, volume~15, pages
+  1201--1214, 2022.
+
+\bibitem{lebret2016neural}
+R{\'e}mi Lebret, David Grangier, and Michael Auli.
+\newblock Neural text generation from structured data with application to the
+  biography domain.
+\newblock In {\em Proceedings of the 2016 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 1203--1213. ACL, 2016.
+
+\bibitem{wei2022chain}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia,
+  Ed~Chi, Quoc Le, and Denny Zhou.
+\newblock Chain-of-thought prompting elicits reasoning in large language
+  models.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  volume~35. Curran Associates, 2022.
+
+\bibitem{hu2022lora}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In {\em Proceedings of the 10th International Conference on Learning
+  Representations (ICLR)}, Virtual, 2022.
+
+\bibitem{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  volume~33, pages 9459--9474. Curran Associates, 2020.
+
+\bibitem{qwen2023report}
+Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, et~al.
+\newblock {Qwen} technical report.
+\newblock \url{https://arxiv.org/abs/2309.16609}, 2023.
+\newblock arXiv:2309.16609.
+
+\bibitem{gemma2024}
+{Gemma Team}, Thomas Mesnard, Cassidy Hardin, Robert Dadashi, et~al.
+\newblock Gemma: Open models based on gemini research and technology.
+\newblock \url{https://arxiv.org/abs/2403.08295}, 2024.
+\newblock arXiv:2403.08295.
+
+\bibitem{nguyen2023phogpt}
+Dat~Quoc Nguyen, Vu~Thi Tran, et~al.
+\newblock {PhoGPT}: Generative pre-training for {Vietnamese}.
+\newblock \url{https://arxiv.org/abs/2311.02945}, 2023.
+\newblock arXiv:2311.02945.
+
+\bibitem{touvron2023llama}
+Hugo Touvron, Thibaut Lavril, Gautier Izacard, et~al.
+\newblock {Llama}: Open and efficient foundation language models.
+\newblock \url{https://arxiv.org/abs/2302.13971}, 2023.
+\newblock arXiv:2302.13971.
+
+\bibitem{zong2018dagmm}
+Bo~Zong, Qi~Song, Martin~Renqiang Min, Wei Cheng, Cristian Lumezanu, Daeki Cho,
+  and Haifeng Chen.
+\newblock Deep autoencoding gaussian mixture model for unsupervised anomaly
+  detection.
+\newblock In {\em Proceedings of the 6th International Conference on Learning
+  Representations (ICLR)}, Vancouver, Canada, 2018.
+
+\bibitem{su2019omni}
+Ya~Su, Youjian Zhao, Chenhao Niu, Rong Liu, Wei Sun, and Dan Pei.
+\newblock Robust anomaly detection for multivariate time series through
+  stochastic recurrent neural network.
+\newblock In {\em Proceedings of the 25th ACM SIGKDD International Conference
+  on Knowledge Discovery \& Data Mining}, pages 2828--2837. ACM, 2019.
+
+\bibitem{munir2019deepant}
+Mohsin Munir, Shoaib~Ahmed Siddiqui, Andreas Dengel, and Sheraz Ahmed.
+\newblock {DeepAnT}: A deep learning approach for unsupervised anomaly
+  detection in time series.
+\newblock {\em IEEE Access}, 7:1991--2005, 2019.
+
+\bibitem{schlegl2019anogan}
+Thomas Schlegl, Philipp Seeb{\"o}ck, Sebastian~M. Waldstein, Georg Langs, and
+  Ursula Schmidt-Erfurth.
+\newblock f-{AnoGAN}: Fast unsupervised anomaly detection with generative
+  adversarial networks.
+\newblock volume~54, pages 30--44, 2019.
+
+\bibitem{audibert2020usad}
+Julien Audibert, Pietro Michiardi, Fr{\'e}d{\'e}ric Guyard, S{\'e}bastien
+  Marti, and Maria~A. Zuluaga.
+\newblock {USAD}: Unsupervised anomaly detection on multivariate time series.
+\newblock In {\em Proceedings of the 26th ACM SIGKDD International Conference
+  on Knowledge Discovery \& Data Mining}, pages 3395--3404. ACM, 2020.
+
+\bibitem{dai2022ganf}
+Enyan Dai and Jie Chen.
+\newblock Graph-augmented normalizing flows for anomaly detection of multiple
+  time series.
+\newblock In {\em Proceedings of the 10th International Conference on Learning
+  Representations (ICLR)}, Virtual, 2022.
+
+\bibitem{liu2021nsibf}
+Dongxiang Liu, Hao Kong, Bing Xu, Hanxi Wang, and Hai Su.
+\newblock Practical approach to anomaly detection in large-scale distributed
+  systems.
+\newblock {\em IEEE Transactions on Big Data}, 8(5):1347--1360, 2021.
+
+\bibitem{chen2016xgboost}
+Tianqi Chen and Carlos Guestrin.
+\newblock {XGBoost}: A scalable tree boosting system.
+\newblock In {\em Proceedings of the 22nd ACM SIGKDD International Conference
+  on Knowledge Discovery \& Data Mining}, pages 785--794. ACM, 2016.
+
+\bibitem{xie2023finma}
+Qianqian Xie, Weiguang Han, Xiao Zhang, Yanzhao Lai, Min Peng, Alejandro
+  Lopez-Lira, and Jimin Huang.
+\newblock {PIXIU}: A large language model, instruction data and evaluation
+  benchmark for finance.
+\newblock {\em arXiv preprint arXiv:2306.05443}, 2023.
+
+\bibitem{wu2023bloomberggpt}
+Shijie Wu, Ozan Irsoy, Steven Lu, Vadim Dabravolski, Mark Dredze, Sebastian
+  Gehrmann, Preethi Kambadur, David Rosenberg, and Gideon Mann.
+\newblock {BloombergGPT}: A large language model for finance.
+\newblock {\em arXiv preprint arXiv:2303.17564}, 2023.
+
+\bibitem{zhang2020bertscore}
+Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian~Q. Weinberger, and Yoav Artzi.
+\newblock {BERTScore}: Evaluating text generation with {BERT}.
+\newblock In {\em Proceedings of the 8th International Conference on Learning
+  Representations (ICLR)}, Virtual, 2020.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  volume~30, pages 5998--6008. Curran Associates, 2017.
+
+\bibitem{bishop2006pattern}
+Christopher~M. Bishop.
+\newblock {\em Pattern Recognition and Machine Learning}.
+\newblock Springer, New York, NY, USA, 2006.
+
+\bibitem{vincent2010stacked}
+Pascal Vincent, Hugo Larochelle, Isabelle Lajoie, Yoshua Bengio, and
+  Pierre-Antoine Manzagol.
+\newblock Stacked denoising autoencoders: Learning useful representations in a
+  deep network with a local denoising criterion.
+\newblock volume~11, pages 3371--3408, 2010.
+
+\bibitem{graves2005bilstm}
+Alex Graves and J{\"u}rgen Schmidhuber.
+\newblock Framewise phoneme classification with bidirectional {LSTM} and other
+  neural network architectures.
+\newblock volume~18, pages 602--610, 2005.
+
+\bibitem{xu2023peft}
+Lingling Xu, Haoran Xie, Si-Zhao~Joe Bi, Xiaohui Qin, et~al.
+\newblock Parameter-efficient fine-tuning methods for pretrained language
+  models: A critical review and assessment.
+\newblock \url{https://arxiv.org/abs/2312.12148}, 2023.
+\newblock arXiv:2312.12148.
+
+\bibitem{papineni2002bleu}
+Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu.
+\newblock {BLEU}: A method for automatic evaluation of machine translation.
+\newblock In {\em Proceedings of the 40th Annual Meeting of the Association for
+  Computational Linguistics (ACL)}, pages 311--318. ACL, 2002.
+
+\bibitem{lin2004rouge}
+Chin-Yew Lin.
+\newblock {ROUGE}: A package for automatic evaluation of summaries.
+\newblock In {\em Text Summarization Branches Out -- Workshop at ACL}, pages
+  74--81. ACL, 2004.
+
+\end{thebibliography}
