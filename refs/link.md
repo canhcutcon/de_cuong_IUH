@@ -44,7 +44,28 @@ Vaswani et al., “Attention Is All You Need” (2017), DOI via arXiv 10.48550/a
 https://arxiv.org/abs/1706.03762
 
 Devlin et al., “BERT: Pre-training of Deep Bidirectional Transformers…” (2019), DOI 10.18653/v1/N19-1423.
+https://arxiv.org/pdf/1810.04805
 
 Hu et al., “LoRA” (2022).
+https://arxiv.org/pdf/2106.09685
 
 Lewis et al., “Retrieval-Augmented Generation…” (2020).
+https://arxiv.org/pdf/2005.11401
+
+Qwen Technical Report (2023).
+https://arxiv.org/pdf/2309.16609
+
+Gemma: Open Models Based on Gemini Research and Technology (2024).
+https://arxiv.org/abs/2403.08295
+
+Llama: Open and Efficient Foundation Language Models (2023).
+https://arxiv.org/abs/2302.13971
+
+PhoGPT: Generative Pre-training for Vietnamese (2023).
+https://arxiv.org/abs/2311.02945
+
+Xu et al., review về PEFT (2023).
+
+Xie et al., PIXIU (2023).
+
+Wu et al., BloombergGPT (2023).
