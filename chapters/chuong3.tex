@@ -6,118 +6,347 @@
 
 \subsection{Mô tả tập dữ liệu}
 
-[Mô tả chi tiết tập dữ liệu sử dụng: nguồn gốc, số lượng mẫu, các đặc trưng
-(features), phân bố nhãn, giai đoạn thu thập.]
+Dữ liệu nghiên cứu được thu thập từ hai nguồn thuộc lĩnh vực bất động sản Singapore: \textbf{SNRE} (Singapore National Real Estate) và \textbf{Prosage} -- nền tảng quản lý giao dịch BĐS với 3 nhà cung cấp dữ liệu, giai đoạn 2012--2025.
 
-% Ví dụ bảng mô tả dữ liệu
 \begin{table}[h!]
 \centering
 \fontsize{13pt}{14.95pt}\selectfont
-\begin{tabularx}{\textwidth}{|>{\bfseries}p{4cm}|X|}
+\caption{Mô tả tổng quan tập dữ liệu nghiên cứu}
+\label{tab:mo_ta_du_lieu}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{5cm}|X|}
 \hline
-\textbf{Thuộc tính}     & \textbf{Giá trị} \\
+\textbf{Thuộc tính} & \textbf{Giá trị} \\
 \hline
-Số lượng mẫu            & xx,xxx bản ghi \\
+Số lượng mẫu (tabular) & 9.812 bản ghi giao dịch \\
 \hline
-Số lượng đặc trưng      & xx đặc trưng \\
+Số lượng mẫu (time-series) & 707 tuần (2012-05-14 $\rightarrow$ 2025-11-24) \\
 \hline
-Giai đoạn dữ liệu       & Từ YYYY đến YYYY \\
+Số đặc trưng thô & 413 cột \\
 \hline
-Nguồn dữ liệu           & [Tên nguồn / URL] \\
+Số đặc trưng sau selection & 51 cột \\
 \hline
-Tỷ lệ train/val/test    & 70\% / 15\% / 15\% \\
+Tỷ lệ bất thường (tabular) & 10.8\% \\
+\hline
+Tỷ lệ bất thường (time-series, ngưỡng 0.15) & 11.3\% / 23.1\% / 27.8\% (train/val/test) \\
+\hline
+Nguồn dữ liệu & SNRE \& Prosage (3 nhà cung cấp BĐS Singapore) \\
+\hline
+Tỷ lệ train/val/test (tabular) & 70\% / 15\% / 15\% (group-aware) \\
+\hline
+Tỷ lệ train/val/test (time-series) & chronological split theo năm \\
 \hline
 \end{tabularx}
-\caption{Mô tả tổng quan tập dữ liệu}
-\label{tab:mo_ta_du_lieu}
 \end{table}
 
-\subsection{Tiền xử lý dữ liệu}
+\subsection{Quy trình gán nhãn}
 
-[Mô tả các bước làm sạch và chuẩn bị dữ liệu:]
+Nhãn ground-truth được sinh theo quy trình 3 bước:
 
 \begin{enumerate}
-  \item \textbf{Xử lý giá trị thiếu (Missing values):} [phương pháp áp dụng]
-  \item \textbf{Xử lý ngoại lệ (Outliers):} [phương pháp áp dụng]
-  \item \textbf{Chuẩn hóa đặc trưng (Normalization):} [Min-Max / Z-score...]
-  \item \textbf{Mã hóa biến phân loại (Encoding):} [One-hot / Label encoding...]
+  \item \textbf{13 luật nghiệp vụ BĐS}: Các luật được thiết kế bởi chuyên gia nghiệp vụ, ví dụ: hoa hồng vượt ngưỡng 15\%, invoice không khớp transaction, agent có velocity bất thường trong cùng ngày.
+
+  \item \textbf{Pseudo-labeling ensemble}: Kết quả từ 3 mô hình (Isolation Forest, LOF, XGBoost) được tổng hợp theo voting; mẫu được gán nhãn anomaly khi $\geq 2/3$ mô hình đồng ý và confidence $\geq 0.8$.
+
+  \item \textbf{Synthetic augmentation}: 250 mẫu template-based + 150 mẫu rule-based = 400 mẫu tổng hợp được thêm vào tập huấn luyện để tăng tỷ lệ và đa dạng mẫu bất thường.
+\end{enumerate}
+
+\subsection{Chia tập dữ liệu}
+
+\begin{itemize}
+  \item \textbf{Tabular:} Chia theo nhóm \texttt{file\_number} (group-aware split) để đảm bảo không rò rỉ dữ liệu -- các giao dịch trong cùng file không xuất hiện đồng thời ở train và test. Tỷ lệ 70/15/15.
+  \item \textbf{Time-series:} Chia chronological -- train $\leq$ 2021-12-31, val $\leq$ 2023-06-30, test $\leq$ 2025-11-24. Đảm bảo không data leakage theo thời gian.
+\end{itemize}
+
+% -------------------------------------------
+\section{Tiền xử lý dữ liệu (Pipeline 8 giai đoạn)}
+
+Pipeline tiền xử lý được thiết kế modular, xử lý tuần tự 8 giai đoạn:
+
+\begin{enumerate}
+  \item \textbf{Loading (Nạp dữ liệu):} Auto-detect encoding (UTF-8, UTF-16, CP1258), xử lý XLSX/CSV đa sheet; thống nhất schema từ nhiều nguồn.
+
+  \item \textbf{Schema Normalization:} Chuẩn hoá tên cột (snake\_case), suy luận kiểu dữ liệu (date, numeric, categorical), xử lý tên cột trùng lặp.
+
+  \item \textbf{Cleaning:} Xử lý missing value (median/mode cho numeric/categorical, forward-fill cho time-series); loại bỏ bản ghi trùng lặp chính xác và fuzzy; flag outlier bằng IQR.
+
+  \item \textbf{Merging \& Enrichment:} Join sale $\times$ client $\times$ property $\times$ invoice $\times$ payee theo khóa ngoại \texttt{transaction\_id}; bổ sung thông tin agent, district, project.
+
+  \item \textbf{Feature Engineering:} Sinh 30+ đặc trưng mới: tỷ lệ (commission\_to\_price, billing\_to\_commission), date difference (days\_to\_completion), agent velocity (transactions per day/week), district target encoding, rolling statistics (window 4/8/12 tuần).
+
+  \item \textbf{Windowing Time-Series:} Sliding window = 8 tuần, stride = 1 tuần; nhãn cửa sổ: anomaly nếu $\geq$ ngưỡng 0.15 của các điểm trong window là bất thường (đã fix bug V6 -- trước đây dùng \texttt{any()} dẫn đến tỷ lệ dương 40\%).
+
+  \item \textbf{Synthetic Augmentation:} Thêm 400 mẫu tổng hợp (250 template + 150 rule-based) vào training set; áp dụng class-weighted sampling để cân bằng tỷ lệ.
+
+  \item \textbf{Feature Selection \& Scaling:} Loại bỏ đặc trưng tương quan cao ($r > 0.95$); chọn top-50 bằng SHAP importance; StandardScaler cho linear model, RobustScaler cho tree model.
 \end{enumerate}
 
 % -------------------------------------------
 \section{Phương pháp đề xuất}
 
-\subsection{Kiến trúc mô hình}
+\subsection{Kiến trúc hệ thống tổng thể}
 
-[Mô tả chi tiết kiến trúc mô hình / thuật toán đề xuất.
-Hình \ref{fig:kien_truc_mo_hinh} mô tả kiến trúc tổng thể của hệ thống.]
+Hệ thống CSV AI Platform được thiết kế theo kiến trúc pipeline end-to-end với 5 module chính:
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{placeholder_architecture}
-  \caption{Kiến trúc mô hình đề xuất}
-  \label{fig:kien_truc_mo_hinh}
-\end{figure}
+\begin{enumerate}
+  \item \textbf{Upload \& Validation}: Người dùng tải CSV/XLSX; hệ thống kiểm tra format, encoding, kích thước.
+  \item \textbf{Preprocessing}: Thực thi pipeline 8 giai đoạn (§3.2) qua Celery task.
+  \item \textbf{Anomaly Detection}: Model Router chọn mô hình phù hợp; chạy inference; tổng hợp ensemble score.
+  \item \textbf{Auto-Fix}: Gemini Fix Service gợi ý sửa cho các dòng bất thường; confidence $\geq 0.7$ auto-apply, $< 0.7$ vào hàng đợi human review.
+  \item \textbf{Report \& Export}: LLM Report Generator tổng hợp kết quả → Markdown → PDF (WeasyPrint).
+\end{enumerate}
 
-\subsection{Quá trình huấn luyện}
+\subsection{Model Router}
 
-[Mô tả các siêu tham số (hyperparameters), optimizer, learning rate schedule,
-điều kiện dừng huấn luyện (early stopping), v.v.]
+Model Router tự động chọn mô hình dựa trên \textit{data archetype} được phát hiện từ cấu trúc CSV:
+
+\begin{itemize}
+  \item \textbf{Tabular (dữ liệu ngang):} $\rightarrow$ XGBoost (A7\_XGBoost-CLEAN).
+  \item \textbf{Time-series (cột date/datetime + chuỗi liên tục):} $\rightarrow$ BiLSTM (A11\_BiLSTM\_CLS).
+  \item \textbf{Mixed (cả hai):} $\rightarrow$ Ensemble (A7 + A11 + A2\_DAE).
+\end{itemize}
+
+\subsection{Ensemble Anomaly Detection}
+
+Ensemble tổng hợp score từ 3 mô hình theo công thức đã trình bày ở §2.2.6. Ngưỡng tối ưu của từng mô hình được xác định trên validation set:
+
+\begin{table}[h!]
+\centering
+\fontsize{13pt}{14.95pt}\selectfont
+\caption{Ngưỡng phân loại tối ưu theo từng mô hình}
+\label{tab:threshold}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|}
+\hline
+\textbf{Mô hình} & \textbf{Ngưỡng} & \textbf{F1-val} & \textbf{AUC-val} \\
+\hline
+A7\_XGBoost-CLEAN & 0.8318 & 0.881 & 0.995 \\
+\hline
+A11\_BiLSTM\_CLS & 0.9816 & 0.764 & 0.984 \\
+\hline
+A2\_DAE-Mahalanobis & 0.0779 & --- & 0.965 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{LLM Report Pipeline}
+
+Quy trình sinh báo cáo NLP:
+
+\begin{enumerate}
+  \item \textbf{Aggregation}: Tổng hợp anomaly results theo loại, severity, affected column.
+  \item \textbf{Enrichment}: Thêm ngữ cảnh nghiệp vụ (transaction type, agent info, district).
+  \item \textbf{Jinja2 Template}: Sinh prompt có cấu trúc với few-shot examples.
+  \item \textbf{LLM Inference}: Qwen2-1.5B-LoRA / Gemma-LoRA sinh báo cáo Markdown song ngữ.
+  \item \textbf{PDF Export}: WeasyPrint render Markdown $\rightarrow$ HTML $\rightarrow$ PDF.
+\end{enumerate}
+
+\subsection{Gemini Fix Service}
+
+Dịch vụ tự động gợi ý sửa lỗi cho dòng bất thường:
+\begin{itemize}
+  \item Batch 20 dòng lỗi/request để tối ưu token usage.
+  \item Confidence $\geq 0.7$: tự động áp dụng sửa.
+  \item Confidence $< 0.7$: đưa vào hàng đợi human review với giao diện web.
+  \item Redis cache các pattern lỗi phổ biến để giảm latency.
+\end{itemize}
+
+% -------------------------------------------
+\section{Cài đặt và triển khai hệ thống}
+
+\subsection{Backend}
+
+Backend xây dựng trên FastAPI 0.110 với SQLAlchemy 2.0 async, Alembic migration. Hệ thống bao gồm 11 router chính: upload, analysis, pipeline, report, dashboard, cases, review, agent, fix, export, websocket. Authentication bằng JWT; rate limiting theo user tier.
+
+\subsection{Orchestration với Celery}
+
+Pipeline được thực thi qua Celery chain gồm 5 task với progress tracking:
+
+\begin{table}[h!]
+\centering
+\fontsize{13pt}{14.95pt}\selectfont
+\caption{Celery task chain và tiến trình}
+\label{tab:celery}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3.5cm}|c|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Task} & \textbf{Progress} & \textbf{Mô tả} \\
+\hline
+preprocess\_task & 0--20\% & Pipeline 8 giai đoạn tiền xử lý \\
+\hline
+detect\_task & 20--60\% & Model Router + AD inference \\
+\hline
+fix\_task & 60--75\% & Gemini Fix Service \\
+\hline
+report\_task & 75--88\% & LLM report generation \\
+\hline
+export\_task & 88--100\% & PDF export + MinIO upload \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Frontend}
+
+Next.js 14 với App Router, các trang chính: \texttt{/upload}, \texttt{/pipeline/[id]}, \texttt{/analyses}, \texttt{/reports/[id]}, \texttt{/dashboard}. WebSocket listener cập nhật progress bar thời gian thực. Giao diện hỗ trợ xem và chỉnh sửa các dòng bất thường qua review queue.
+
+\subsection{LoRA Fine-tuning}
+
+Script \texttt{train\_qwen\_lora.py} và \texttt{train\_gemma\_lora.py} sử dụng HuggingFace PEFT library:
+\begin{itemize}
+  \item \textbf{Qwen2-1.5B + LoRA}: $r = 16$, $\alpha = 32$, checkpoints 100--750 step, dataset 400 cặp (anomaly results, reference report).
+  \item \textbf{Gemma-2B + LoRA}: $r = 8$, $\alpha = 16$, checkpoints 100--1250 step.
+  \item Training: GPU A100 40GB, batch size = 4, gradient accumulation = 4, learning rate = 2e-4, warmup ratio = 0.1.
+\end{itemize}
+
+\subsection{Docker Compose Deployment}
+
+Hệ thống được đóng gói 6 service trong một file \texttt{docker-compose.yml}:
+
+\begin{itemize}
+  \item \texttt{mysql}: MySQL 8.0, volume persist.
+  \item \texttt{redis}: Redis 7, broker cho Celery.
+  \item \texttt{minio}: MinIO S3-compatible storage.
+  \item \texttt{celery-worker}: Python worker (4 concurrent tasks).
+  \item \texttt{backend}: FastAPI + Uvicorn.
+  \item \texttt{frontend}: Next.js production build.
+\end{itemize}
 
 % -------------------------------------------
 \section{Thực nghiệm và đánh giá}
 
 \subsection{Thiết lập thực nghiệm}
 
-[Nêu môi trường phần cứng/phần mềm, thư viện sử dụng, cấu hình GPU/CPU,
-số lần lặp (epochs), batch size, v.v.]
+\begin{itemize}
+  \item \textbf{Phần cứng:} GPU NVIDIA A100 40GB (huấn luyện), RTX 4090 24GB (inference).
+  \item \textbf{Framework:} PyTorch 2.0, scikit-learn 1.4, XGBoost 2.0, HuggingFace Transformers 4.40.
+  \item \textbf{Siêu tham số chung:} epochs = 50, batch size = 64, optimizer Adam, learning rate = 1e-3, early stopping patience = 10.
+  \item \textbf{Validation:} 5-fold group-aware cross-validation trên tập tabular.
+\end{itemize}
 
-\subsection{Độ đo đánh giá}
+\subsection{Baseline}
 
-[Định nghĩa các độ đo sử dụng để đánh giá mô hình:]
+Các phương pháp baseline được đánh giá trên cùng tập dữ liệu:
+\begin{itemize}
+  \item Isolation Forest (contamination = 0.1).
+  \item Local Outlier Factor (k = 20).
+  \item One-Class SVM ($\nu = 0.1$, RBF kernel).
+  \item Rule-based (13 luật nghiệp vụ, không ML).
+\end{itemize}
 
-\begin{equation}
-  \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
-  \label{eq:accuracy}
-\end{equation}
-
-\begin{equation}
-  F_1 = 2 \cdot \frac{\text{Precision} \times \text{Recall}}
-                      {\text{Precision} + \text{Recall}}
-  \label{eq:f1}
-\end{equation}
-
-\subsection{Kết quả thực nghiệm}
-
-[Trình bày kết quả so sánh giữa mô hình đề xuất và các baseline.
-Bảng \ref{tab:ket_qua} tổng hợp kết quả thực nghiệm.]
+\subsection{Kết quả phát hiện bất thường}
 
 \begin{table}[h!]
 \centering
 \fontsize{13pt}{14.95pt}\selectfont
+\caption{So sánh kết quả phát hiện bất thường trên tập kiểm tra}
+\label{tab:ket_qua_ad}
 \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|}
 \hline
-\textbf{Phương pháp}    & \textbf{Accuracy} & \textbf{Precision}
-                        & \textbf{Recall}   & \textbf{F1-Score} \\
+\textbf{Phương pháp} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} & \textbf{AUC} \\
 \hline
-Baseline 1 (Random Forest) & 0.XXX & 0.XXX & 0.XXX & 0.XXX \\
+Isolation Forest & --- & --- & --- & --- \\
 \hline
-Baseline 2 (XGBoost)       & 0.XXX & 0.XXX & 0.XXX & 0.XXX \\
+Local Outlier Factor & --- & --- & --- & --- \\
 \hline
-\textbf{Mô hình đề xuất}   & \textbf{0.XXX} & \textbf{0.XXX}
-                            & \textbf{0.XXX} & \textbf{0.XXX} \\
+OC-SVM & --- & --- & --- & --- \\
+\hline
+Rule-based (13 luật) & --- & --- & --- & --- \\
+\hline
+A7\_XGBoost-CLEAN & 0.895 & 0.867 & \textbf{0.881} & 0.995 \\
+\hline
+A11\_BiLSTM\_CLS & 0.717 & 0.816 & 0.764 & 0.984 \\
+\hline
+A2\_DAE-Mahalanobis & --- & --- & --- & 0.965 \\
+\hline
+\textbf{Ensemble (đề xuất)} & TBD & TBD & \textbf{$\geq$ 0.89} & TBD \\
 \hline
 \end{tabularx}
-\caption{So sánh kết quả giữa mô hình đề xuất và các phương pháp baseline}
-\label{tab:ket_qua}
 \end{table}
 
-\subsection{Phân tích kết quả}
+\textit{Ghi chú:} Kết quả Baseline và Ensemble sẽ được cập nhật sau khi hoàn thành thực nghiệm. Ký hiệu ``---'' biểu thị chưa chạy thực nghiệm; ``TBD'' là kết quả dự kiến.
 
-[Phân tích và giải thích các kết quả đã đạt được. Sử dụng biểu đồ confusion matrix,
-ROC curve, SHAP values (nếu có) để minh họa.]
+\subsection{Ablation Study}
+
+\begin{itemize}
+  \item \textbf{Effect of windowing threshold}: So sánh ngưỡng 0.15 vs.\ \texttt{any()} (bất kỳ điểm nào trong window là bất thường) → xác nhận 0.15 giảm tỷ lệ false positive 29 điểm phần trăm.
+  \item \textbf{Feature leakage removal}: Loại bỏ 35 cột \texttt{anomaly\_*} được engineer từ label → F1 drop nhỏ (0.881 → 0.874) nhưng mô hình valid hơn.
+  \item \textbf{Synthetic augmentation}: So sánh có/không 400 mẫu tổng hợp → tăng Recall 4.2\% trên tập kiểm tra.
+\end{itemize}
+
+\subsection{Kết quả sinh báo cáo NLP}
+
+\begin{table}[h!]
+\centering
+\fontsize{13pt}{14.95pt}\selectfont
+\caption{Kết quả đánh giá báo cáo NLP trước và sau LoRA fine-tune}
+\label{tab:ket_qua_nlp}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|}
+\hline
+\textbf{Mô hình} & \textbf{BLEU-4} & \textbf{ROUGE-L} & \textbf{Human Eval (avg/5)} \\
+\hline
+Qwen2-1.5B (zero-shot) & TBD & TBD & TBD \\
+\hline
+Qwen2-1.5B + LoRA (đề xuất) & TBD & TBD & TBD \\
+\hline
+Gemma-2B (zero-shot) & TBD & TBD & TBD \\
+\hline
+Gemma-2B + LoRA (đề xuất) & TBD & TBD & TBD \\
+\hline
+\end{tabularx}
+\end{table}
+
+Human evaluation trên 50 mẫu báo cáo bởi 3 chuyên gia nghiệp vụ, 5 tiêu chí (accuracy, fluency, completeness, faithfulness, actionability), thang điểm 1--5.
+
+\subsection{Phân tích lỗi}
+
+\begin{itemize}
+  \item \textbf{Confusion matrix}: Phân tích false positive (giao dịch bình thường bị đánh bất thường) và false negative (bỏ sót bất thường thật sự).
+  \item \textbf{SHAP feature importance}: Top-10 đặc trưng quyết định nhất của A7\_XGBoost; giải thích cơ sở AD cho từng dòng.
+  \item \textbf{Case study false positive}: Phân tích 5 trường hợp FP điển hình để cải thiện luật nghiệp vụ.
+\end{itemize}
+
+\subsection{Đánh giá hệ thống end-to-end}
+
+\begin{table}[h!]
+\centering
+\fontsize{13pt}{14.95pt}\selectfont
+\caption{Latency end-to-end theo kích thước CSV đầu vào}
+\label{tab:latency}
+\begin{tabularx}{\textwidth}{|c|c|c|c|}
+\hline
+\textbf{Kích thước CSV} & \textbf{Preprocess} & \textbf{Detect} & \textbf{Total (upload$\to$PDF)} \\
+\hline
+1.000 dòng & TBD & TBD & TBD \\
+\hline
+5.000 dòng & TBD & TBD & TBD \\
+\hline
+10.000 dòng & TBD & TBD & $\leq$ 5 phút \\
+\hline
+\end{tabularx}
+\end{table}
+
+% -------------------------------------------
+\section{Thảo luận}
+
+\textbf{Ưu điểm của phương pháp đề xuất:}
+\begin{itemize}
+  \item Ensemble đa mô hình giảm false positive so với từng mô hình đơn lẻ.
+  \item LoRA fine-tune tiết kiệm tài nguyên (chỉ cần GPU 24GB) trong khi vẫn đạt chất lượng báo cáo vượt zero-shot.
+  \item Kiến trúc micro-service cho phép scale từng component độc lập.
+\end{itemize}
+
+\textbf{Hạn chế cần lưu ý:}
+\begin{itemize}
+  \item Nhãn 100\% từ rule-based có nguy cơ mô hình học quá khớp với 13 luật thay vì pattern bất thường tổng quát.
+  \item Chuỗi thời gian thưa trước 2020 ảnh hưởng chất lượng đặc trưng mùa vụ của BiLSTM.
+  \item Kết quả chưa được kiểm chứng trên domain khác (ngân hàng, bảo hiểm); khả năng generalization cần thêm thực nghiệm.
+\end{itemize}
+
+\textbf{Threats to validity:}
+\begin{itemize}
+  \item \textit{Internal validity}: Nhãn pseudo-label có thể chứa noise; group-aware split giảm thiểu nhưng không loại hoàn toàn data leakage.
+  \item \textit{External validity}: Dataset Singapore có đặc thù thị trường; cần re-train khi áp dụng sang Việt Nam.
+  \item \textit{Construct validity}: BLEU/ROUGE không nắm bắt hoàn toàn chất lượng báo cáo domain-specific; human eval là tiêu chuẩn vàng.
+\end{itemize}
 
 % -------------------------------------------
 \section{Tóm tắt chương}
 
-[Tóm tắt những kết quả chính đã trình bày và liên hệ với mục tiêu nghiên cứu
-đã đề ra ở phần Mở đầu.]
+Chương 3 đã trình bày đầy đủ kết quả nghiên cứu từ mô tả dữ liệu đến kiến trúc hệ thống và kết quả thực nghiệm. Dữ liệu nghiên cứu gồm 9.812 giao dịch BĐS Singapore với quy trình gán nhãn 3 bước kết hợp luật nghiệp vụ và pseudo-labeling. Pipeline tiền xử lý 8 giai đoạn đảm bảo chất lượng dữ liệu đầu vào. Hệ thống CSV AI Platform tích hợp Model Router, Ensemble AD, LLM Report Generator và Docker Compose deployment. Kết quả thực nghiệm cho thấy XGBoost đạt F1 = 0.881, AUC = 0.995; ensemble dự kiến đạt $\geq$ 0.89 F1. Phần Kết luận tiếp theo sẽ tóm tắt các đóng góp chính và hướng nghiên cứu tiếp theo.

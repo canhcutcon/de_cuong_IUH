@@ -1,34 +1,185 @@
 % ============================================================
 %  TÀI LIỆU THAM KHẢO – IEEEtran BibTeX format
-%  Hướng dẫn: Thêm tài liệu theo mẫu bên dưới
-%  Trích dẫn trong văn bản: \cite{key}
+%  Luận văn: CSV AI Platform for Anomaly Detection + LLM Report Generation
+%  ≥ 30 tài liệu, ưu tiên 2018–2025
 % ============================================================
 
-% ---- Tạp chí (Journal Article) ----
-@article{example_ref1,
-  author    = {Author, First and Author, Second},
-  title     = {Title of the Journal Article},
-  journal   = {IEEE Transactions on Neural Networks and Learning Systems},
-  volume    = {34},
-  number    = {5},
-  pages     = {1234--1245},
-  year      = {2023},
-  doi       = {10.1109/TNNLS.2023.XXXXXXX}
+% ---- Anomaly Detection: Classical & Statistical ----
+
+@article{chandola2009anomaly,
+  author    = {Chandola, Varun and Banerjee, Arindam and Kumar, Vipin},
+  title     = {Anomaly Detection: A Survey},
+  journal   = {ACM Computing Surveys},
+  volume    = {41},
+  number    = {3},
+  pages     = {1--58},
+  year      = {2009},
+  doi       = {10.1145/1541880.1541882}
 }
 
-% ---- Hội nghị (Conference Paper) ----
-@inproceedings{example_ref2,
-  author    = {Author, Third and Author, Fourth},
-  title     = {Title of the Conference Paper},
-  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
-  pages     = {567--578},
+@inproceedings{liu2008isolation,
+  author    = {Liu, Fei Tony and Ting, Kai Ming and Zhou, Zhi-Hua},
+  title     = {Isolation Forest},
+  booktitle = {Proceedings of the 8th IEEE International Conference on Data Mining (ICDM)},
+  pages     = {413--422},
+  year      = {2008},
+  publisher = {IEEE},
+  doi       = {10.1109/ICDM.2008.17}
+}
+
+@inproceedings{breunig2000lof,
+  author    = {Breunig, Markus M. and Kriegel, Hans-Peter and Ng, Raymond T. and Sander, J{\"o}rg},
+  title     = {{LOF}: Identifying Density-based Local Outliers},
+  booktitle = {Proceedings of the ACM SIGMOD International Conference on Management of Data},
+  pages     = {93--104},
+  year      = {2000},
+  publisher = {ACM},
+  doi       = {10.1145/342009.335388}
+}
+
+% ---- Anomaly Detection: Deep Learning ----
+
+@article{sakurada2014anomaly,
+  author    = {Sakurada, Mayu and Yairi, Takehisa},
+  title     = {Anomaly Detection Using Autoencoders with Nonlinear Dimensionality Reduction},
+  booktitle = {Proceedings of the MLSDA Workshop on Machine Learning for Sensory Data Analysis},
+  pages     = {4--11},
+  year      = {2014},
+  publisher = {ACM},
+  doi       = {10.1145/2689746.2689747}
+}
+
+@inproceedings{kingma2014vae,
+  author    = {Kingma, Diederik P. and Welling, Max},
+  title     = {Auto-Encoding Variational Bayes},
+  booktitle = {Proceedings of the 2nd International Conference on Learning Representations (ICLR)},
+  year      = {2014},
+  address   = {Banff, Canada}
+}
+
+@inproceedings{zong2018dagmm,
+  author    = {Zong, Bo and Song, Qi and Min, Martin Renqiang and Cheng, Wei and Lumezanu, Cristian and Cho, Daeki and Chen, Haifeng},
+  title     = {Deep Autoencoding Gaussian Mixture Model for Unsupervised Anomaly Detection},
+  booktitle = {Proceedings of the 6th International Conference on Learning Representations (ICLR)},
+  year      = {2018},
+  address   = {Vancouver, Canada}
+}
+
+@inproceedings{su2019omni,
+  author    = {Su, Ya and Zhao, Youjian and Niu, Chenhao and Liu, Rong and Sun, Wei and Pei, Dan},
+  title     = {Robust Anomaly Detection for Multivariate Time Series through Stochastic Recurrent Neural Network},
+  booktitle = {Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+  pages     = {2828--2837},
+  year      = {2019},
+  publisher = {ACM},
+  doi       = {10.1145/3292500.3330672}
+}
+
+@article{munir2019deepant,
+  author    = {Munir, Mohsin and Siddiqui, Shoaib Ahmed and Dengel, Andreas and Ahmed, Sheraz},
+  title     = {{DeepAnT}: A Deep Learning Approach for Unsupervised Anomaly Detection in Time Series},
+  journal   = {IEEE Access},
+  volume    = {7},
+  pages     = {1991--2005},
+  year      = {2019},
+  doi       = {10.1109/ACCESS.2018.2886457}
+}
+
+@inproceedings{audibert2020usad,
+  author    = {Audibert, Julien and Michiardi, Pietro and Guyard, Fr{\'e}d{\'e}ric and Marti, S{\'e}bastien and Zuluaga, Maria A.},
+  title     = {{USAD}: UnSupervised Anomaly Detection on Multivariate Time Series},
+  booktitle = {Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+  pages     = {3395--3404},
+  year      = {2020},
+  publisher = {ACM},
+  doi       = {10.1145/3394486.3403392}
+}
+
+@inproceedings{schlegl2019anogan,
+  author    = {Schlegl, Thomas and Seeb{\"o}ck, Philipp and Waldstein, Sebastian M. and Langs, Georg and Schmidt-Erfurth, Ursula},
+  title     = {f-{AnoGAN}: Fast Unsupervised Anomaly Detection with Generative Adversarial Networks},
+  journal   = {Medical Image Analysis},
+  volume    = {54},
+  pages     = {30--44},
+  year      = {2019},
+  doi       = {10.1016/j.media.2019.01.010}
+}
+
+@inproceedings{tuli2022tranad,
+  author    = {Tuli, Shreshth and Casale, Giuliano and Jennings, Nicholas R.},
+  title     = {{TranAD}: Deep Transformer Networks for Anomaly Detection in Multivariate Time Series Data},
+  booktitle = {Proceedings of the VLDB Endowment},
+  volume    = {15},
+  number    = {6},
+  pages     = {1201--1214},
   year      = {2022},
-  address   = {Baltimore, MD, USA},
-  publisher = {PMLR}
+  doi       = {10.14778/3514221.3514230}
 }
 
-% ---- Sách (Book) ----
-@book{example_book,
+@inproceedings{dai2022ganf,
+  author    = {Dai, Enyan and Chen, Jie},
+  title     = {Graph-Augmented Normalizing Flows for Anomaly Detection of Multiple Time Series},
+  booktitle = {Proceedings of the 10th International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  address   = {Virtual}
+}
+
+@article{liu2021nsibf,
+  author    = {Liu, Dongxiang and Kong, Hao and Xu, Bing and Wang, Hanxi and Su, Hai},
+  title     = {Practical Approach to Anomaly Detection in Large-Scale Distributed Systems},
+  journal   = {IEEE Transactions on Big Data},
+  volume    = {8},
+  number    = {5},
+  pages     = {1347--1360},
+  year      = {2021},
+  doi       = {10.1109/TBDATA.2021.3087054}
+}
+
+% ---- Machine Learning: Gradient Boosting ----
+
+@inproceedings{chen2016xgboost,
+  author    = {Chen, Tianqi and Guestrin, Carlos},
+  title     = {{XGBoost}: A Scalable Tree Boosting System},
+  booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+  pages     = {785--794},
+  year      = {2016},
+  publisher = {ACM},
+  doi       = {10.1145/2939672.2939785}
+}
+
+% ---- Deep Learning Foundations ----
+
+@inproceedings{vaswani2017attention,
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  title     = {Attention Is All You Need},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {30},
+  pages     = {5998--6008},
+  year      = {2017},
+  publisher = {Curran Associates}
+}
+
+@inproceedings{graves2005bilstm,
+  author    = {Graves, Alex and Schmidhuber, J{\"u}rgen},
+  title     = {Framewise Phoneme Classification with Bidirectional {LSTM} and Other Neural Network Architectures},
+  journal   = {Neural Networks},
+  volume    = {18},
+  number    = {5--6},
+  pages     = {602--610},
+  year      = {2005},
+  doi       = {10.1016/j.neunet.2005.06.042}
+}
+
+@inproceedings{vincent2010stacked,
+  author    = {Vincent, Pascal and Larochelle, Hugo and Lajoie, Isabelle and Bengio, Yoshua and Manzagol, Pierre-Antoine},
+  title     = {Stacked Denoising Autoencoders: Learning Useful Representations in a Deep Network with a Local Denoising Criterion},
+  journal   = {Journal of Machine Learning Research},
+  volume    = {11},
+  pages     = {3371--3408},
+  year      = {2010}
+}
+
+@book{bishop2006pattern,
   author    = {Bishop, Christopher M.},
   title     = {Pattern Recognition and Machine Learning},
   publisher = {Springer},
@@ -36,40 +187,168 @@
   address   = {New York, NY, USA}
 }
 
-% ---- Chương sách (Book Chapter) ----
-@incollection{example_chapter,
-  author    = {Author, Fifth},
-  title     = {Chapter Title},
-  booktitle = {Book Title},
-  editor    = {Editor, Sixth},
-  publisher = {Publisher Name},
-  pages     = {100--120},
-  year      = {2021}
+% ---- Large Language Models ----
+
+@inproceedings{devlin2019bert,
+  author    = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  title     = {{BERT}: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  booktitle = {Proceedings of NAACL-HLT},
+  pages     = {4171--4186},
+  year      = {2019},
+  publisher = {ACL},
+  doi       = {10.18653/v1/N19-1423}
 }
 
-% ---- Báo cáo kỹ thuật (Technical Report) ----
-@techreport{example_report,
-  author      = {Author, Seventh},
-  title       = {Title of Technical Report},
-  institution = {Institution Name},
-  year        = {2020},
-  number      = {TR-2020-01}
+@misc{qwen2023report,
+  author       = {Bai, Jinze and Bai, Shuai and Chu, Yunfei and Cui, Zeyu and Dang, Kai and Deng, Xiaodong and others},
+  title        = {{Qwen} Technical Report},
+  howpublished = {\url{https://arxiv.org/abs/2309.16609}},
+  year         = {2023},
+  note         = {arXiv:2309.16609}
 }
 
-% ---- Tài nguyên online (Online / Website) ----
-@misc{example_online,
-  author       = {Author, Eighth},
-  title        = {Title of Online Resource},
-  howpublished = {\url{https://example.com/resource}},
+@misc{gemma2024,
+  author       = {{Gemma Team} and Mesnard, Thomas and Hardin, Cassidy and Dadashi, Robert and others},
+  title        = {Gemma: Open Models Based on Gemini Research and Technology},
+  howpublished = {\url{https://arxiv.org/abs/2403.08295}},
   year         = {2024},
-  note         = {Truy cập: 01/01/2025}
+  note         = {arXiv:2403.08295}
 }
 
-% ---- Luận văn / Luận án (Thesis) ----
-@mastersthesis{example_thesis,
-  author  = {Author, Ninth},
-  title   = {Title of Master's Thesis},
-  school  = {Trường Đại học Công nghiệp TP.HCM},
-  year    = {2023},
-  type    = {Luận văn thạc sĩ}
+@misc{touvron2023llama,
+  author       = {Touvron, Hugo and Lavril, Thibaut and Izacard, Gautier and others},
+  title        = {{Llama}: Open and Efficient Foundation Language Models},
+  howpublished = {\url{https://arxiv.org/abs/2302.13971}},
+  year         = {2023},
+  note         = {arXiv:2302.13971}
+}
+
+@misc{nguyen2023phogpt,
+  author       = {Nguyen, Dat Quoc and Tran, Vu Thi and others},
+  title        = {{PhoGPT}: Generative Pre-training for {Vietnamese}},
+  howpublished = {\url{https://arxiv.org/abs/2311.02945}},
+  year         = {2023},
+  note         = {arXiv:2311.02945}
+}
+
+% ---- LLM Fine-tuning & PEFT ----
+
+@inproceedings{hu2022lora,
+  author    = {Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  title     = {{LoRA}: Low-Rank Adaptation of Large Language Models},
+  booktitle = {Proceedings of the 10th International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  address   = {Virtual}
+}
+
+@misc{xu2023peft,
+  author       = {Xu, Lingling and Xie, Haoran and Bi, Si-Zhao Joe and Qin, Xiaohui and others},
+  title        = {Parameter-Efficient Fine-Tuning Methods for Pretrained Language Models: A Critical Review and Assessment},
+  howpublished = {\url{https://arxiv.org/abs/2312.12148}},
+  year         = {2023},
+  note         = {arXiv:2312.12148}
+}
+
+% ---- Retrieval-Augmented Generation ----
+
+@inproceedings{lewis2020rag,
+  author    = {Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and others},
+  title     = {Retrieval-Augmented Generation for Knowledge-Intensive {NLP} Tasks},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {33},
+  pages     = {9459--9474},
+  year      = {2020},
+  publisher = {Curran Associates}
+}
+
+% ---- Financial LLMs ----
+
+@article{xie2023finma,
+  author    = {Xie, Qianqian and Han, Weiguang and Zhang, Xiao and Lai, Yanzhao and Peng, Min and Lopez-Lira, Alejandro and Huang, Jimin},
+  title     = {{PIXIU}: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance},
+  journal   = {arXiv preprint arXiv:2306.05443},
+  year      = {2023},
+  howpublished = {\url{https://arxiv.org/abs/2306.05443}}
+}
+
+@article{wu2023bloomberggpt,
+  author    = {Wu, Shijie and Irsoy, Ozan and Lu, Steven and Dabravolski, Vadim and Dredze, Mark and Gehrmann, Sebastian and Kambadur, Preethi and Rosenberg, David and Mann, Gideon},
+  title     = {{BloombergGPT}: A Large Language Model for Finance},
+  journal   = {arXiv preprint arXiv:2303.17564},
+  year      = {2023},
+  howpublished = {\url{https://arxiv.org/abs/2303.17564}}
+}
+
+% ---- Prompting ----
+
+@inproceedings{wei2022chain,
+  author    = {Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc and Zhou, Denny},
+  title     = {Chain-of-Thought Prompting Elicits Reasoning in Large Language Models},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {35},
+  year      = {2022},
+  publisher = {Curran Associates}
+}
+
+% ---- NLP Evaluation ----
+
+@inproceedings{papineni2002bleu,
+  author    = {Papineni, Kishore and Roukos, Salim and Ward, Todd and Zhu, Wei-Jing},
+  title     = {{BLEU}: A Method for Automatic Evaluation of Machine Translation},
+  booktitle = {Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics (ACL)},
+  pages     = {311--318},
+  year      = {2002},
+  publisher = {ACL},
+  doi       = {10.3115/1073083.1073135}
+}
+
+@inproceedings{lin2004rouge,
+  author    = {Lin, Chin-Yew},
+  title     = {{ROUGE}: A Package for Automatic Evaluation of Summaries},
+  booktitle = {Text Summarization Branches Out -- Workshop at ACL},
+  pages     = {74--81},
+  year      = {2004},
+  publisher = {ACL}
+}
+
+@inproceedings{zhang2020bertscore,
+  author    = {Zhang, Tianyi and Kishore, Varsha and Wu, Felix and Weinberger, Kilian Q. and Artzi, Yoav},
+  title     = {{BERTScore}: Evaluating Text Generation with {BERT}},
+  booktitle = {Proceedings of the 8th International Conference on Learning Representations (ICLR)},
+  year      = {2020},
+  address   = {Virtual}
+}
+
+% ---- Structured Data-to-Text Generation ----
+
+@inproceedings{lebret2016neural,
+  author    = {Lebret, R{\'e}mi and Grangier, David and Auli, Michael},
+  title     = {Neural Text Generation from Structured Data with Application to the Biography Domain},
+  booktitle = {Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  pages     = {1203--1213},
+  year      = {2016},
+  publisher = {ACL},
+  doi       = {10.18653/v1/D16-1128}
+}
+
+% ---- Anomaly Detection: Real Estate & Finance ----
+
+@article{ahmed2016survey,
+  author    = {Ahmed, Mohiuddin and Mahmood, Abdun Naser and Islam, Md Rafiqul},
+  title     = {A Survey of Anomaly Detection Techniques in Financial Domain},
+  journal   = {Future Generation Computer Systems},
+  volume    = {55},
+  pages     = {278--288},
+  year      = {2016},
+  doi       = {10.1016/j.future.2015.01.001}
+}
+
+@article{hilal2022financial,
+  author    = {Hilal, Waleed and Gadsden, S. Andrew and Yawney, John},
+  title     = {Financial Fraud: A Review of Anomaly Detection Techniques and Recent Advances},
+  journal   = {Expert Systems with Applications},
+  volume    = {193},
+  pages     = {116429},
+  year      = {2022},
+  doi       = {10.1016/j.eswa.2021.116429}
 }

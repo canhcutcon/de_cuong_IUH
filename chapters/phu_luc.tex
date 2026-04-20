@@ -3,28 +3,150 @@
 %  Bao gồm: số liệu, mã chương trình, hình ảnh bổ sung, v.v.
 % ============================================================
 
-\section*{Phụ lục A: Mã nguồn chương trình}
+\section*{Phụ lục A: Siêu tham số và cấu hình mô hình}
 
-[Đặt mã nguồn quan trọng tại đây. Ví dụ:]
+Bảng A.1 tổng hợp siêu tham số của các mô hình AD trong luận văn.
+
+\begin{table}[h!]
+\centering
+\fontsize{11pt}{14pt}\selectfont
+\caption*{Bảng A.1. Siêu tham số các mô hình phát hiện bất thường}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.5cm}|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Mô hình} & \textbf{Cấu hình} \\
+\hline
+A7\_XGBoost-CLEAN & n\_estimators=500, max\_depth=6, learning\_rate=0.05, subsample=0.8, colsample\_bytree=0.8, scale\_pos\_weight=8.3, reg\_alpha=0.1, reg\_lambda=1.0, threshold=0.8318 \\
+\hline
+A2\_DAE-Mahalanobis & encoder=[512, 256, 128], latent\_dim=16, decoder=[128, 256, 512], noise\_std=0.18, epochs=100, batch=256, lr=1e-3, threshold=0.0779 \\
+\hline
+A11\_BiLSTM\_CLS & hidden\_size=64, num\_layers=2, dropout=0.3, window=8, stride=1, epochs=50, batch=64, lr=1e-3, threshold=0.9816 \\
+\hline
+TranAD & d\_model=64, nhead=4, num\_layers=3, dropout=0.1, alpha=0.5, epochs=50, batch=32 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\section*{Phụ lục B: Mã nguồn chính}
+
+Đoạn mã B.1 mô tả quy trình huấn luyện XGBoost với cross-validation group-aware:
 
 \begin{verbatim}
-# Python – Ví dụ huấn luyện mô hình
-import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
+# Python – A7 XGBoost Group-Aware Training
+import xgboost as xgb
+from sklearn.model_selection import GroupKFold
+from sklearn.metrics import f1_score
+import numpy as np
 
-df = pd.read_csv("data.csv")
-X = df.drop("target", axis=1)
-y = df["target"]
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42)
-
-model = RandomForestClassifier(n_estimators=100)
-model.fit(X_train, y_train)
-print("Accuracy:", model.score(X_test, y_test))
+def train_xgb_group_cv(X, y, groups, n_splits=5):
+    gkf = GroupKFold(n_splits=n_splits)
+    f1_scores = []
+    for fold, (train_idx, val_idx) in enumerate(gkf.split(X, y, groups)):
+        X_tr, X_val = X[train_idx], X[val_idx]
+        y_tr, y_val = y[train_idx], y[val_idx]
+        scale_pos = (y_tr == 0).sum() / (y_tr == 1).sum()
+        model = xgb.XGBClassifier(
+            n_estimators=500, max_depth=6,
+            learning_rate=0.05, scale_pos_weight=scale_pos,
+            subsample=0.8, colsample_bytree=0.8,
+            reg_alpha=0.1, reg_lambda=1.0,
+            eval_metric='aucpr', early_stopping_rounds=30
+        )
+        model.fit(X_tr, y_tr, eval_set=[(X_val, y_val)], verbose=False)
+        proba = model.predict_proba(X_val)[:, 1]
+        threshold = find_best_threshold(y_val, proba)
+        pred = (proba >= threshold).astype(int)
+        f1_scores.append(f1_score(y_val, pred))
+        print(f"Fold {fold+1}: F1={f1_scores[-1]:.4f}, thr={threshold:.4f}")
+    print(f"Mean F1: {np.mean(f1_scores):.4f} ± {np.std(f1_scores):.4f}")
+    return model
 \end{verbatim}
 
-\section*{Phụ lục B: Dữ liệu bổ sung}
+Đoạn mã B.2 mô tả LoRA fine-tune với HuggingFace PEFT:
 
-[Các bảng số liệu chi tiết, kết quả thực nghiệm bổ sung, v.v.]
+\begin{verbatim}
+# Python – Qwen2-1.5B LoRA Fine-tuning
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import LoraConfig, get_peft_model, TaskType
+import torch
+
+model_id = "Qwen/Qwen2-1.5B-Instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id, torch_dtype=torch.bfloat16, device_map="auto"
+)
+
+lora_config = LoraConfig(
+    task_type=TaskType.CAUSAL_LM,
+    r=16, lora_alpha=32,
+    target_modules=["q_proj", "v_proj"],
+    lora_dropout=0.05, bias="none"
+)
+model = get_peft_model(model, lora_config)
+model.print_trainable_parameters()
+# trainable params: 3,538,944 || total: 1,546,210,304 (0.23%)
+\end{verbatim}
+
+\section*{Phụ lục C: Ví dụ báo cáo sinh bởi LLM}
+
+Ví dụ đầu vào anomaly results và báo cáo Markdown tương ứng được sinh bởi Qwen2-1.5B + LoRA:
+
+\textbf{Input (anomaly summary):}
+\begin{verbatim}
+{
+  "total_rows": 9812, "anomaly_count": 45,
+  "anomaly_rate": 0.0046,
+  "top_anomalies": [
+    {"row": 1234, "type": "commission_spike",
+     "value": 125000, "expected": 12000},
+    {"row": 5678, "type": "duplicate_invoice",
+     "invoice_id": "INV-2024-0891"}
+  ]
+}
+\end{verbatim}
+
+\textbf{Output (excerpt):}
+\begin{verbatim}
+## BÁO CÁO PHÁT HIỆN BẤT THƯỜNG – PHIÊN PHÂN TÍCH #A-20240415
+
+**Tóm tắt:** Phân tích 9,812 giao dịch phát hiện 45 bất thường (0.46%).
+Mức độ rủi ro: TRUNG BÌNH.
+
+**Chi tiết bất thường nghiêm trọng:**
+1. Dòng 1234 – Hoa hồng bất thường: $125,000 (kỳ vọng ~$12,000).
+   → Đề xuất: Xác minh lại hợp đồng và phê duyệt cấp quản lý.
+2. Dòng 5678 – Trùng lặp invoice INV-2024-0891.
+   → Đề xuất: Kiểm tra hệ thống billing, huỷ bản sao thừa.
+\end{verbatim}
+
+\section*{Phụ lục D: Schema cơ sở dữ liệu}
+
+Bảng D.1 mô tả schema chính của MySQL database trong hệ thống:
+
+\begin{table}[h!]
+\centering
+\fontsize{11pt}{13pt}\selectfont
+\caption*{Bảng D.1. Schema bảng \texttt{pipeline\_runs}}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.5cm}|p{2.5cm}|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\
+\hline
+id & UUID & Khoá chính \\
+\hline
+user\_id & UUID & FK tới bảng users \\
+\hline
+file\_name & VARCHAR(255) & Tên file CSV gốc \\
+\hline
+status & ENUM & pending/running/done/failed \\
+\hline
+progress & FLOAT & 0.0--1.0 \\
+\hline
+anomaly\_count & INT & Số dòng bất thường phát hiện \\
+\hline
+report\_url & TEXT & URL MinIO của báo cáo PDF \\
+\hline
+created\_at & DATETIME & Thời điểm tạo pipeline \\
+\hline
+completed\_at & DATETIME & Thời điểm hoàn thành \\
+\hline
+\end{tabularx}
+\end{table}

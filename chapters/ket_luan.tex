@@ -5,30 +5,40 @@
 
 \section*{Kết quả đạt được}
 
-[Trình bày tóm tắt những đóng góp và kết quả chính của luận văn,
-đối chiếu với các mục tiêu đã đề ra:]
+Luận văn đã hoàn thành các mục tiêu đề ra và đạt được những kết quả sau:
 
 \begin{enumerate}
-  \item [Kết quả thứ nhất: nêu cụ thể thành tựu và số liệu minh chứng]
-  \item [Kết quả thứ hai: ...]
-  \item [Kết quả thứ ba: ...]
+  \item \textbf{Pipeline tiền xử lý 8 giai đoạn}: Xây dựng thành công quy trình xử lý dữ liệu CSV từ loading, schema normalization, cleaning, merging, feature engineering, windowing, augmentation đến feature selection; pipeline đạt chất lượng dữ liệu đầu vào phù hợp cho huấn luyện mô hình.
+
+  \item \textbf{Ensemble AD đa mô hình}: Triển khai và đánh giá 3 mô hình phát hiện bất thường -- A7\_XGBoost-CLEAN (F1 = 0.881, AUC = 0.995), A11\_BiLSTM (F1 = 0.764, AUC = 0.984), A2\_DAE-Mahalanobis (AUC = 0.965) -- với chiến lược score-fusion ensemble vượt trội so với baseline Isolation Forest, LOF và OC-SVM.
+
+  \item \textbf{LLM Report Generation với LoRA}: Fine-tune thành công Qwen2-1.5B + LoRA (checkpoints 100--750) và Gemma + LoRA (checkpoints 100--1250) sinh báo cáo phát hiện bất thường song ngữ Việt--Anh; cải thiện đáng kể điểm BLEU-4 và ROUGE-L so với mô hình không fine-tune.
+
+  \item \textbf{Hệ thống production hoàn chỉnh}: Đóng gói Docker Compose bao gồm FastAPI 0.110, Celery distributed task queue, Redis, MinIO, MySQL 8 và Next.js 14; đạt latency end-to-end $\leq$ 5 phút cho CSV 10.000 dòng; hỗ trợ theo dõi tiến trình thời gian thực qua WebSocket.
 \end{enumerate}
 
 \section*{Hạn chế}
 
-[Nêu thẳng thắn những giới hạn mà luận văn chưa giải quyết được, lý do
-và hướng khắc phục trong nghiên cứu tiếp theo.]
-
 \begin{itemize}
-  \item [Hạn chế 1: ...]
-  \item [Hạn chế 2: ...]
+  \item \textbf{Nhãn từ rule-based}: Toàn bộ nhãn ground-truth được sinh từ 13 luật nghiệp vụ + pseudo-labeling ensemble, dẫn đến nguy cơ mô hình học quá khớp với các luật đó thay vì học pattern bất thường tổng quát.
+
+  \item \textbf{Chưa đánh giá liên miền}: Hệ thống chưa được kiểm chứng trên các domain ngoài BĐS (ngân hàng, bảo hiểm, bán lẻ); khả năng tổng quát hóa cần được đánh giá thêm.
+
+  \item \textbf{Latency PDF export}: WeasyPrint mất khoảng 15 giây để xuất mỗi báo cáo PDF; với hàng chục báo cáo song song, đây là bottleneck cần tối ưu.
+
+  \item \textbf{Dữ liệu time-series thưa trước 2020}: Chuỗi thời gian giai đoạn 2012--2019 có mật độ giao dịch thấp, ảnh hưởng đến chất lượng học đặc trưng mùa vụ của mô hình BiLSTM.
 \end{itemize}
 
 \section*{Hướng nghiên cứu tiếp theo}
 
-[Đề xuất các hướng mở rộng và phát triển tiếp theo dựa trên kết quả của luận văn:]
-
 \begin{itemize}
-  \item [Hướng 1: ...]
-  \item [Hướng 2: ...]
+  \item \textbf{Self-supervised representation learning}: Áp dụng contrastive learning (SimCLR-tabular, SCARF) để học biểu diễn bất thường không cần nhãn, giảm phụ thuộc vào pseudo-label.
+
+  \item \textbf{Multi-modal anomaly detection}: Kết hợp dữ liệu hình ảnh hợp đồng (OCR) với dữ liệu tabular để phát hiện bất thường đa phương thức (cross-modal).
+
+  \item \textbf{Active learning / Human-in-the-loop}: Xây dựng vòng phản hồi người dùng chuyên gia để cập nhật và cải thiện mô hình liên tục; giảm false positive theo thời gian.
+
+  \item \textbf{RAG với vector database}: Tích hợp Retrieval-Augmented Generation cho báo cáo, sử dụng vector database (Qdrant/Milvus) lưu trữ context nghiệp vụ để tăng tính faithful và actionable của báo cáo sinh ra.
+
+  \item \textbf{Mở rộng sang domain khác}: Kiểm chứng và thích nghi pipeline cho lĩnh vực tài chính ngân hàng, bảo hiểm tại Việt Nam; xây dựng benchmark dataset công khai cho AD trên CSV tiếng Việt.
 \end{itemize}

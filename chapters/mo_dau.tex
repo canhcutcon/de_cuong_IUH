@@ -7,43 +7,69 @@
 
 \noindent\textbf{1. Đặt vấn đề}
 
-[Trình bày bối cảnh thực tiễn và lý luận dẫn đến sự cần thiết của đề tài.
-Nêu rõ vấn đề còn tồn tại mà luận văn hướng đến giải quyết.
-Tham khảo các nghiên cứu liên quan để chỉ ra khoảng trống nghiên cứu (research gap).]
+Trong thời đại chuyển đổi số, các doanh nghiệp bất động sản và tài chính Việt Nam lưu trữ hàng triệu giao dịch dưới dạng tệp CSV/Excel. Tuy nhiên, dữ liệu này thường chứa đựng các sai sót do nhập liệu thủ công, gian lận nghiệp vụ (fraud), hoặc lỗi hệ thống tích lũy qua nhiều năm. Quá trình rà soát thủ công không chỉ tốn kém nhân lực mà còn bỏ sót các bất thường có tính hệ thống.
+
+Về mặt lý luận, các phương pháp phát hiện bất thường (Anomaly Detection -- AD) truyền thống như rule-based hay Isolation Forest không nắm bắt được các mẫu tương tác phức tạp trong dữ liệu đa chiều. Mặc dù các mô hình Deep Learning (Autoencoder, BiLSTM, Transformer) đã đạt kết quả SOTA trên nhiều bộ dữ liệu chuẩn, chúng vẫn chưa được tích hợp thành hệ thống end-to-end hoàn chỉnh phục vụ nghiệp vụ BĐS thực tế tại Việt Nam.
+
+Luận văn này giải quyết ba khoảng trống nghiên cứu chính:
+\begin{enumerate}
+  \item Thiếu nền tảng \textbf{end-to-end} tích hợp multi-model (tabular + time-series) cho dữ liệu CSV ngữ cảnh tiếng Việt.
+  \item Kết quả AD thông thường chỉ ra chỉ số dòng bất thường, \textbf{chưa sinh giải thích bằng ngôn ngữ tự nhiên} có thể hành động được cho người nghiệp vụ phi kỹ thuật.
+  \item Thiếu nghiên cứu kết hợp \textbf{LLM fine-tune (LoRA)} sinh báo cáo phát hiện bất thường song ngữ Việt--Anh theo tiêu chuẩn nghiệp vụ.
+\end{enumerate}
 
 \medskip
 \noindent\textbf{2. Mục tiêu nghiên cứu}
 
-[Nêu mục tiêu tổng quát và các mục tiêu cụ thể của luận văn.
-Mỗi mục tiêu cần đo lường được (SMART).
+\textit{Mục tiêu tổng quát:} Xây dựng nền tảng AI hoàn chỉnh nhận tệp CSV đầu vào → phát hiện bất thường đa mô hình → đề xuất sửa lỗi tự động → sinh báo cáo NLP → xuất PDF; triển khai được môi trường production.
 
-Ví dụ:
+\textit{Mục tiêu cụ thể:}
 \begin{itemize}
-  \item Xây dựng mô hình \ldots\ đạt độ chính xác $\geq$ XX\% trên tập dữ liệu \ldots
-  \item Đề xuất phương pháp \ldots\ cải thiện \ldots
-  \item Đánh giá hiệu quả \ldots\ so với các phương pháp hiện có.
-\end{itemize}]
+  \item Xây dựng pipeline tiền xử lý dữ liệu 8 giai đoạn, đạt \textbf{F1 $\geq$ 0.85} cho bài toán phân loại bất thường tabular.
+  \item Huấn luyện và triển khai 3 mô hình AD (XGBoost, BiLSTM, DAE ensemble); so sánh với baseline Isolation Forest, LOF; đạt \textbf{AUC $\geq$ 0.97} trên tập kiểm tra.
+  \item Fine-tune \textbf{Qwen2-1.5B + LoRA} và \textbf{Gemma + LoRA} sinh báo cáo song ngữ Việt--Anh; đánh giá bằng BLEU/ROUGE + human evaluation.
+  \item Đóng gói hệ thống Docker Compose (FastAPI + Celery + Next.js) với \textbf{latency $\leq$ 5 phút} cho tệp CSV 10.000 dòng.
+\end{itemize}
 
 \medskip
 \noindent\textbf{3. Đối tượng và phạm vi nghiên cứu}
 
-\textit{Đối tượng nghiên cứu:} [Xác định cái gì được nghiên cứu – mô hình, thuật toán, hệ thống, dữ liệu...]
+\textit{Đối tượng nghiên cứu:} Mô hình phát hiện bất thường (supervised/unsupervised), kiến trúc hệ thống micro-service, pipeline sinh báo cáo bằng LLM fine-tune (LoRA).
 
 \textit{Phạm vi nghiên cứu:}
 \begin{itemize}
-  \item \textbf{Phạm vi nội dung:} [Chủ đề, bài toán, phương pháp cụ thể]
-  \item \textbf{Phạm vi không gian:} [Tập dữ liệu, địa bàn áp dụng]
-  \item \textbf{Phạm vi thời gian:} [Giai đoạn dữ liệu; thời gian thực hiện đề tài]
+  \item \textbf{Phạm vi nội dung:} Dữ liệu tabular (9.812 dòng giao dịch BĐS) và time-series tuần (707 tuần, 2012--2025); 13 luật nghiệp vụ BĐS Singapore; fine-tune LoRA (không huấn luyện LLM từ đầu).
+  \item \textbf{Phạm vi không gian:} Dữ liệu SNRE \& Prosage -- ba nhà cung cấp dữ liệu BĐS tại Singapore giai đoạn 2012--2025.
+  \item \textbf{Phạm vi thời gian:} Giai đoạn thực hiện tháng 10/2024 -- tháng 06/2026.
 \end{itemize}
 
 \medskip
 \noindent\textbf{4. Cách tiếp cận và phương pháp nghiên cứu}
 
-[Mô tả phương pháp luận tổng quát: thực nghiệm, định lượng, học máy...
-Nêu ngắn gọn quy trình: thu thập dữ liệu → tiền xử lý → xây dựng mô hình → đánh giá.]
+Luận văn áp dụng phương pháp thực nghiệm định lượng kết hợp kỹ thuật phần mềm theo các bước:
+\begin{enumerate}
+  \item \textbf{Khảo sát tài liệu} (literature review): tổng hợp $\geq$ 30 công trình về AD, LLM, fine-tuning.
+  \item \textbf{Thu thập \& tiền xử lý dữ liệu}: EDA, feature engineering 8 giai đoạn, gán nhãn pseudo-label.
+  \item \textbf{Xây dựng mô hình}: PyTorch 2.0 + XGBoost; huấn luyện cross-validation group-aware.
+  \item \textbf{Đánh giá chéo}: F1/AUC/PR curve; ablation study; so sánh baseline.
+  \item \textbf{Triển khai production}: Docker Compose, CI/CD, monitoring latency.
+  \item \textbf{Đánh giá hệ thống}: kiểm tra end-to-end, scalability, human evaluation báo cáo NLP.
+\end{enumerate}
 
 \medskip
 \noindent\textbf{5. Ý nghĩa thực tiễn của đề tài}
 
-[Nêu đóng góp của đề tài về mặt khoa học và thực tiễn.
-Đặc biệt nhấn mạnh ứng dụng vào bối cảnh Việt Nam hoặc lĩnh vực cụ thể.]
+\textit{Về khoa học:} Luận văn đóng góp phương pháp kết hợp ensemble AD đa mô hình (tabular + time-series) với LLM domain-specific LoRA sinh báo cáo song ngữ -- một hướng nghiên cứu còn ít được khám phá trong bối cảnh tiếng Việt. Kết quả dự kiến được công bố tại hội nghị chuyên ngành trong nước và quốc tế.
+
+\textit{Về thực tiễn:} Hệ thống giảm 70--80\% thời gian audit CSV thủ công; pipeline và template kiến trúc có thể tái sử dụng trực tiếp trong các lĩnh vực banking, insurance, retail. Nền tảng được đóng gói Docker Compose, sẵn sàng triển khai on-premise cho doanh nghiệp vừa và nhỏ.
+
+\medskip
+\noindent\textbf{6. Bố cục luận văn}
+
+Luận văn gồm phần Mở đầu, 3 chương chính và phần Kết luận:
+\begin{itemize}
+  \item \textbf{Chương 1 -- Tổng quan:} Khảo sát các công trình liên quan về phát hiện bất thường và sinh báo cáo NLP; xác định khoảng trống nghiên cứu.
+  \item \textbf{Chương 2 -- Cơ sở lý thuyết:} Trình bày nền tảng ML/DL, các mô hình AD (XGBoost, DAE, BiLSTM, TranAD, AnoGAN), LLM \& LoRA fine-tune, và công nghệ triển khai.
+  \item \textbf{Chương 3 -- Áp dụng kết quả:} Mô tả dữ liệu, pipeline xử lý, kiến trúc hệ thống, thực nghiệm so sánh, và đánh giá end-to-end.
+  \item \textbf{Kết luận:} Tóm tắt đóng góp, hạn chế và hướng phát triển tiếp theo.
+\end{itemize}

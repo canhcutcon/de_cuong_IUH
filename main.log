@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  27 MAR 2026 09:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  20 APR 2026 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,87 +626,29 @@ pages
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 )
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.96 X
-      ây dựng hệ thống phát hiện bất thường trong csv file, chỉnh sửa và tạo...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package caption Error: fontsize undefined.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 }
-       
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package caption Error: labelfmt undefined.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.208 }
-       
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package caption Error: labelfmt undefined.
-
-See the caption package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.213 }
-       
-If you do not understand this error, please take a closer look
-at the documentation of the `caption' package, especially the
-section about errors.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 296.
-LaTeX Font Info:    ... okay on input line 296.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 293.
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -714,64 +656,64 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 296.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 296.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 296.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 296.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 296.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 296.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 296.
-LaTeX Font Info:    Redeclaring math accent \check on input line 296.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 296.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 296.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 296.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 296.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 296.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 293.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 293.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 293.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 293.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 293.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 293.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 293.
+LaTeX Font Info:    Redeclaring math accent \check on input line 293.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 293.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 293.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 293.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 293.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 293.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 296.
+(Font)              `operators' in the math version `normal' on input line 293.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 2
-96.
+93.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 296.
+(Font)              `operators' in the math version `bold' on input line 293.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 
-296.
+293.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on 
-input line 296.
+input line 293.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line
- 296.
+ 293.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 
-296.
+293.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 296.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 293.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 296.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 293.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on 
-input line 296.
+input line 293.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input lin
-e 296.
+e 293.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 296.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 293.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 296.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 293.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -810,38 +752,32 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 296.
-
-
-[0
-
-]
+Package hyperref Info: Link coloring OFF on input line 293.
 File: figures/logo_IUH.png Graphic file (type bmp)
 <figures/logo_IUH.png>
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 330.
-
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 327.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 330.
+(Font)              size <12> substituted on input line 327.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 330.
+(Font)              size <6> substituted on input line 327.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 330.
+(Font)              size <12> substituted on input line 327.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 330.
+(Font)              size <6> substituted on input line 327.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 330
+LaTeX Font Info:    Trying to load font information for U+msa on input line 327
 .
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 330
+LaTeX Font Info:    Trying to load font information for U+msb on input line 327
 .
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -849,15 +785,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 330.
+(Font)              size <12> substituted on input line 327.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 330.
+(Font)              size <6> substituted on input line 327.
 
 
 
-[1]
+[1
+
+]
 
 [1] (./main.toc)
 \tf@toc=\write3
@@ -881,18 +819,25 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
 
 [5
 
-] (./chapters/mo_dau.tex
+]
+Overfull \vbox (531.59901pt too high) has occurred while \output is active []
+
+
+
+[6] (./chapters/mo_dau.tex
 
 [1
 
-])
+]
 
-[2]
+[2])
+
+[3]
 Chương 1.
 ! Argument of \__text_expand_loop:w has an extra }.
 <inserted text> 
                 \par 
-l.441 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
                                                 
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -906,7 +851,7 @@ Runaway argument?
 ! Paragraph ended before \__text_expand_loop:w was complete.
 <to be read again> 
                    \par 
-l.441 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
                                                 
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -915,7 +860,7 @@ My plan is to forget the whole thing and hope for the best.
 ! Missing number, treated as zero.
 <to be read again> 
                    \scan_stop: 
-l.441 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
                                                 
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -924,7 +869,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Argument of \@vspacer has an extra }.
 <inserted text> 
                 \par 
-l.441 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
                                                 
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -937,7 +882,7 @@ Runaway argument?
 ! Paragraph ended before \@vspacer was complete.
 <to be read again> 
                    \par 
-l.441 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
                                                 
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -946,7 +891,7 @@ My plan is to forget the whole thing and hope for the best.
 ! Argument of \ttl@assign@d has an extra }.
 <inserted text> 
                 \par 
-l.441 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
                                                 
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -960,14 +905,14 @@ Runaway argument?
 ! Paragraph ended before \ttl@assign@d was complete.
 <to be read again> 
                    \par 
-l.441 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
+l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
                                                 
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 )
-! Incomplete \iffalse; all text was ignored after line 441.
+! Incomplete \iffalse; all text was ignored after line 438.
 <inserted text> 
                 \fi 
 <*> main.tex
@@ -983,11 +928,11 @@ the matching `\fi'. I've inserted a `\fi'; this might work.
 
  
 Here is how much of TeX's memory you used:
- 17711 strings out of 475366
- 335338 string characters out of 5762339
- 791929 words of memory out of 5000000
- 40423 multiletter control sequences out of 15000+600000
+ 17713 strings out of 475366
+ 335403 string characters out of 5762339
+ 807887 words of memory out of 5000000
+ 40425 multiletter control sequences out of 15000+600000
  564036 words of font info for 79 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 79i,12n,93p,300b,427s stack positions out of 10000i,1000n,20000p,200000b,200000s
-Output written on main.pdf (9 pages).
+ 79i,12n,93p,478b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Output written on main.pdf (10 pages).

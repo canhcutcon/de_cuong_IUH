@@ -2,54 +2,216 @@
 %  CHƯƠNG 2: CƠ SỞ LÝ THUYẾT
 % ============================================================
 
-\section{[Tên lý thuyết / khái niệm cơ bản thứ nhất]}
+\section{Nền tảng học máy và học sâu}
 
-[Trình bày các khái niệm, lý thuyết nền tảng cần thiết để hiểu phương pháp
-đề xuất trong luận văn. Nên có trích dẫn đầy đủ cho mỗi khái niệm.]
+\subsection{Học có giám sát, không giám sát và bán giám sát}
 
-\subsection{[Tiểu mục]}
+Học có giám sát (Supervised Learning) huấn luyện mô hình $f: \mathcal{X} \to \mathcal{Y}$ với tập dữ liệu có nhãn $\{(\mathbf{x}_i, y_i)\}_{i=1}^{N}$. Trong bài toán phân loại nhị phân bất thường, $y_i \in \{0, 1\}$ biểu thị bình thường/bất thường \cite{bishop2006pattern}.
 
-[Nội dung chi tiết.]
+Học không giám sát (Unsupervised Learning) chỉ sử dụng $\{\mathbf{x}_i\}$ để học cấu trúc dữ liệu. Đối với AD, mô hình học phân phối $p(\mathbf{x})$ của dữ liệu bình thường; quan sát có xác suất thấp được đánh dấu là bất thường.
 
-% -------------------------------------------
-\section{[Tên lý thuyết / công cụ thứ hai]}
+Học bán giám sát (Semi-supervised Learning) kết hợp cả hai: dữ liệu có nhãn ít ($\mathcal{D}_l$) cùng dữ liệu không nhãn nhiều ($\mathcal{D}_u$) để cải thiện độ chính xác. Luận văn áp dụng pseudo-labeling: nhãn được sinh từ 13 luật nghiệp vụ, sau đó ensemble của các mô hình xác nhận lại (confidence $\geq 0.8$).
 
-\subsection{[Tiểu mục]}
+\subsection{Hàm mất mát}
 
-[Nội dung chi tiết. Ví dụ về bullet list:]
-
-Các đặc điểm chính bao gồm:
-\begin{itemize}
-  \item Đặc điểm thứ nhất: [mô tả]
-  \item Đặc điểm thứ hai: [mô tả]
-  \item Đặc điểm thứ ba: [mô tả]
-\end{itemize}
-
-% -------------------------------------------
-\section{[Các phương pháp / mô hình liên quan]}
-
-\subsection{[Phương pháp A]}
-
-[Mô tả phương pháp A, cách hoạt động, ưu nhược điểm.]
-
-\subsection{[Phương pháp B]}
-
-[Mô tả phương pháp B.]
-
-% Ví dụ công thức
-Hàm mất mát cross-entropy được định nghĩa như sau:
+Hàm mất mát Cross-Entropy nhị phân cho bài toán phân loại bất thường:
 
 \begin{equation}
-  \mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^{N}
+  \mathcal{L}_{CE}(\theta) = -\frac{1}{N} \sum_{i=1}^{N}
     \left[ y_i \log \hat{p}_i + (1-y_i) \log(1-\hat{p}_i) \right]
   \label{eq:cross_entropy}
 \end{equation}
 
-Trong đó: $y_i \in \{0,1\}$ là nhãn thực tế; $\hat{p}_i$ là xác suất dự đoán
-của mô hình; $N$ là tổng số mẫu huấn luyện.
+Trong đó: $y_i \in \{0,1\}$ là nhãn thực tế; $\hat{p}_i = \sigma(f_\theta(\mathbf{x}_i))$ là xác suất dự đoán; $N$ là tổng số mẫu.
+
+Hàm mất mát Reconstruction (MSE) cho Autoencoder:
+
+\begin{equation}
+  \mathcal{L}_{rec}(\theta) = \frac{1}{N} \sum_{i=1}^{N}
+    \left\| \mathbf{x}_i - \hat{\mathbf{x}}_i \right\|_2^2
+  \label{eq:reconstruction}
+\end{equation}
+
+\subsection{Chuẩn hoá và regularization}
+
+\begin{itemize}
+  \item \textbf{Batch Normalization:} Chuẩn hoá activation theo mini-batch; ổn định huấn luyện, tăng learning rate.
+  \item \textbf{Layer Normalization:} Chuẩn hoá theo chiều đặc trưng; phù hợp Transformer và sequence model.
+  \item \textbf{Dropout:} Tắt ngẫu nhiên $p\%$ neuron trong training; giảm overfitting. Luận văn dùng dropout = 0.3 cho BiLSTM.
+  \item \textbf{L1/L2 Regularization:} Thêm $\lambda \|\mathbf{w}\|_1$ hoặc $\lambda \|\mathbf{w}\|_2^2$ vào loss; XGBoost sử dụng L1 (alpha) và L2 (lambda) regularization.
+\end{itemize}
+
+% -------------------------------------------
+\section{Các mô hình phát hiện bất thường trong luận văn}
+
+\subsection{XGBoost}
+
+XGBoost (eXtreme Gradient Boosting) \cite{chen2016xgboost} là thuật toán ensemble học có giám sát dựa trên gradient boosting, xây dựng tuần tự các cây quyết định $T_k$ để giảm thiểu residual error:
+
+\begin{equation}
+  \hat{y}_i^{(t)} = \hat{y}_i^{(t-1)} + \eta \cdot f_t(\mathbf{x}_i)
+  \label{eq:xgboost}
+\end{equation}
+
+Trong đó $\eta$ là learning rate; $f_t$ là cây thứ $t$. Mô hình A7\_XGBoost-CLEAN trong luận văn đạt F1 = 0.881, AUC = 0.995 trên tập kiểm tra, với ngưỡng phân loại tối ưu = 0.8318 (tìm bằng precision-recall curve).
+
+\subsection{Denoising Autoencoder (DAE)}
+
+DAE \cite{vincent2010stacked} học biểu diễn nén (latent representation) bằng cách tái tạo dữ liệu gốc $\mathbf{x}$ từ phiên bản nhiễu $\tilde{\mathbf{x}} = \mathbf{x} + \boldsymbol{\epsilon}$, $\boldsymbol{\epsilon} \sim \mathcal{N}(0, \sigma^2 I)$:
+
+\begin{equation}
+  \mathcal{L}_{DAE} = \left\| \mathbf{x} - D(E(\tilde{\mathbf{x}})) \right\|_2^2
+  \label{eq:dae}
+\end{equation}
+
+Mô hình A2\_DAE trong luận văn sử dụng noise injection $\sigma = 0.18$, latent dimension = 16. Anomaly score được tính bằng Mahalanobis distance trên latent space, đạt AUC = 0.965.
+
+\subsection{BiLSTM Classifier}
+
+BiLSTM (Bidirectional Long Short-Term Memory) \cite{graves2005bilstm} xử lý chuỗi theo cả hai chiều thuận và nghịch, học phụ thuộc dài hạn:
+
+\begin{equation}
+  \mathbf{h}_t = [\overrightarrow{\mathbf{h}}_t; \overleftarrow{\mathbf{h}}_t]
+  \label{eq:bilstm}
+\end{equation}
+
+Cấu hình mô hình A11\_BiLSTM: hidden size = 64, 2 layers, dropout = 0.3, sequence window = 8 tuần. Đầu ra là xác suất bất thường cho mỗi cửa sổ time-series, đạt F1 = 0.764, AUC = 0.984.
+
+\subsection{TranAD}
+
+TranAD \cite{tuli2022tranad} là mô hình Transformer với dual-decoder: decoder thứ nhất ($D_1$) tái tạo chuỗi bình thường, decoder thứ hai ($D_2$) phân biệt normal vs.\ anomaly. Loss kết hợp reconstruction và discrimination:
+
+\begin{equation}
+  \mathcal{L}_{TranAD} = \alpha \cdot \mathcal{L}_{rec}^{D_1} + (1-\alpha) \cdot \mathcal{L}_{rec}^{D_2}
+  \label{eq:tranad}
+\end{equation}
+
+Cơ chế self-conditioning attention làm cho mô hình tập trung vào các pattern bất thường theo ngữ cảnh chuỗi thời gian.
+
+\subsection{AnoGAN / f-AnoGAN}
+
+f-AnoGAN \cite{schlegl2019anogan} là mô hình GAN với fast mapping encoder $E$: tìm latent code $\mathbf{z}^*$ cho quan sát $\mathbf{x}$ bằng cách tối thiểu hoá:
+
+\begin{equation}
+  \mathbf{z}^* = \arg\min_{\mathbf{z}} \left\| \mathbf{x} - G(\mathbf{z}) \right\|_2 + \kappa \cdot \left\| f_D(\mathbf{x}) - f_D(G(\mathbf{z})) \right\|_2
+  \label{eq:anogan}
+\end{equation}
+
+Anomaly score = $\|\mathbf{x} - G(\mathbf{z}^*)\|_2$ (reconstruction) + $\kappa \cdot \|f_D(\mathbf{x}) - f_D(G(\mathbf{z}^*))\|_2$ (discrimination).
+
+\subsection{Chiến lược Ensemble}
+
+Luận văn sử dụng score-level fusion: anomaly score $s_i$ của quan sát $i$ được tổng hợp từ 3 mô hình:
+
+\begin{equation}
+  s_i^{ens} = w_1 \cdot s_i^{XGB} + w_2 \cdot s_i^{BiLSTM} + w_3 \cdot s_i^{DAE}
+  \label{eq:ensemble}
+\end{equation}
+
+Trong đó $w_k$ được tối ưu hoá bằng grid search trên tập validation với tiêu chí F1-score. Ngưỡng phân loại của từng mô hình: XGBoost = 0.8318, BiLSTM = 0.9816, DAE = 0.0779.
+
+% -------------------------------------------
+\section{Nền tảng NLP và mô hình ngôn ngữ lớn}
+
+\subsection{Kiến trúc Transformer}
+
+Transformer \cite{vaswani2017attention} là kiến trúc nền tảng của mọi LLM hiện đại, dựa trên cơ chế self-attention:
+
+\begin{equation}
+  \text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right) V
+  \label{eq:attention}
+\end{equation}
+
+Trong đó $Q, K, V$ là query, key, value matrices; $d_k$ là chiều của key vector. Multi-Head Attention chạy $h$ attention head song song để học nhiều loại phụ thuộc.
+
+\subsection{Mô hình ngôn ngữ lớn pretrained}
+
+\begin{itemize}
+  \item \textbf{Qwen2-1.5B} \cite{qwen2023report}: Mô hình đa ngôn ngữ của Alibaba, 1.5 tỷ tham số, context window 32K token, hỗ trợ tốt tiếng Việt và tiếng Anh.
+  \item \textbf{Gemma-2B} \cite{gemma2024}: Google DeepMind, kiến trúc decoder-only, sử dụng RoPE positional encoding, Multi-Query Attention; hiệu năng tốt ở kích thước nhỏ.
+\end{itemize}
+
+\subsection{PEFT và LoRA fine-tune}
+
+Parameter-Efficient Fine-Tuning (PEFT) \cite{xu2023peft} giảm số tham số cần cập nhật bằng cách chèn các adapter nhỏ. LoRA (Low-Rank Adaptation) \cite{hu2022lora} xấp xỉ ma trận cập nhật trọng số $\Delta W$ bằng tích hai ma trận rank thấp:
+
+\begin{equation}
+  W' = W_0 + \Delta W = W_0 + B A
+  \label{eq:lora}
+\end{equation}
+
+Trong đó $A \in \mathbb{R}^{r \times d}$, $B \in \mathbb{R}^{d \times r}$, rank $r \ll d$. Chỉ $A$ và $B$ được cập nhật trong fine-tune; $W_0$ đóng băng. Luận văn áp dụng LoRA với $r = 16$, $\alpha = 32$, target modules = \texttt{q\_proj, v\_proj}.
+
+\subsection{Prompt engineering và sinh báo cáo có cấu trúc}
+
+\begin{itemize}
+  \item \textbf{System prompt:} Định nghĩa vai trò và format đầu ra (JSON hoặc Markdown structured report).
+  \item \textbf{Few-shot prompting:} Cung cấp 2--3 ví dụ (anomaly results → report) trong context để hướng dẫn format.
+  \item \textbf{Chain-of-Thought (CoT)} \cite{wei2022chain}: Yêu cầu mô hình giải thích từng bước trước khi đưa ra kết luận, tăng chất lượng reasoning.
+  \item \textbf{Structured output:} Ràng buộc đầu ra theo JSON schema để dễ parse và render PDF.
+\end{itemize}
+
+\subsection{Độ đo đánh giá NLP}
+
+\begin{itemize}
+  \item \textbf{BLEU-4} \cite{papineni2002bleu}: Đo n-gram overlap giữa báo cáo sinh và reference; phổ biến nhưng nhạy cảm với từ ngữ.
+  \item \textbf{ROUGE-L} \cite{lin2004rouge}: Longest Common Subsequence ratio; tốt hơn BLEU cho văn bản dài.
+  \item \textbf{BERTScore} \cite{zhang2020bertscore}: Tính similarity ngữ nghĩa dựa trên embedding BERT; không phụ thuộc exact match.
+  \item \textbf{Human evaluation} 5 tiêu chí: accuracy (độ chính xác với kết quả AD), fluency (tính trôi chảy), completeness (đầy đủ thông tin), faithfulness (không hallucinate), actionability (đề xuất có thể thực hiện được).
+\end{itemize}
+
+% -------------------------------------------
+\section{Độ đo đánh giá mô hình phân loại}
+
+Các độ đo chính cho bài toán phân loại bất thường nhị phân:
+
+\begin{equation}
+  \text{Precision} = \frac{TP}{TP + FP}, \quad
+  \text{Recall} = \frac{TP}{TP + FN}
+  \label{eq:prec_rec}
+\end{equation}
+
+\begin{equation}
+  F_1 = 2 \cdot \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+  \label{eq:f1}
+\end{equation}
+
+\begin{equation}
+  \text{AUC-ROC} = \int_0^1 TPR(t)\, d[FPR(t)]
+  \label{eq:auc}
+\end{equation}
+
+Ngoài ra, luận văn sử dụng \textbf{PR-AUC} (Area Under Precision-Recall Curve) -- phù hợp hơn ROC-AUC khi dữ liệu mất cân bằng (tỷ lệ bất thường 10.8\%) -- và \textbf{Best-F1-threshold} (ngưỡng tối ưu hoá F1 trên validation set).
+
+% -------------------------------------------
+\section{Công nghệ triển khai hệ thống}
+
+\subsection{Backend và API}
+
+\begin{itemize}
+  \item \textbf{FastAPI 0.110}: Framework Python async, tự động sinh OpenAPI docs, dependency injection, hỗ trợ WebSocket.
+  \item \textbf{SQLAlchemy 2.0 async}: ORM với async session; Alembic cho database migration.
+  \item \textbf{Celery + Redis}: Distributed task queue; chain 5 task (preprocess → detect → fix → report → export) với progress tracking.
+  \item \textbf{MinIO}: Object storage S3-compatible để lưu file CSV gốc, mô hình, báo cáo PDF.
+  \item \textbf{MySQL 8}: Database chính lưu metadata giao dịch, pipeline state, anomaly results.
+\end{itemize}
+
+\subsection{Frontend và realtime}
+
+\begin{itemize}
+  \item \textbf{Next.js 14}: React framework với App Router, Server Components, streaming UI.
+  \item \textbf{WebSocket}: Cập nhật tiến trình pipeline (0--100\%) real-time; tránh polling HTTP.
+  \item \textbf{Tailwind CSS}: Utility-first styling; responsive dashboard.
+\end{itemize}
+
+\subsection{Deployment}
+
+\begin{itemize}
+  \item \textbf{Docker Compose}: Orchestrate 6 service (MySQL, Redis, MinIO, Celery worker, Backend, Frontend) trên single host.
+  \item \textbf{WeasyPrint}: HTML/CSS to PDF engine cho xuất báo cáo; hỗ trợ Unicode, CJK fonts.
+\end{itemize}
 
 % -------------------------------------------
 \section{Tóm tắt chương}
 
-[Tóm tắt ngắn gọn những nội dung lý thuyết đã trình bày trong chương 2
-và mối liên hệ với phương pháp đề xuất ở Chương 3.]
+Chương 2 đã trình bày đầy đủ nền tảng lý thuyết của luận văn, bao gồm: các khái niệm ML/DL cơ bản (hàm mất mát, regularization); chi tiết 5 mô hình AD (XGBoost, DAE, BiLSTM, TranAD, AnoGAN) và chiến lược ensemble; kiến trúc Transformer, kỹ thuật LoRA fine-tune, prompt engineering cho sinh báo cáo NLP; và các độ đo đánh giá cho cả AD lẫn NLP. Các công nghệ triển khai được giới thiệu tạo nền tảng cho phần hiện thực ở Chương 3. Tất cả lý thuyết đã trình bày đều được áp dụng trực tiếp vào hệ thống CSV AI Platform được mô tả trong chương tiếp theo.

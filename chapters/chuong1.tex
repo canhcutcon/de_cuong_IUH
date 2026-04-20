@@ -1,91 +1,160 @@
 % ============================================================
 %  CHƯƠNG 1: TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU
-%  Heading 1: Times New Roman 14pt, đậm, in hoa
-%  Được gọi từ main.tex với \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
 % ============================================================
 
-\section{Giới thiệu tổng quan}
-% Heading 2: Times New Roman 13pt, đậm
+\section{Tổng quan bài toán phát hiện bất thường}
 
-[Giới thiệu tổng quan về lĩnh vực nghiên cứu. Nêu tầm quan trọng của chủ đề
-và xu hướng phát triển hiện nay.]
+Phát hiện bất thường (Anomaly Detection -- AD) là bài toán xác định các quan sát, điểm dữ liệu hoặc chuỗi sự kiện không tuân theo phân phối hoặc mẫu hành vi thông thường của dữ liệu \cite{chandola2009anomaly}. Đây là một trong những bài toán nền tảng của học máy với ứng dụng rộng rãi trong phát hiện gian lận tài chính, giám sát IoT, chẩn đoán y tế, và kiểm tra chất lượng trong công nghiệp.
+
+\subsection{Phân loại bất thường}
+
+Theo phân loại của Chandola và cộng sự \cite{chandola2009anomaly}, bất thường được chia thành ba nhóm:
+\begin{itemize}
+  \item \textbf{Point anomaly (bất thường điểm):} Một quan sát đơn lẻ khác biệt đáng kể so với phần còn lại. Ví dụ: giá trị hoa hồng một giao dịch cao hơn 10 lần trung bình.
+  \item \textbf{Contextual anomaly (bất thường ngữ cảnh):} Quan sát bất thường trong ngữ cảnh cụ thể nhưng không bất thường toàn cục. Ví dụ: không có giao dịch bán nào trong tháng đỉnh mùa BĐS.
+  \item \textbf{Collective anomaly (bất thường tập hợp):} Tập hợp các quan sát cùng bất thường dù từng quan sát đơn lẻ là bình thường. Ví dụ: chuỗi 5 tuần liên tiếp có tỷ lệ giao dịch thất bại tăng dần.
+\end{itemize}
+
+\subsection{Phân loại bài toán theo nhãn}
+
+\begin{itemize}
+  \item \textbf{Supervised AD:} Có nhãn đầy đủ normal/anomaly; huấn luyện như bài toán phân loại nhị phân. Nhược điểm: cần dữ liệu gán nhãn tốn kém.
+  \item \textbf{Semi-supervised AD:} Chỉ có nhãn cho dữ liệu bình thường; mô hình học phân phối normal. Phổ biến trong thực tế vì dữ liệu anomaly thường khan hiếm.
+  \item \textbf{Unsupervised AD:} Không có nhãn; phát hiện dựa trên density, clustering, hoặc reconstruction error.
+\end{itemize}
+
+Trong luận văn này, bài toán được tiếp cận theo hướng \textbf{supervised} (với pseudo-label từ 13 luật nghiệp vụ) kết hợp \textbf{semi-supervised} (DAE reconstruction-based) để tận dụng cả dữ liệu có nhãn và không nhãn.
 
 % -------------------------------------------
-\subsection{Tiểu mục thứ nhất}
-% Heading 3: Times New Roman 13pt, đậm nghiêng
+\section{Các hướng tiếp cận phát hiện bất thường}
 
-[Nội dung tiểu mục. Văn bản nội dung sử dụng Times New Roman 13pt, giãn dòng 1.5,
-căn lề hai bên, thụt đầu dòng 1cm.]
+Bảng \ref{tab:approaches} tổng hợp các hướng tiếp cận AD chính, ưu nhược điểm và đại diện tiêu biểu:
 
-\subsubsection{Tiểu mục thứ hai}
-% Heading 4: Times New Roman 13pt, nghiêng
-
-[Nội dung tiểu mục thứ hai. Đây là cấp sâu nhất được sử dụng (tối đa 4 chữ số: 1.1.1.1).]
-
-% -------------------------------------------
-\section{Tổng quan các công trình nghiên cứu}
-
-\subsection{Các nghiên cứu trong nước}
-
-[Tổng hợp và phân tích các công trình trong nước có liên quan. Mỗi công trình cần:
-tên tác giả, năm công bố, phương pháp sử dụng, kết quả đạt được, hạn chế.]
-
-\subsection{Các nghiên cứu ngoài nước}
-
-[Tổng hợp các công trình quốc tế tiêu biểu, ưu tiên các bài báo trong 5 năm gần nhất
-được đăng trên các tạp chí/hội nghị uy tín (Scopus, ISI).
-Có thể trích dẫn theo chuẩn IEEE: \cite{example_ref1}, \cite{example_ref2}.]
-
-% Ví dụ bảng tổng hợp nghiên cứu
 \begin{table}[h!]
 \centering
 \fontsize{13pt}{14.95pt}\selectfont
-\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}X|
-                               >{\raggedright\arraybackslash}X|c|}
+\caption{Tổng hợp các hướng tiếp cận phát hiện bất thường}
+\label{tab:approaches}
+\begin{tabularx}{\textwidth}{|>{\bfseries}p{2.8cm}|>{\raggedright\arraybackslash}p{3.5cm}|>{\raggedright\arraybackslash}X|}
 \hline
-\textbf{STT} & \textbf{Nghiên cứu} & \textbf{Phương pháp chính} & \textbf{Năm} \\
+\textbf{Hướng tiếp cận} & \textbf{Đại diện} & \textbf{Ưu / Nhược điểm} \\
 \hline
-1 & Tác giả A và cộng sự -- Mô tả ngắn nội dung nghiên cứu
-  & RandomForest, XGBoost & 2022 \\
+Thống kê & Z-score, IQR, Grubbs test & Đơn giản, nhanh, không bắt được tương tác đa chiều \\
 \hline
-2 & Tác giả B và cộng sự -- Mô tả ngắn nội dung nghiên cứu
-  & LSTM, Transformer     & 2023 \\
+Rule-based & 13 luật nghiệp vụ BĐS & Interpretability cao, chi phí bảo trì lớn, khó mở rộng \\
 \hline
-3 & Tác giả C và cộng sự -- Mô tả ngắn nội dung nghiên cứu
-  & BERT, GPT             & 2024 \\
+ML cổ điển & Isolation Forest \cite{liu2008isolation}, LOF \cite{breunig2000lof}, OC-SVM & Tốt với tabular, khó với time-series dài, nhạy cảm hyperparameter \\
+\hline
+Deep Learning & Autoencoder \cite{sakurada2014anomaly}, VAE \cite{kingma2014vae}, BiLSTM, Transformer (TranAD \cite{tuli2022tranad}), AnoGAN & SOTA, cần nhiều dữ liệu, khó giải thích cho người nghiệp vụ \\
+\hline
+Ensemble & Voting, stacking, score fusion & Robust, giảm variance, phức tạp triển khai và tune \\
 \hline
 \end{tabularx}
-\caption{Tóm tắt các nghiên cứu liên quan}
-\label{tab:tong_quan_nghien_cuu}
+\end{table}
+
+% -------------------------------------------
+\section{Tổng quan sinh báo cáo NLP tự động}
+
+Sinh báo cáo tự động từ dữ liệu cấu trúc (Structured Data-to-Text Generation) là bài toán tạo văn bản ngôn ngữ tự nhiên từ đầu vào là bảng, JSON, hoặc kết quả phân tích \cite{lebret2016neural}. Trong ngữ cảnh AD, đầu ra là báo cáo mô tả các bất thường phát hiện được, nguyên nhân dự đoán và đề xuất hành động.
+
+\subsection{Các kỹ thuật sinh báo cáo}
+
+\begin{itemize}
+  \item \textbf{Template-based:} Điền dữ liệu vào mẫu cố định (Jinja2); nhanh, có thể kiểm soát format nhưng cứng nhắc, thiếu ngữ cảnh.
+  \item \textbf{Prompt engineering:} Sử dụng LLM (GPT, Qwen2) với few-shot prompting và Chain-of-Thought \cite{wei2022chain}; linh hoạt nhưng không nhất quán, chi phí API cao.
+  \item \textbf{Fine-tune LoRA:} Điều chỉnh LLM nhẹ với Low-Rank Adaptation \cite{hu2022lora}; cân bằng giữa hiệu quả và chi phí; cho phép domain adaptation với tài nguyên hạn chế.
+  \item \textbf{RAG:} Retrieval-Augmented Generation \cite{lewis2020rag}; tăng tính faithful bằng cách truy xuất context nghiệp vụ liên quan.
+\end{itemize}
+
+\subsection{Các mô hình LLM khảo sát}
+
+Luận văn khảo sát và lựa chọn mô hình fine-tune dựa trên tiêu chí: hỗ trợ tiếng Việt, kích thước phù hợp deploy on-premise, giấy phép mã nguồn mở:
+\begin{itemize}
+  \item \textbf{Qwen2-1.5B} \cite{qwen2023report}: 1.5 tỷ tham số, hỗ trợ đa ngôn ngữ, context window 32K token.
+  \item \textbf{Gemma-2B} \cite{gemma2024}: Google DeepMind, hiệu năng tốt ở kích thước nhỏ, giấy phép Apache 2.0.
+  \item \textbf{PhoGPT} \cite{nguyen2023phogpt}: Mô hình tiếng Việt từ VinAI, chuyên sâu văn bản tiếng Việt.
+  \item \textbf{Llama 3-8B} \cite{touvron2023llama}: Meta AI, benchmark mạnh, cần GPU ≥ 16GB để fine-tune.
+\end{itemize}
+
+% -------------------------------------------
+\section{Các công trình nghiên cứu liên quan}
+
+\subsection{Các nghiên cứu trong nước}
+
+Tại Việt Nam, nghiên cứu về phát hiện bất thường trên dữ liệu tài chính và BĐS còn hạn chế. Phần lớn nghiên cứu tập trung vào phát hiện gian lận thẻ tín dụng (credit card fraud) sử dụng các mô hình truyền thống như Random Forest, XGBoost trên dataset công khai. Chưa có công trình nào kết hợp AD đa mô hình với LLM sinh báo cáo cho dữ liệu BĐS thực tế.
+
+\subsection{Các nghiên cứu ngoài nước}
+
+Bảng \ref{tab:related_work} tổng hợp các công trình quốc tế tiêu biểu có liên quan trực tiếp đến luận văn:
+
+\begin{table}[h!]
+\centering
+\fontsize{11pt}{13pt}\selectfont
+\caption{Tổng hợp các công trình nghiên cứu liên quan (2018--2024)}
+\label{tab:related_work}
+\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{STT} & \textbf{Tác giả, năm} & \textbf{Phương pháp} & \textbf{Kết quả \& Hạn chế} \\
+\hline
+1 & Zong et al.\ (2018) \cite{zong2018dagmm} & DAGMM & AUC 0.927 trên KDD99; chưa áp dụng time-series dài \\
+\hline
+2 & Su et al.\ (2019) \cite{su2019omni} & OmniAnomaly (VAE + Normalizing Flow) & F1 0.84 trên SMD; không hỗ trợ tabular \\
+\hline
+3 & Munir et al.\ (2019) \cite{munir2019deepant} & DeepAnT (CNN) & Phát hiện anomaly điểm trong time-series; không ensemble \\
+\hline
+4 & Schlegl et al.\ (2019) \cite{schlegl2019anogan} & f-AnoGAN & AUC 0.91 trên dữ liệu ảnh y tế; chậm inference \\
+\hline
+5 & Audibert et al.\ (2020) \cite{audibert2020usad} & USAD (Encoder-Decoder AD) & F1 0.87 trên SMAP; huấn luyện ổn định \\
+\hline
+6 & Tuli et al.\ (2022) \cite{tuli2022tranad} & TranAD (Transformer AD) & SOTA trên 6/9 dataset chuẩn; cần nhiều GPU \\
+\hline
+7 & Dai \& Chen (2022) \cite{dai2022ganf} & GANF (Graph-Augmented NF) & AUC 0.97 trên SWaT; phức tạp với tabular thưa \\
+\hline
+8 & Liu et al.\ (2021) \cite{liu2021nsibf} & NSIBF (Non-stationary IBF) & Tốt với non-stationary TS; không tích hợp NLP \\
+\hline
+9 & Chen \& Guestrin (2016) \cite{chen2016xgboost} & XGBoost & AUC 0.99 fraud detection; cần nhãn đầy đủ \\
+\hline
+10 & Hu et al.\ (2022) \cite{hu2022lora} & LoRA (Low-Rank Adaptation) & Giảm 10.000× tham số fine-tune; benchmark NLU/NLG \\
+\hline
+11 & Lewis et al.\ (2020) \cite{lewis2020rag} & RAG (Retrieval-Augmented Gen.) & SOTA Open-domain QA; cần vector DB riêng \\
+\hline
+12 & Xie et al.\ (2023) \cite{xie2023finma} & FinMA (Financial LLM) & GPT-4 level finance NLP; không hỗ trợ Vietnamese \\
+\hline
+13 & Wu et al.\ (2023) \cite{wu2023bloomberggpt} & BloombergGPT & 50B params finance; không open-source đầy đủ \\
+\hline
+14 & Wei et al.\ (2022) \cite{wei2022chain} & Chain-of-Thought Prompting & Cải thiện reasoning; không ổn định output format \\
+\hline
+15 & Zhang et al.\ (2020) \cite{zhang2020bertscore} & BERTScore & Đánh giá NLG tốt hơn BLEU; cần GPU để tính \\
+\hline
+16 & Kingma \& Welling (2014) \cite{kingma2014vae} & VAE & Latent space học được; reconstruction blur \\
+\hline
+17 & Vaswani et al.\ (2017) \cite{vaswani2017attention} & Transformer (self-attention) & Nền tảng mọi mô hình SOTA hiện đại \\
+\hline
+\end{tabularx}
 \end{table}
 
 \subsection{Nhận xét và khoảng trống nghiên cứu}
 
-[Đánh giá ưu điểm và hạn chế của các nghiên cứu trên.
-Xác định rõ \textbf{research gap} mà luận văn này sẽ giải quyết.]
+Qua khảo sát 17+ công trình tiêu biểu, có thể rút ra nhận xét sau:
+
+\begin{enumerate}
+  \item \textbf{Phần lớn nghiên cứu AD chỉ tập trung một loại dữ liệu} -- hoặc tabular hoặc time-series -- chưa có hệ thống thống nhất xử lý cả hai loại với model router tự động.
+
+  \item \textbf{Kết quả AD chưa liên kết với NLP}: Các mô hình như TranAD, USAD chỉ xuất anomaly score và index; chưa sinh giải thích ngôn ngữ tự nhiên phù hợp nghiệp vụ.
+
+  \item \textbf{LLM tài chính (FinMA, BloombergGPT) không hỗ trợ tiếng Việt} và yêu cầu tài nguyên rất lớn, không phù hợp deploy on-premise cho doanh nghiệp vừa và nhỏ tại Việt Nam.
+
+  \item \textbf{Thiếu end-to-end platform}: Không có công trình nào tích hợp toàn bộ vòng đời từ CSV upload → multi-model AD → auto-fix → LLM report → PDF export trong một hệ thống production duy nhất.
+\end{enumerate}
+
+\textbf{Khoảng trống nghiên cứu mà luận văn giải quyết:}
+\begin{itemize}
+  \item Xây dựng nền tảng end-to-end tích hợp multi-model AD (tabular + time-series) cho dữ liệu CSV tiếng Việt.
+  \item Kết hợp AD với LLM fine-tune (LoRA) sinh báo cáo song ngữ domain-specific -- hướng chưa được khám phá trong bối cảnh BĐS Việt Nam.
+  \item Triển khai hệ thống production hoàn chỉnh với Docker Compose, phù hợp on-premise cho doanh nghiệp vừa và nhỏ.
+\end{itemize}
 
 % -------------------------------------------
-\section{Ví dụ chèn hình ảnh}
+\section{Tóm tắt chương}
 
-[Hình \ref{fig:quy_trinh_nghien_cuu} minh họa quy trình nghiên cứu tổng quát
-của luận văn.]
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{placeholder_figure}  % thay bằng file ảnh thực tế
-  \caption{Quy trình nghiên cứu tổng quát}
-  \label{fig:quy_trinh_nghien_cuu}
-\end{figure}
-
-% -------------------------------------------
-\section{Ví dụ công thức toán học}
-
-[Công thức \eqref{eq:rmse} trình bày độ đo RMSE được sử dụng để đánh giá mô hình:]
-
-\begin{equation}
-  \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( \hat{y}_i - y_i \right)^2}
-  \label{eq:rmse}
-\end{equation}
-
-Trong đó: $\hat{y}_i$ là giá trị dự đoán; $y_i$ là giá trị thực tế;
-$n$ là số lượng mẫu trong tập kiểm tra.
+Chương 1 đã trình bày tổng quan về bài toán phát hiện bất thường -- từ định nghĩa, phân loại đến các hướng tiếp cận từ thống kê, ML cổ điển đến Deep Learning ensemble. Phần khảo sát NLP đã giới thiệu các kỹ thuật sinh báo cáo tự động và các LLM phù hợp fine-tune cho domain tiếng Việt. Bảng tổng hợp 17+ công trình liên quan chỉ ra ba khoảng trống nghiên cứu rõ ràng mà luận văn này hướng đến giải quyết. Chương 2 tiếp theo sẽ trình bày chi tiết cơ sở lý thuyết của các mô hình và công nghệ được sử dụng.
