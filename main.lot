@@ -1,0 +1,14 @@
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces \xpg@aux {}{vietnamese}Tổng hợp các hướng tiếp cận phát hiện bất thường}}{5}{table.caption.3}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces \xpg@aux {}{vietnamese}Tổng hợp các công trình nghiên cứu liên quan (2018--2024)}}{7}{table.caption.4}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces \xpg@aux {}{vietnamese}Mô tả tổng quan tập dữ liệu nghiên cứu}}{16}{table.caption.5}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces \xpg@aux {}{vietnamese}Ngưỡng phân loại tối ưu theo từng mô hình}}{19}{table.caption.6}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces \xpg@aux {}{vietnamese}Celery task chain và tiến trình}}{20}{table.caption.7}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces \xpg@aux {}{vietnamese}So sánh kết quả phát hiện bất thường trên tập kiểm tra}}{21}{table.caption.8}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces \xpg@aux {}{vietnamese}Kết quả đánh giá báo cáo NLP trước và sau LoRA fine-tune}}{22}{table.caption.9}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces \xpg@aux {}{vietnamese}Latency end-to-end theo kích thước CSV đầu vào}}{23}{table.caption.10}%
+\contentsline {table}{\numberline {.6}{\ignorespaces \xpg@aux {}{vietnamese}}}{28}{table.caption.14}%
+\contentsline {table}{\numberline {.6}{\ignorespaces \xpg@aux {}{vietnamese}}}{31}{table.caption.15}%
+\contentsfinish 

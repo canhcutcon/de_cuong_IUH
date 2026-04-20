@@ -117,15 +117,15 @@
 % Spacing Before: 24pt, After: 24pt, Line spacing: 1.15
 % ============================================================
 \titleformat{\chapter}[display]
-  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering\MakeUppercase}
-  {CHƯƠNG \thechapter}        % dòng đầu: "CHƯƠNG 1"
-  {0pt}                       % khoảng cách giữa số chương và tên
-  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering\MakeUppercase}
+  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering}
+  {CHƯƠNG \thechapter}
+  {0pt}
+  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering}
 \titlespacing*{\chapter}{0pt}{24pt}{24pt}
 
 % Chapter không đánh số (MỞ ĐẦU, KẾT LUẬN, v.v.)
 \titleformat{name=\chapter, numberless}[block]
-  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering\MakeUppercase}
+  {\fontsize{14pt}{16.1pt}\selectfont\bfseries\centering}
   {}
   {0pt}
   {}
@@ -229,7 +229,7 @@
 
 % Chương trong TOC: in hoa, đậm
 \titlecontents{chapter}[0em]
-  {\bfseries\MakeUppercase}
+  {\bfseries}
   {CHƯƠNG \thecontentslabel\quad}
   {}
   {\titlerule*[0.5em]{.}\contentspage}

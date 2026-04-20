@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  20 APR 2026 14:30
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  20 APR 2026 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -834,105 +834,533 @@ Overfull \vbox (531.59901pt too high) has occurred while \output is active []
 
 [3]
 Chương 1.
-! Argument of \__text_expand_loop:w has an extra }.
-<inserted text> 
-                \par 
-l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
-                                                
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
+(./chapters/chuong1.tex
 
-Runaway argument?
-\ttl@glcmds \parindent \z@ \ifttl@label {CHƯƠNG \thechapter \ttl@strut \ETC.
-! Paragraph ended before \__text_expand_loop:w was complete.
-<to be read again> 
-                   \par 
-l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
-                                                
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+Package natbib Warning: Citation `chandola2009anomaly' on page 4 undefined on i
+nput line 7.
 
-! Missing number, treated as zero.
-<to be read again> 
-                   \scan_stop: 
-l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
-                                                
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
 
-! Argument of \@vspacer has an extra }.
-<inserted text> 
-                \par 
-l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
-                                                
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
+Package natbib Warning: Citation `chandola2009anomaly' on page 4 undefined on i
+nput line 11.
 
-Runaway argument?
-! Paragraph ended before \@vspacer was complete.
-<to be read again> 
-                   \par 
-l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
-                                                
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
 
-! Argument of \ttl@assign@d has an extra }.
-<inserted text> 
-                \par 
-l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
-                                                
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
 
-Runaway argument?
-{\@vspace }\futurelet \@let@token \new@ifnch \@tempskipa 
-! Paragraph ended before \ttl@assign@d was complete.
-<to be read again> 
-                   \par 
-l.438 \chapter{TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}
-                                                
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+[4
+
+]
+
+LaTeX Warning: Reference `tab:approaches' on page 5 undefined on input line 31.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\TU/TimesNewRoman(0)/b/n/13 Hướng tiếp
+ []
+
+
+Package natbib Warning: Citation `liu2008isolation' on page 5 undefined on inpu
+t line 52.
+
+
+Package natbib Warning: Citation `breunig2000lof' on page 5 undefined on input 
+line 52.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\TU/TimesNewRoman(0)/b/n/13 Deep
+ []
+
+
+Package natbib Warning: Citation `sakurada2014anomaly' on page 5 undefined on i
+nput line 52.
+
+
+Package natbib Warning: Citation `kingma2014vae' on page 5 undefined on input l
+ine 52.
+
+
+Package natbib Warning: Citation `tuli2022tranad' on page 5 undefined on input 
+line 52.
+
+
+Package natbib Warning: Citation `lebret2016neural' on page 5 undefined on inpu
+t line 58.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 5 undefined on input li
+ne 64.
+
+
+
+[5]
+
+Package natbib Warning: Citation `hu2022lora' on page 6 undefined on input line
+ 65.
+
+
+Package natbib Warning: Citation `lewis2020rag' on page 6 undefined on input li
+ne 66.
+
+
+Package natbib Warning: Citation `qwen2023report' on page 6 undefined on input 
+line 73.
+
+
+Package natbib Warning: Citation `gemma2024' on page 6 undefined on input line 
+74.
+
+
+Package natbib Warning: Citation `nguyen2023phogpt' on page 6 undefined on inpu
+t line 75.
+
+
+Package natbib Warning: Citation `touvron2023llama' on page 6 undefined on inpu
+t line 76.
+
+
+LaTeX Warning: Reference `tab:related_work' on page 6 undefined on input line 8
+8.
+
+
+Package natbib Warning: Citation `zong2018dagmm' on page 6 undefined on input l
+ine 133.
+
+
+Package natbib Warning: Citation `su2019omni' on page 6 undefined on input line
+ 133.
+
+
+Package natbib Warning: Citation `munir2019deepant' on page 6 undefined on inpu
+t line 133.
+
+
+Package natbib Warning: Citation `schlegl2019anogan' on page 6 undefined on inp
+ut line 133.
+
+
+Package natbib Warning: Citation `audibert2020usad' on page 6 undefined on inpu
+t line 133.
+
+
+Package natbib Warning: Citation `tuli2022tranad' on page 6 undefined on input 
+line 133.
+
+
+Package natbib Warning: Citation `dai2022ganf' on page 6 undefined on input lin
+e 133.
+
+
+Package natbib Warning: Citation `liu2021nsibf' on page 6 undefined on input li
+ne 133.
+
+
+Package natbib Warning: Citation `chen2016xgboost' on page 6 undefined on input
+ line 133.
+
+
+Package natbib Warning: Citation `hu2022lora' on page 6 undefined on input line
+ 133.
+
+
+Package natbib Warning: Citation `lewis2020rag' on page 6 undefined on input li
+ne 133.
+
+
+Package natbib Warning: Citation `xie2023finma' on page 6 undefined on input li
+ne 133.
+
+
+Package natbib Warning: Citation `wu2023bloomberggpt' on page 6 undefined on in
+put line 133.
+
+
+Package natbib Warning: Citation `wei2022chain' on page 6 undefined on input li
+ne 133.
+
+
+Package natbib Warning: Citation `zhang2020bertscore' on page 6 undefined on in
+put line 133.
+
+
+Package natbib Warning: Citation `kingma2014vae' on page 6 undefined on input l
+ine 133.
+
+
+Package natbib Warning: Citation `vaswani2017attention' on page 6 undefined on 
+input line 133.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[6]
+
+[7])
+
+[8]
+Chương 2.
+(./chapters/chuong2.tex
+
+Package natbib Warning: Citation `bishop2006pattern' on page 9 undefined on inp
+ut line 9.
+
+
+
+[9
+
+]
+
+Package natbib Warning: Citation `chen2016xgboost' on page 10 undefined on inpu
+t line 49.
+
+
+Package natbib Warning: Citation `vincent2010stacked' on page 10 undefined on i
+nput line 60.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <13> not available
+(Font)              size <12> substituted on input line 60.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <6.5> not available
+(Font)              size <6> substituted on input line 60.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <13> not available
+(Font)              size <12> substituted on input line 60.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 60.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13> not available
+(Font)              size <12> substituted on input line 60.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 60.
+
+
+
+[10]
+
+Package natbib Warning: Citation `graves2005bilstm' on page 11 undefined on inp
+ut line 71.
+
+
+Package natbib Warning: Citation `tuli2022tranad' on page 11 undefined on input
+ line 82.
+
+
+Package natbib Warning: Citation `schlegl2019anogan' on page 11 undefined on in
+put line 93.
+
+
+
+[11]
+
+Package natbib Warning: Citation `vaswani2017attention' on page 12 undefined on
+ input line 118.
+
+
+Package natbib Warning: Citation `qwen2023report' on page 12 undefined on input
+ line 130.
+
+
+Package natbib Warning: Citation `gemma2024' on page 12 undefined on input line
+ 131.
+
+
+Overfull \hbox (14.79501pt too wide) in paragraph at lines 131--132
+[]\TU/TimesNewRoman(0)/b/n/13 Gemma-2B \TU/TimesNewRoman(0)/m/n/13 [\TU/TimesNe
+wRoman(0)/b/n/13 ? \TU/TimesNewRoman(0)/m/n/13 ]: Google DeepMind, kiến trúc de
+coder-only, sử dụng RoPE positional
+ []
+
+
+Package natbib Warning: Citation `xu2023peft' on page 12 undefined on input lin
+e 136.
+
+
+Package natbib Warning: Citation `hu2022lora' on page 12 undefined on input lin
+e 136.
+
+
+
+[12]
+Overfull \hbox (4.28636pt too wide) in paragraph at lines 149--150
+[]\TU/TimesNewRoman(0)/b/n/13 Few-shot prompting: \TU/TimesNewRoman(0)/m/n/13 C
+ung cấp 2–3 ví dụ (anomaly results → report) trong context
+ []
+
+
+Package natbib Warning: Citation `wei2022chain' on page 13 undefined on input l
+ine 150.
+
+
+Package natbib Warning: Citation `papineni2002bleu' on page 13 undefined on inp
+ut line 157.
+
+
+Package natbib Warning: Citation `lin2004rouge' on page 13 undefined on input l
+ine 158.
+
+
+Package natbib Warning: Citation `zhang2020bertscore' on page 13 undefined on i
+nput line 159.
+
+
+
+[13]
+Overfull \hbox (4.72646pt too wide) in paragraph at lines 192--193
+[]\TU/TimesNewRoman(0)/b/n/13 FastAPI 0.110\TU/TimesNewRoman(0)/m/n/13 : Framew
+ork Python async, tự động sinh OpenAPI docs, dependency
+ []
+
+
+Overfull \hbox (5.6416pt too wide) in paragraph at lines 193--194
+[]\TU/TimesNewRoman(0)/b/n/13 SQLAlchemy 2.0 async\TU/TimesNewRoman(0)/m/n/13 :
+ ORM với async session; Alembic cho database migration. 
+ []
+
+
+
+[14])
+
+[15]
+Chương 3.
+(./chapters/chuong3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|\TU/TimesNewRoman(0)/b/n/13 Số lượng mẫu (time-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|\TU/TimesNewRoman(0)/b/n/13 Tỷ lệ train/val/test
+ []
+
+
+Overfull \hbox (5.53581pt too wide) in paragraph at lines 48--49
+[]\TU/TimesNewRoman(0)/b/n/13 Pseudo-labeling ensemble\TU/TimesNewRoman(0)/m/n/
+13 : Kết quả từ 3 mô hình (Isolation Forest, LOF, XGBoost)
+ []
+
+
+
+[16
+
+]
+Overfull \hbox (96.34016pt too wide) in paragraph at lines 74--75
+[]\TU/TimesNewRoman(0)/b/n/13 Feature Engineering: \TU/TimesNewRoman(0)/m/n/13 
+Sinh 30+ đặc trưng mới: tỷ lệ (commission_to_price, billing_to_commission),
+ []
+
+
+
+[17]
+Overfull \hbox (19.26234pt too wide) in paragraph at lines 104--105
+[]\TU/TimesNewRoman(0)/b/n/13 Time-series (cột date/datetime + chuỗi liên tục):
+ $\OMS/cmsy/m/n/12 !$ \TU/TimesNewRoman(0)/m/n/13 BiLSTM (A11_BiLSTM_CLS). 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[18]
+Overfull \hbox (2.06566pt too wide) in paragraph at lines 157--158
+\TU/TimesNewRoman(0)/m/n/13 Backend xây dựng trên FastAPI 0.110 với SQLAlchemy 
+2.0 async, Alembic migration.
+ []
+
+
+
+[19]
+Overfull \hbox (3.6926pt too wide) in paragraph at lines 191--193
+\TU/TimesNewRoman(0)/m/n/13 Script \TU/lmtt/m/n/13 train_qwen_lora.py \TU/Times
+NewRoman(0)/m/n/13 và \TU/lmtt/m/n/13 train_gemma_lora.py \TU/TimesNewRoman(0)/
+m/n/13 sử dụng HuggingFace PEFT
+ []
+
+
+
+[20]
+Overfull \hbox (3.60706pt too wide) in paragraph at lines 217--218
+[]\TU/TimesNewRoman(0)/b/n/13 Phần cứng: \TU/TimesNewRoman(0)/m/n/13 GPU NVIDIA
+ A100 40GB (huấn luyện), RTX 4090 24GB (inference). 
+ []
+
+
+Overfull \hbox (15.41492pt too wide) in paragraph at lines 218--219
+[]\TU/TimesNewRoman(0)/b/n/13 Framework: \TU/TimesNewRoman(0)/m/n/13 PyTorch 2.
+0, scikit-learn 1.4, XGBoost 2.0, HuggingFace Transformers
+ []
+
+
+
+[21]
+Underfull \hbox (badness 10000) in alignment at lines 322--322
+[][][][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[22])
+
+[23]
+
+[24] (./chapters/ket_luan.tex
+
+[25
+
+]
+Overfull \hbox (4.79626pt too wide) in paragraph at lines 35--36
+[]\TU/TimesNewRoman(0)/b/n/13 Self-supervised representation learning\TU/TimesN
+ewRoman(0)/m/n/13 : Áp dụng contrastive learning (SimCLR-
+ []
+
+
+Overfull \hbox (8.1944pt too wide) in paragraph at lines 39--40
+[]\TU/TimesNewRoman(0)/b/n/13 Active learning / Human-in-the-loop\TU/TimesNewRo
+man(0)/m/n/13 : Xây dựng vòng phản hồi người dùng chuyên
+ []
 
 )
-! Incomplete \iffalse; all text was ignored after line 438.
-<inserted text> 
-                \fi 
-<*> main.tex
-            
-The file ended while I was skipping conditional text.
-This kind of error happens when you say `\if...' and forget
-the matching `\fi'. I've inserted a `\fi'; this might work.
 
-! Emergency stop.
-<*> main.tex
-            
-*** (job aborted, no legal \end found)
+[26] (./chapters/cong_trinh.tex
+Overfull \hbox (20.65057pt too wide) in paragraph at lines 6--10
+\TU/TimesNewRoman(0)/m/n/13 [1] \TU/TimesNewRoman(0)/b/n/13 Võ Thị Trà Giang \T
+U/TimesNewRoman(0)/m/n/13 và Tôn Long Phước, “Ensemble Anomaly Detection for Vi
+etnamese
+ []
 
- 
+
+Overfull \hbox (25.90533pt too wide) in paragraph at lines 6--10
+\TU/TimesNewRoman(0)/m/n/13 Real Estate CSV Data using XGBoost, BiLSTM and Deno
+ising Autoencoder,” \TU/TimesNewRoman(0)/m/it/13 Proceedings
+ []
+
+)
+No file main.bbl.
+
+
+[27
+
+] (./chapters/phu_luc.tex
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]|\TU/TimesNewRoman(0)/b/n/11 A7_XGBoost-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]|\TU/TimesNewRoman(0)/b/n/11 A2_DAE-
+ []
+
+
+Overfull \hbox (47.71739pt too wide) in paragraph at lines 62--62
+[]    \TU/lmtt/m/n/13 for fold, (train_idx, val_idx) in enumerate(gkf.split(X, 
+y, groups)):[] 
+ []
+
+
+
+[28
+
+]
+Overfull \hbox (34.32742pt too wide) in paragraph at lines 62--62
+[]        \TU/lmtt/m/n/13 model.fit(X_tr, y_tr, eval_set=[(X_val, y_val)], verb
+ose=False)[] 
+ []
+
+
+Overfull \hbox (67.80237pt too wide) in paragraph at lines 62--62
+[]        \TU/lmtt/m/n/13 print(f"Fold {fold+1}: F1={f1_scores[-1]:.4f}, thr={t
+hreshold:.4f}")[] 
+ []
+
+
+Overfull \hbox (47.71733pt too wide) in paragraph at lines 62--62
+[]    \TU/lmtt/m/n/13 print(f"Mean F1: {np.mean(f1_scores):.4f} ± {np.std(f1_sc
+ores):.4f}")[] 
+ []
+
+
+Overfull \hbox (61.10732pt too wide) in paragraph at lines 87--87
+[]\TU/lmtt/m/n/13 tokenizer = AutoTokenizer.from_pretrained(model_id, trust_rem
+ote_code=True)[] 
+ []
+
+
+
+[29]
+Overfull \hbox (34.30136pt too wide) in paragraph at lines 119--119
+[]\TU/lmtt/m/n/13 **Tóm tắt:** Phân tích 9,812 giao dịch phát hiện 45 bất thườn
+g (0.46%).[] 
+ []
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 128.
+
+Overfull \hbox (5.06245pt too wide) in paragraph at lines 151--151
+[]|\TU/TimesNewRoman(0)/m/n/11 VARCHAR(255)| 
+ []
+
+
+
+[30])
+
+[31] (./chapters/ly_lich.tex
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 18--19
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+[]|\TU/TimesNewRoman(0)/m/n/13 Trường Đại học Công nghiệp
+ []
+
+)
+
+Package caption Warning: Unused \captionsetup[figure] on input line 206.
+See the caption package documentation for explanation.
+
+
+Package natbib Warning: There were undefined citations.
+
+
+
+[32
+
+] (./main.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17713 strings out of 475366
- 335403 string characters out of 5762339
- 807887 words of memory out of 5000000
- 40425 multiletter control sequences out of 15000+600000
- 564036 words of font info for 79 fonts, out of 8000000 for 9000
+ 17968 strings out of 475366
+ 339747 string characters out of 5762339
+ 809883 words of memory out of 5000000
+ 40628 multiletter control sequences out of 15000+600000
+ 570645 words of font info for 115 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 79i,12n,93p,478b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
-Output written on main.pdf (10 pages).
+ 79i,13n,93p,660b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (39 pages).

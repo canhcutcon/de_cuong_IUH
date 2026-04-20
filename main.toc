@@ -1,0 +1,73 @@
+\xpg@aux {}{vietnamese}
+\contentsline {chapter}{DANH MỤC TỪ VIẾT TẮT}{vi}{chapter*.1}%
+\contentsline {chapter}{MỞ ĐẦU}{1}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Tổng quan bài toán phát hiện bất thường}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Phân loại bất thường}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Phân loại bài toán theo nhãn}{4}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Các hướng tiếp cận phát hiện bất thường}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Tổng quan sinh báo cáo NLP tự động}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Các kỹ thuật sinh báo cáo}{5}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Các mô hình LLM khảo sát}{6}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Các công trình nghiên cứu liên quan}{6}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Các nghiên cứu trong nước}{6}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Các nghiên cứu ngoài nước}{6}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Nhận xét và khoảng trống nghiên cứu}{6}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Tóm tắt chương}{8}{section.1.5}%
+\contentsline {chapter}{\numberline {2}CƠ SỞ LÝ THUYẾT}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Nền tảng học máy và học sâu}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Học có giám sát, không giám sát và bán giám sát}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Hàm mất mát}{9}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Chuẩn hoá và regularization}{10}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Các mô hình phát hiện bất thường trong luận văn}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}XGBoost}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Denoising Autoencoder (DAE)}{10}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}BiLSTM Classifier}{11}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}TranAD}{11}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}AnoGAN / f-AnoGAN}{11}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Chiến lược Ensemble}{12}{subsection.2.2.6}%
+\contentsline {section}{\numberline {2.3}Nền tảng NLP và mô hình ngôn ngữ lớn}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Kiến trúc Transformer}{12}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Mô hình ngôn ngữ lớn pretrained}{12}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}PEFT và LoRA fine-tune}{12}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Prompt engineering và sinh báo cáo có cấu trúc}{13}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Độ đo đánh giá NLP}{13}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}Độ đo đánh giá mô hình phân loại}{13}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Công nghệ triển khai hệ thống}{14}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Backend và API}{14}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Frontend và realtime}{14}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Deployment}{14}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Tóm tắt chương}{15}{section.2.6}%
+\contentsline {chapter}{\numberline {3}ÁP DỤNG KẾT QUẢ NGHIÊN CỨU}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dữ liệu nghiên cứu}{16}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Mô tả tập dữ liệu}{16}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Quy trình gán nhãn}{16}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Chia tập dữ liệu}{17}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Tiền xử lý dữ liệu (Pipeline 8 giai đoạn)}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Phương pháp đề xuất}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Kiến trúc hệ thống tổng thể}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Model Router}{18}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Ensemble Anomaly Detection}{18}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}LLM Report Pipeline}{19}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Gemini Fix Service}{19}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Cài đặt và triển khai hệ thống}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Backend}{19}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Orchestration với Celery}{20}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Frontend}{20}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}LoRA Fine-tuning}{20}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Docker Compose Deployment}{20}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Thực nghiệm và đánh giá}{21}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Thiết lập thực nghiệm}{21}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Baseline}{21}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Kết quả phát hiện bất thường}{21}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Ablation Study}{22}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Kết quả sinh báo cáo NLP}{22}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}Phân tích lỗi}{22}{subsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.5.7}Đánh giá hệ thống end-to-end}{22}{subsection.3.5.7}%
+\contentsline {section}{\numberline {3.6}Thảo luận}{22}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Tóm tắt chương}{23}{section.3.7}%
+\contentsline {chapter}{KẾT LUẬN VÀ KIẾN NGHỊ}{25}{chapter*.11}%
+\contentsline {chapter}{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}{27}{chapter*.12}%
+\contentsline {chapter}{PHỤ LỤC}{28}{appendix*.13}%
+\contentsline {chapter}{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}{32}{appendix*.16}%
+\contentsfinish 
