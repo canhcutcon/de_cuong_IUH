@@ -65,7 +65,10 @@ PhoGPT: Generative Pre-training for Vietnamese (2023).
 https://arxiv.org/abs/2311.02945
 
 Xu et al., review về PEFT (2023).
+https://arxiv.org/abs/2312.12148
 
 Xie et al., PIXIU (2023).
+https://arxiv.org/abs/2306.05443
 
 Wu et al., BloombergGPT (2023).
+https://arxiv.org/abs/2303.17564
