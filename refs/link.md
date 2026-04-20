@@ -35,10 +35,13 @@ Graves, Schmidhuber, “Framewise Phoneme Classification with Bidirectional LSTM
 https://www.cs.toronto.edu/~graves/ijcnn_2005.pdf
 
 Vincent et al., “Stacked Denoising Autoencoders…” (2010).
+https://www.jmlr.org/papers/volume11/vincent10a/vincent10a.pdf
 
 Bishop, Pattern Recognition and Machine Learning (2006).
+https://link.springer.com/book/9780387310732
 
 Vaswani et al., “Attention Is All You Need” (2017), DOI via arXiv 10.48550/arXiv.1706.03762.
+https://arxiv.org/abs/1706.03762
 
 Devlin et al., “BERT: Pre-training of Deep Bidirectional Transformers…” (2019), DOI 10.18653/v1/N19-1423.
 
