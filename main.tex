@@ -63,6 +63,10 @@
 
 %--- Toán học ---
 \usepackage{amsmath, amssymb}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}   % math font khớp với Times New Roman
+% Termes Math không có bold → map bold math glyphs sang Latin Modern Math
+\setmathfont{Latin Modern Math}[range={bfup,bfit,bfsfup,bfsfit,bfcal,bffrak}]
 
 %--- Danh sách ---
 \usepackage{enumitem}
