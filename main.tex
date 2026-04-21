@@ -227,6 +227,14 @@
 \renewcommand{\listtablename}{\centering DANH MỤC BẢNG BIỂU}
 \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}
 
+% Polyglossia Vietnamese override các name trên ở \AtBeginDocument → đặt lại
+\AtBeginDocument{%
+  \renewcommand{\contentsname}{\centering MỤC LỤC}%
+  \renewcommand{\listfigurename}{\centering DANH MỤC HÌNH ẢNH}%
+  \renewcommand{\listtablename}{\centering DANH MỤC BẢNG BIỂU}%
+  \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}%
+}
+
 % Chương trong TOC: in hoa, đậm
 \titlecontents{chapter}[0em]
   {\bfseries}
@@ -418,6 +426,7 @@
 %--------------------------------------------------------------
 \newpage
 \chapter*{DANH MỤC TỪ VIẾT TẮT}
+\markboth{DANH MỤC TỪ VIẾT TẮT}{}
 \addcontentsline{toc}{chapter}{DANH MỤC TỪ VIẾT TẮT}
 \input{chapters/abbreviations}
 
@@ -429,6 +438,7 @@
 \setcounter{page}{1}
 
 \chapter*{MỞ ĐẦU}
+\markboth{MỞ ĐẦU}{}
 \addcontentsline{toc}{chapter}{MỞ ĐẦU}
 \input{chapters/mo_dau}
 
@@ -454,6 +464,7 @@
 %  KẾT LUẬN VÀ KIẾN NGHỊ
 %--------------------------------------------------------------
 \chapter*{KẾT LUẬN VÀ KIẾN NGHỊ}
+\markboth{KẾT LUẬN VÀ KIẾN NGHỊ}{}
 \addcontentsline{toc}{chapter}{KẾT LUẬN VÀ KIẾN NGHỊ}
 \input{chapters/ket_luan}
 
@@ -461,6 +472,7 @@
 %  DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ
 %--------------------------------------------------------------
 \chapter*{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}
+\markboth{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}{}
 \addcontentsline{toc}{chapter}{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}
 \input{chapters/cong_trinh}
 
@@ -478,6 +490,7 @@
 %--------------------------------------------------------------
 \appendix
 \chapter*{PHỤ LỤC}
+\markboth{PHỤ LỤC}{}
 \addcontentsline{toc}{chapter}{PHỤ LỤC}
 \input{chapters/phu_luc}
 
@@ -485,6 +498,7 @@
 %  LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN
 %--------------------------------------------------------------
 \chapter*{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}
+\markboth{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}{}
 \addcontentsline{toc}{chapter}{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}
 \input{chapters/ly_lich}
 
