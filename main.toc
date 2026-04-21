@@ -63,9 +63,9 @@
 \contentsline {subsection}{\numberline {3.5.4}Ablation Study}{22}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5}Kết quả sinh báo cáo NLP}{22}{subsection.3.5.5}%
 \contentsline {subsection}{\numberline {3.5.6}Phân tích lỗi}{22}{subsection.3.5.6}%
-\contentsline {subsection}{\numberline {3.5.7}Đánh giá hệ thống end-to-end}{22}{subsection.3.5.7}%
-\contentsline {section}{\numberline {3.6}Thảo luận}{22}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Tóm tắt chương}{23}{section.3.7}%
+\contentsline {subsection}{\numberline {3.5.7}Đánh giá hệ thống end-to-end}{23}{subsection.3.5.7}%
+\contentsline {section}{\numberline {3.6}Thảo luận}{23}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Tóm tắt chương}{24}{section.3.7}%
 \contentsline {chapter}{KẾT LUẬN VÀ KIẾN NGHỊ}{25}{chapter*.11}%
 \contentsline {chapter}{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}{27}{chapter*.12}%
 \contentsline {chapter}{Tài liệu tham khảo}{28}{chapter*.13}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  20 APR 2026 14:47
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  21 APR 2026 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -972,7 +972,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [18]
-Overfull \hbox (2.06566pt too wide) in paragraph at lines 157--158
+Overfull \hbox (2.06566pt too wide) in paragraph at lines 161--162
 \TU/TimesNewRoman(0)/m/n/13 Backend xây dựng trên FastAPI 0.110 với SQLAlchemy 
 2.0 async, Alembic migration.
  []
@@ -980,7 +980,7 @@ Overfull \hbox (2.06566pt too wide) in paragraph at lines 157--158
 
 
 [19]
-Overfull \hbox (3.6926pt too wide) in paragraph at lines 191--193
+Overfull \hbox (3.6926pt too wide) in paragraph at lines 195--197
 \TU/TimesNewRoman(0)/m/n/13 Script \TU/lmtt/m/n/13 train_qwen_lora.py \TU/Times
 NewRoman(0)/m/n/13 và \TU/lmtt/m/n/13 train_gemma_lora.py \TU/TimesNewRoman(0)/
 m/n/13 sử dụng HuggingFace PEFT
@@ -989,13 +989,13 @@ m/n/13 sử dụng HuggingFace PEFT
 
 
 [20]
-Overfull \hbox (3.60706pt too wide) in paragraph at lines 217--218
+Overfull \hbox (3.60706pt too wide) in paragraph at lines 221--222
 []\TU/TimesNewRoman(0)/b/n/13 Phần cứng: \TU/TimesNewRoman(0)/m/n/13 GPU NVIDIA
  A100 40GB (huấn luyện), RTX 4090 24GB (inference). 
  []
 
 
-Overfull \hbox (15.41492pt too wide) in paragraph at lines 218--219
+Overfull \hbox (15.41492pt too wide) in paragraph at lines 222--223
 []\TU/TimesNewRoman(0)/b/n/13 Framework: \TU/TimesNewRoman(0)/m/n/13 PyTorch 2.
 0, scikit-learn 1.4, XGBoost 2.0, HuggingFace Transformers
  []
@@ -1003,18 +1003,15 @@ Overfull \hbox (15.41492pt too wide) in paragraph at lines 218--219
 
 
 [21]
-Underfull \hbox (badness 10000) in alignment at lines 322--322
+
+[22]
+Underfull \hbox (badness 10000) in alignment at lines 330--330
 [][][][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-
-[22])
-
-[23]
+[23])
 
 [24] (./chapters/ket_luan.tex
 
@@ -1219,14 +1216,17 @@ L3 programming layer <2025-01-18>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 18072 strings out of 475366
- 342056 string characters out of 5762339
+ 18089 strings out of 475366
+ 342525 string characters out of 5762339
  817526 words of memory out of 5000000
- 40729 multiletter control sequences out of 15000+600000
- 570645 words of font info for 115 fonts, out of 8000000 for 9000
+ 40742 multiletter control sequences out of 15000+600000
+ 572586 words of font info for 128 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 79i,13n,93p,660b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,15n,93p,660b,613s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (43 pages).

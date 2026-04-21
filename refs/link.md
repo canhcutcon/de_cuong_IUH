@@ -26,8 +26,6 @@ https://www.researchgate.net/publication/357952802_TranAD_Deep_Transformer_Netwo
 Dai, Chen, “Graph-Augmented Normalizing Flows for Anomaly Detection of Multiple Time Series” (2022).
 https://arxiv.org/pdf/2202.07857
 
-Liu et al., “Practical Approach to Anomaly Detection in Large-Scale Distributed Systems” (2021), DOI 10.1109/TBDATA.2021.3087054.
-
 Chen, Guestrin, “XGBoost: A Scalable Tree Boosting System” (2016), DOI 10.1145/2939672.2939785.
 https://arxiv.org/pdf/1603.02754
 
@@ -85,6 +83,6 @@ https://arxiv.org/pdf/1904.09675
 Lebret, Grangier, Auli, neural text generation from structured data (2016), DOI 10.18653/v1/D16-1128.
 https://arxiv.org/pdf/1603.07771
 
-Ahmed, Mahmood, Islam, survey về anomaly detection trong lĩnh vực tài chính (2016), DOI 10.1016/j.future.2015.01.001.
-
 Hilal, Gadsden, Yawney, review về financial fraud và anomaly detection (2022), DOI 10.1016/j.eswa.2021.116429
+https://www.isij.eu/article/financial-fraud-review-anomaly-detection-techniques-and-recent-advances
+
