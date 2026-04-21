@@ -250,6 +250,18 @@
 % numberless chapter đã tự canh giữa. Chèn \centering vào \chapter*{...}
 % sẽ phá định dạng (font default, lệch trái).
 
+% Patch \tableofcontents/\listoffigures/\listoftables: reset \@nobreakfalse
+% ngay trước \@starttoc. Cần thiết vì \chapter* (numberless) được titlesec
+% render sẽ set \@nobreak=true để giữ nội dung theo heading; nhưng
+% \@starttoc đọc file .toc/.lof/.lot không phát sinh paragraph mới trigger
+% \everypar → @nobreak dính suốt, LaTeX không tìm được breakpoint → toàn
+% bộ TOC thành 1 vbox overfull, entry dư bị mất (không flow sang trang 2).
+\makeatletter
+\patchcmd{\tableofcontents}{\@starttoc}{\@nobreakfalse\@starttoc}{}{}
+\patchcmd{\listoffigures}{\@starttoc}{\@nobreakfalse\@starttoc}{}{}
+\patchcmd{\listoftables}{\@starttoc}{\@nobreakfalse\@starttoc}{}{}
+\makeatother
+
 % Font TOC đồng bộ 13pt Times (bold cho chapter)
 \renewcommand{\cftchapfont}{\fontsize{13pt}{19.5pt}\bfseries}
 \renewcommand{\cftsecfont}{\fontsize{13pt}{19.5pt}\selectfont}
@@ -260,26 +272,27 @@
 % Chương trong TOC: in hoa, đậm
 % Lưu ý: đối số #3 (numberless-format) phải render tiêu đề, nếu không
 % các \chapter* (MỞ ĐẦU, KẾT LUẬN, TÀI LIỆU THAM KHẢO, ...) sẽ mất tên trong mục lục.
+% \addvspace{...} cho phép LaTeX ngắt trang trong TOC (tránh overfull vbox).
 \titlecontents{chapter}[0em]
-  {\bfseries}
+  {\addvspace{6pt}\bfseries}
   {CHƯƠNG~\thecontentslabel\quad}
   {}% numberless chapter: dùng nguyên nội dung được add vào TOC
   {\titlerule*[0.6em]{.}\contentspage}
 
 \titlecontents{section}[1.5em]
-  {}
+  {\addvspace{2pt}}
   {\thecontentslabel\quad}
   {}
   {\titlerule*[0.6em]{.}\contentspage}
 
 \titlecontents{subsection}[3em]
-  {}
+  {\addvspace{1pt}}
   {\thecontentslabel\quad}
   {}
   {\titlerule*[0.6em]{.}\contentspage}
 
 \titlecontents{subsubsection}[4.5em]
-  {}
+  {\addvspace{1pt}}
   {\thecontentslabel\quad}
   {}
   {\titlerule*[0.6em]{.}\contentspage}
@@ -433,12 +446,27 @@
 %  (parskip 10pt toàn cục làm TOC vượt 1 trang, không flow → mất nội dung)
 %--------------------------------------------------------------
 \newpage
-\setlength{\parskip}{0pt}
-\tableofcontents
+% parskip có stretch nhỏ để LaTeX có độ co giãn cần thiết cho việc ngắt trang
+% trong TOC/LOF/LOT. parskip=0pt rigid + titlecontents không có \addvspace sẽ
+% khiến toàn bộ TOC thành 1 vbox không breakable → overfull và mất nội dung.
+\setlength{\parskip}{0pt plus 1pt}
+\raggedbottom
+% Inline expansion của \tableofcontents + \@nobreakfalse để breakpoint
+% hoạt động xuyên suốt TOC (tránh patch conflict với hyperref wrapper).
+\makeatletter
+\chapter*{\contentsname}\@mkboth{\contentsname}{\contentsname}%
+\@nobreakfalse
+\@starttoc{toc}
 \clearpage
-\listoffigures
+\chapter*{\listfigurename}\@mkboth{\listfigurename}{\listfigurename}%
+\@nobreakfalse
+\@starttoc{lof}
 \clearpage
-\listoftables
+\chapter*{\listtablename}\@mkboth{\listtablename}{\listtablename}%
+\@nobreakfalse
+\@starttoc{lot}
+\makeatother
+\flushbottom
 \setlength{\parskip}{10pt}
 
 %--------------------------------------------------------------

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  21 APR 2026 16:49
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  21 APR 2026 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,7 +477,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 Package fontspec Info: 
 (fontspec)             Script 'Math' not explicitly supported within font 'TeX
@@ -504,7 +510,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -519,7 +531,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 Package fontspec Info: 
 (fontspec)             Font family 'TeXGyreTermesMath(0)' created for font
@@ -539,7 +557,12 @@ oadable: Metric (TFM) file or installed font not found.
                    relax 
 l.71 
      
-? 
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
 
 Package unicode-math Warning: The first font loaded by unicode-math must be an
 (unicode-math)                OpenType Math font (with script=math). If you
@@ -562,7 +585,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 Package fontspec Info: 
 (fontspec)             Script 'Math' not explicitly supported within font 'TeX
@@ -589,7 +618,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -604,7 +639,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -619,7 +660,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -634,7 +681,13 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-? 
+
+A font might not be found for many reasons.
+ Check the spelling, where the font is installed etc. etc.
+
+ When in doubt, ask someone for help!
+
+
 
 Package fontspec Info: 
 (fontspec)             Font family 'TeXGyreTermesMath(1)' created for font
@@ -657,7 +710,12 @@ oadable: Metric (TFM) file or installed font not found.
                    relax 
 l.71 
      
-? 
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `normal' on input line 71.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -857,29 +915,30 @@ pages
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 )
-No file main.aux.
+(./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 325.
-LaTeX Font Info:    ... okay on input line 325.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 338.
+LaTeX Font Info:    ... okay on input line 338.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -919,21 +978,21 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  TU/TeXGyreTermesMath(1)/m/n --> TU/TimesNewRoman(0)/m/n
- on input line 325.
+ on input line 338.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line
- 325.
+ 338.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 
-325.
+338.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 325.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 338.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 325.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 338.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 325.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 338.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 325.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 338.
 
 Package fontspec Info: 
 (fontspec)             Font family 'latinmodern-math.otf(0)' created for font
@@ -973,10 +1032,10 @@ flt;"<7.2-10.2>"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;"<-
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/TeXGyreTermesMath(1)/m/n --> TU/latinmodern-math.otf
-(1)/m/n on input line 325.
+(1)/m/n on input line 338.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/TeXGyreTermesMath(1)/b/n --> TU/latinmodern-math.otf
-(1)/b/n on input line 325.
+(1)/b/n on input line 338.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.0001.
@@ -1029,15 +1088,15 @@ ge=dflt;+ssty=1;"
 uage=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 325.
+(Font)              `symbols' in the math version `normal' on input line 338.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 325.
+t line 338.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 325.
+(Font)              `symbols' in the math version `bold' on input line 338.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 325.
+t line 338.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999.
@@ -1085,41 +1144,38 @@ uage=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 3
-25.
+38.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 325.
+t line 338.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 325
+(Font)              `largesymbols' in the math version `bold' on input line 338
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 325.
-Package hyperref Info: Link coloring OFF on input line 325.
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
+t line 338.
+Package hyperref Info: Link coloring OFF on input line 338.
 File: figures/logo_IUH.png Graphic file (type bmp)
 <figures/logo_IUH.png>
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 359.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 372.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 13.00139pt on input line 359.
+(Font)              scaled to size 13.00139pt on input line 372.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.10092pt on input line 359.
+(Font)              scaled to size 9.10092pt on input line 372.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.50069pt on input line 359.
+(Font)              scaled to size 6.50069pt on input line 372.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 12.99861pt on input line 359.
+(Font)              scaled to size 12.99861pt on input line 372.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.09898pt on input line 359.
+(Font)              scaled to size 9.09898pt on input line 372.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.4993pt on input line 359.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 359
+(Font)              scaled to size 6.4993pt on input line 372.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 372
 .
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 359
+LaTeX Font Info:    Trying to load font information for U+msb on input line 372
 .
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1130,40 +1186,51 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 
-[1]
-No file main.toc.
+[1] (./main.toc
+
+[2
+
+]
+
+[3])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
 
 
-[2]
-No file main.lof.
+[4] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
 
 
-[3
+[5
 
-]
-No file main.lot.
+
+] (./main.lot)
 \tf@lot=\write5
 \openout5 = `main.lot'.
 
 
 
-[4
+[6
 
-] (./chapters/abbreviations.tex [5
+
+] (./chapters/abbreviations.tex [7
 
 ])
 
-[6] (./chapters/mo_dau.tex
+[8] (./chapters/mo_dau.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [1
 
 ]
+Underfull \vbox (badness 5091) has occurred while \output is active []
+
+
 
 [2])
 
@@ -1179,15 +1246,13 @@ Package natbib Warning: Citation `chandola2009anomaly' on page 4 undefined on i
 nput line 11.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [4
 
 ]
-
-LaTeX Warning: Reference `tab:approaches' on page 5 undefined on input line 31.
-
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 52--52
 []|\TU/TimesNewRoman(0)/b/n/13 Hướng tiếp
  []
@@ -1251,10 +1316,6 @@ t line 75.
 
 Package natbib Warning: Citation `touvron2023llama' on page 6 undefined on inpu
 t line 76.
-
-
-LaTeX Warning: Reference `tab:related_work' on page 6 undefined on input line 8
-8.
 
 
 Package natbib Warning: Citation `zong2018dagmm' on page 6 undefined on input l
@@ -1326,6 +1387,9 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [7])
 
@@ -1335,6 +1399,9 @@ Chương 2.
 
 Package natbib Warning: Citation `bishop2006pattern' on page 9 undefined on inp
 ut line 9.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1431,6 +1498,9 @@ Package natbib Warning: Citation `zhang2020bertscore' on page 13 undefined on i
 nput line 159.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [13]
 Overfull \hbox (4.72646pt too wide) in paragraph at lines 192--193
@@ -1477,6 +1547,9 @@ Sinh 30+ đặc trưng mới: tỷ lệ (commission_to_price, billing_to_commiss
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [17]
 Overfull \hbox (20.26231pt too wide) in paragraph at lines 104--105
@@ -1488,12 +1561,18 @@ Overfull \hbox (20.26231pt too wide) in paragraph at lines 104--105
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [18]
 Overfull \hbox (2.06566pt too wide) in paragraph at lines 161--162
 \TU/TimesNewRoman(0)/m/n/13 Backend xây dựng trên FastAPI 0.110 với SQLAlchemy 
 2.0 async, Alembic migration.
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1532,6 +1611,9 @@ Underfull \hbox (badness 10000) in alignment at lines 330--330
 [23])
 
 [24] (./chapters/ket_luan.tex
+Underfull \vbox (badness 1436) has occurred while \output is active []
+
+
 
 [25
 
@@ -1658,21 +1740,14 @@ Package natbib Warning: There were undefined citations.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 21682 strings out of 475366
- 398485 string characters out of 5762339
- 962051 words of memory out of 5000000
- 44301 multiletter control sequences out of 15000+600000
- 569855 words of font info for 143 fonts, out of 8000000 for 9000
+ 21690 strings out of 475366
+ 398454 string characters out of 5762339
+ 963487 words of memory out of 5000000
+ 44303 multiletter control sequences out of 15000+600000
+ 569839 words of font info for 141 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  79i,15n,107p,660b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (39 pages).
+Output written on main.pdf (41 pages).
