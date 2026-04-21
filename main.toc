@@ -1,5 +1,5 @@
 \xpg@aux {}{vietnamese}
-\contentsline {chapter}{DANH MỤC TỪ VIẾT TẮT}{vi}{chapter*.1}%
+\contentsline {chapter}{DANH MỤC TỪ VIẾT TẮT}{v}{chapter*.1}%
 \contentsline {chapter}{MỞ ĐẦU}{1}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}TỔNG QUAN VỀ LĨNH VỰC NGHIÊN CỨU}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Tổng quan bài toán phát hiện bất thường}{4}{section.1.1}%
@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {2.2.6}Chiến lược Ensemble}{12}{subsection.2.2.6}%
 \contentsline {section}{\numberline {2.3}Nền tảng NLP và mô hình ngôn ngữ lớn}{12}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Kiến trúc Transformer}{12}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Mô hình ngôn ngữ lớn pretrained}{12}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Các mô hình LLM tiền huấn luyện}{12}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}PEFT và LoRA fine-tune}{12}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Prompt engineering và sinh báo cáo có cấu trúc}{13}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Độ đo đánh giá NLP}{13}{subsection.2.3.5}%

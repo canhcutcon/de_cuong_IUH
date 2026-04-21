@@ -3,51 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: refs/references.bib
-Warning--empty journal in sakurada2014anomaly
-Warning--can't use both volume and number fields in tuli2022tranad
-Warning--empty booktitle in schlegl2019anogan
-Warning--empty booktitle in vincent2010stacked
-Warning--empty booktitle in graves2005bilstm
-Warning--can't use both volume and number fields in graves2005bilstm
-You've used 32 entries,
+You've used 31 entries,
             1791 wiz_defined-function locations,
-            633 strings with 10595 characters,
-and the built_in function-call counts, 9780 in all, are:
-= -- 876
-> -- 500
-< -- 22
-+ -- 178
-- -- 146
-* -- 607
-:= -- 1436
-add.period$ -- 112
-call.type$ -- 32
-change.case$ -- 31
+            624 strings with 10391 characters,
+and the built_in function-call counts, 8988 in all, are:
+= -- 804
+> -- 483
+< -- 14
++ -- 172
+- -- 141
+* -- 565
+:= -- 1366
+add.period$ -- 110
+call.type$ -- 31
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 463
-empty$ -- 913
-format.name$ -- 146
-if$ -- 2294
+cite$ -- 31
+duplicate$ -- 410
+empty$ -- 842
+format.name$ -- 141
+if$ -- 2087
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 28
-newline$ -- 168
-num.names$ -- 32
-pop$ -- 159
+int.to.str$ -- 31
+missing$ -- 27
+newline$ -- 163
+num.names$ -- 31
+pop$ -- 141
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 280
+skip$ -- 218
 stack$ -- 0
-substring$ -- 580
-swap$ -- 191
-text.length$ -- 22
+substring$ -- 519
+swap$ -- 147
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 83
-width$ -- 34
-write$ -- 370
-(There were 6 warnings)
+warning$ -- 0
+while$ -- 76
+width$ -- 33
+write$ -- 360

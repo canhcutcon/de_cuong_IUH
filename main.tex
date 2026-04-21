@@ -93,6 +93,7 @@
 %--- Khác ---
 \usepackage{emptypage}      % trang trắng không có header/footer
 \usepackage{indentfirst}    % Thụt đầu dòng sau heading
+\usepackage{etoolbox}       % dùng để patch \tableofcontents
 
 % ============================================================
 % THÔNG TIN ĐỀ TÀI – CHỈNH SỬA TẠI ĐÂY
@@ -226,43 +227,65 @@
 % ============================================================
 % MỤC LỤC – định dạng
 % ============================================================
-\renewcommand{\contentsname}{\centering MỤC LỤC}
-\renewcommand{\listfigurename}{\centering DANH MỤC HÌNH ẢNH}
-\renewcommand{\listtablename}{\centering DANH MỤC BẢNG BIỂU}
+\renewcommand{\contentsname}{MỤC LỤC}
+\renewcommand{\listfigurename}{DANH MỤC HÌNH ẢNH}
+\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
 \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}
 
 % Polyglossia Vietnamese override các name trên ở \AtBeginDocument → đặt lại
 \AtBeginDocument{%
-  \renewcommand{\contentsname}{\centering MỤC LỤC}%
-  \renewcommand{\listfigurename}{\centering DANH MỤC HÌNH ẢNH}%
-  \renewcommand{\listtablename}{\centering DANH MỤC BẢNG BIỂU}%
+  \renewcommand{\contentsname}{MỤC LỤC}%
+  \renewcommand{\listfigurename}{DANH MỤC HÌNH ẢNH}%
+  \renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}%
   \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}%
 }
 
+% Ép canh giữa tiêu đề MỤC LỤC / DANH MỤC HÌNH ẢNH / DANH MỤC BẢNG BIỂU
+\makeatletter
+\patchcmd{\tableofcontents}
+  {\chapter*{\contentsname}}
+  {\chapter*{\centering\contentsname}}{}{}
+\patchcmd{\listoffigures}
+  {\chapter*{\listfigurename}}
+  {\chapter*{\centering\listfigurename}}{}{}
+\patchcmd{\listoftables}
+  {\chapter*{\listtablename}}
+  {\chapter*{\centering\listtablename}}{}{}
+\makeatother
+
+% Font TOC đồng bộ 13pt Times (bold cho chapter)
+\renewcommand{\cftchapfont}{\fontsize{13pt}{19.5pt}\bfseries}
+\renewcommand{\cftsecfont}{\fontsize{13pt}{19.5pt}\selectfont}
+\renewcommand{\cftsubsecfont}{\fontsize{13pt}{19.5pt}\selectfont}
+\renewcommand{\cftsubsubsecfont}{\fontsize{13pt}{19.5pt}\selectfont}
+\setlength{\cftbeforechapskip}{6pt}
+
 % Chương trong TOC: in hoa, đậm
+% Lưu ý: đối số #3 (numberless-format) phải render tiêu đề, nếu không
+% các \chapter* (MỞ ĐẦU, KẾT LUẬN, TÀI LIỆU THAM KHẢO, ...) sẽ mất tên trong mục lục.
 \titlecontents{chapter}[0em]
   {\bfseries}
-  {CHƯƠNG \thecontentslabel\quad}
-  {}
-  {\titlerule*[0.5em]{.}\contentspage}
+  {CHƯƠNG~\thecontentslabel\quad}
+  {}% numberless chapter: dùng nguyên nội dung được add vào TOC
+  {\titlerule*[0.6em]{.}\contentspage}
 
 \titlecontents{section}[1.5em]
   {}
   {\thecontentslabel\quad}
   {}
-  {\titlerule*[0.5em]{.}\contentspage}
+  {\titlerule*[0.6em]{.}\contentspage}
 
 \titlecontents{subsection}[3em]
   {}
   {\thecontentslabel\quad}
   {}
-  {\titlerule*[0.5em]{.}\contentspage}
+  {\titlerule*[0.6em]{.}\contentspage}
 
 \titlecontents{subsubsection}[4.5em]
   {}
   {\thecontentslabel\quad}
   {}
-  {\titlerule*[0.5em]{.}\contentspage}
+  {\titlerule*[0.6em]{.}\contentspage}
 
 % ============================================================
 % HEADER & FOOTER

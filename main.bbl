@@ -21,7 +21,8 @@ Markus~M. Breunig, Hans-Peter Kriegel, Raymond~T. Ng, and J{\"o}rg Sander.
 Mayu Sakurada and Takehisa Yairi.
 \newblock Anomaly detection using autoencoders with nonlinear dimensionality
   reduction.
-\newblock pages 4--11, 2014.
+\newblock In {\em Proceedings of the MLSDA Workshop on Machine Learning for
+  Sensory Data Analysis}, pages 4--11. ACM, 2014.
 
 \bibitem{kingma2014vae}
 Diederik~P. Kingma and Max Welling.
@@ -33,8 +34,7 @@ Diederik~P. Kingma and Max Welling.
 Shreshth Tuli, Giuliano Casale, and Nicholas~R. Jennings.
 \newblock {TranAD}: Deep transformer networks for anomaly detection in
   multivariate time series data.
-\newblock In {\em Proceedings of the VLDB Endowment}, volume~15, pages
-  1201--1214, 2022.
+\newblock {\em Proceedings of the VLDB Endowment}, 15(6):1201--1214, 2022.
 
 \bibitem{lebret2016neural}
 R{\'e}mi Lebret, David Grangier, and Michael Auli.
@@ -115,7 +115,7 @@ Thomas Schlegl, Philipp Seeb{\"o}ck, Sebastian~M. Waldstein, Georg Langs, and
   Ursula Schmidt-Erfurth.
 \newblock f-{AnoGAN}: Fast unsupervised anomaly detection with generative
   adversarial networks.
-\newblock volume~54, pages 30--44, 2019.
+\newblock {\em Medical Image Analysis}, 54:30--44, 2019.
 
 \bibitem{audibert2020usad}
 Julien Audibert, Pietro Michiardi, Fr{\'e}d{\'e}ric Guyard, S{\'e}bastien
@@ -130,12 +130,6 @@ Enyan Dai and Jie Chen.
   time series.
 \newblock In {\em Proceedings of the 10th International Conference on Learning
   Representations (ICLR)}, Virtual, 2022.
-
-\bibitem{liu2021nsibf}
-Dongxiang Liu, Hao Kong, Bing Xu, Hanxi Wang, and Hai Su.
-\newblock Practical approach to anomaly detection in large-scale distributed
-  systems.
-\newblock {\em IEEE Transactions on Big Data}, 8(5):1347--1360, 2021.
 
 \bibitem{chen2016xgboost}
 Tianqi Chen and Carlos Guestrin.
@@ -179,13 +173,13 @@ Pascal Vincent, Hugo Larochelle, Isabelle Lajoie, Yoshua Bengio, and
   Pierre-Antoine Manzagol.
 \newblock Stacked denoising autoencoders: Learning useful representations in a
   deep network with a local denoising criterion.
-\newblock volume~11, pages 3371--3408, 2010.
+\newblock {\em Journal of Machine Learning Research}, 11:3371--3408, 2010.
 
 \bibitem{graves2005bilstm}
 Alex Graves and J{\"u}rgen Schmidhuber.
 \newblock Framewise phoneme classification with bidirectional {LSTM} and other
   neural network architectures.
-\newblock volume~18, pages 602--610, 2005.
+\newblock {\em Neural Networks}, 18:602--610, 2005.
 
 \bibitem{xu2023peft}
 Lingling Xu, Haoran Xie, Si-Zhao~Joe Bi, Xiaohui Qin, et~al.
