@@ -72,3 +72,19 @@ https://arxiv.org/abs/2306.05443
 
 Wu et al., BloombergGPT (2023).
 https://arxiv.org/abs/2303.17564
+
+Papineni et al., BLEU (2002), DOI 10.3115/1073083.1073135.
+https://aclanthology.org/P02-1040.pdf
+
+Lin, ROUGE (2004).
+https://aclanthology.org/W04-1013.pdf
+
+Zhang et al., BERTScore (2020).
+https://arxiv.org/pdf/1904.09675
+
+Lebret, Grangier, Auli, neural text generation from structured data (2016), DOI 10.18653/v1/D16-1128.
+https://arxiv.org/pdf/1603.07771
+
+Ahmed, Mahmood, Islam, survey về anomaly detection trong lĩnh vực tài chính (2016), DOI 10.1016/j.future.2015.01.001.
+
+Hilal, Gadsden, Yawney, review về financial fraud và anomaly detection (2022), DOI 10.1016/j.eswa.2021.116429
