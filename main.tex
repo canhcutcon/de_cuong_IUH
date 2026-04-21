@@ -428,22 +428,18 @@
 \setlength{\parskip}{10pt}
 
 %--------------------------------------------------------------
-%  MỤC LỤC
+%  MỤC LỤC / DANH MỤC HÌNH / DANH MỤC BẢNG
+%  Reset \parskip = 0 để TOC/LOF/LOT không bị phình mỗi entry
+%  (parskip 10pt toàn cục làm TOC vượt 1 trang, không flow → mất nội dung)
 %--------------------------------------------------------------
 \newpage
+\setlength{\parskip}{0pt}
 \tableofcontents
-
-%--------------------------------------------------------------
-%  DANH MỤC HÌNH ẢNH
-%--------------------------------------------------------------
-\newpage
+\clearpage
 \listoffigures
-
-%--------------------------------------------------------------
-%  DANH MỤC BẢNG BIỂU
-%--------------------------------------------------------------
-\newpage
+\clearpage
 \listoftables
+\setlength{\parskip}{10pt}
 
 %--------------------------------------------------------------
 %  DANH MỤC TỪ VIẾT TẮT
