@@ -41,11 +41,12 @@ de_cuong_IUH/
 ### Trên máy local (terminal)
 
 ```bash
-cd de_cuong_IUH
-xelatex main.tex
-bibtex main
-xelatex main.tex
-xelatex main.tex
+  cd de_cuong_IUH
+  rm -f main.aux main.toc main.lof main.lot main.out
+  xelatex main.tex
+  bibtex main
+  xelatex main.tex
+  xelatex main.tex
 ```
 
 > Cần chạy XeLaTeX **3 lần** để mục lục và tài liệu tham khảo hiển thị đúng.

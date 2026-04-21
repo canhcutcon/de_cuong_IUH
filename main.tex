@@ -65,8 +65,9 @@
 \usepackage{amsmath, amssymb}
 \usepackage{unicode-math}
 \setmathfont{TeX Gyre Termes Math}   % math font khớp với Times New Roman
-% Termes Math không có bold → map bold math glyphs sang Latin Modern Math
-\setmathfont{Latin Modern Math}[range={bfup,bfit,bfsfup,bfsfit,bfcal,bffrak}]
+% TeX Gyre Termes Math và Latin Modern Math đều không có glyph bold riêng.
+% Không remap bold ranges để tránh cảnh báo "Font shape undefined".
+% Muốn chữ toán in đậm, dùng \mathbf{...} (lấy từ main text font Times New Roman bold).
 
 %--- Danh sách ---
 \usepackage{enumitem}
@@ -205,14 +206,10 @@
 }
 
 % Đổi "Figure" → "Hình" và "Table" → "Bảng"
-\captionsetup[figure]{
-  name    = {Hình},
-  position = below
-}
-\captionsetup[table]{
-  name    = {Bảng},
-  position = above
-}
+% Không lặp lại position (đã set global) để tránh warning
+% "Unused \captionsetup[figure]".
+\captionsetup[figure]{name = {Hình}}
+\captionsetup[table]{name = {Bảng}, position = above}
 
 % Đặt lại bộ đếm figure/table theo chapter
 \counterwithin{figure}{chapter}
@@ -232,26 +229,26 @@
 \renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
 \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}
 
-% Polyglossia Vietnamese override các name trên ở \AtBeginDocument → đặt lại
+% Polyglossia Vietnamese override các name trên mỗi lần \selectlanguage
+% → dùng \gappto\captionsvietnamese để ép lại mạnh hơn \AtBeginDocument
+\gappto\captionsvietnamese{%
+  \renewcommand{\contentsname}{MỤC LỤC}%
+  \renewcommand{\listfigurename}{DANH MỤC HÌNH ẢNH}%
+  \renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}%
+  \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}%
+  \renewcommand{\appendixname}{PHỤ LỤC}%
+}
+% Vẫn giữ \AtBeginDocument để đảm bảo override ngay cả khi hook Vietnamese
+% đã chạy trước khi gappto được áp dụng.
 \AtBeginDocument{%
   \renewcommand{\contentsname}{MỤC LỤC}%
   \renewcommand{\listfigurename}{DANH MỤC HÌNH ẢNH}%
   \renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}%
   \renewcommand{\bibname}{TÀI LIỆU THAM KHẢO}%
 }
-
-% Ép canh giữa tiêu đề MỤC LỤC / DANH MỤC HÌNH ẢNH / DANH MỤC BẢNG BIỂU
-\makeatletter
-\patchcmd{\tableofcontents}
-  {\chapter*{\contentsname}}
-  {\chapter*{\centering\contentsname}}{}{}
-\patchcmd{\listoffigures}
-  {\chapter*{\listfigurename}}
-  {\chapter*{\centering\listfigurename}}{}{}
-\patchcmd{\listoftables}
-  {\chapter*{\listtablename}}
-  {\chapter*{\centering\listtablename}}{}{}
-\makeatother
+% KHÔNG patchcmd \tableofcontents để chèn \centering — titleformat của
+% numberless chapter đã tự canh giữa. Chèn \centering vào \chapter*{...}
+% sẽ phá định dạng (font default, lệch trái).
 
 % Font TOC đồng bộ 13pt Times (bold cho chapter)
 \renewcommand{\cftchapfont}{\fontsize{13pt}{19.5pt}\bfseries}
