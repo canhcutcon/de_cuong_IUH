@@ -110,32 +110,30 @@ Bảng \ref{tab:related_work} tổng hợp các công trình quốc tế tiêu b
 \hline
 7 & Dai \& Chen (2022) \cite{dai2022ganf} & GANF (Graph-Augmented NF) & AUC 0.97 trên SWaT; phức tạp với tabular thưa \\
 \hline
-8 & Liu et al.\ (2021) \cite{liu2021nsibf} & NSIBF (Non-stationary IBF) & Tốt với non-stationary TS; không tích hợp NLP \\
+8 & Chen \& Guestrin (2016) \cite{chen2016xgboost} & XGBoost & AUC 0.99 fraud detection; cần nhãn đầy đủ \\
 \hline
-9 & Chen \& Guestrin (2016) \cite{chen2016xgboost} & XGBoost & AUC 0.99 fraud detection; cần nhãn đầy đủ \\
+9 & Hu et al.\ (2022) \cite{hu2022lora} & LoRA (Low-Rank Adaptation) & Giảm 10.000× tham số fine-tune; benchmark NLU/NLG \\
 \hline
-10 & Hu et al.\ (2022) \cite{hu2022lora} & LoRA (Low-Rank Adaptation) & Giảm 10.000× tham số fine-tune; benchmark NLU/NLG \\
+10 & Lewis et al.\ (2020) \cite{lewis2020rag} & RAG (Retrieval-Augmented Gen.) & SOTA Open-domain QA; cần vector DB riêng \\
 \hline
-11 & Lewis et al.\ (2020) \cite{lewis2020rag} & RAG (Retrieval-Augmented Gen.) & SOTA Open-domain QA; cần vector DB riêng \\
+11 & Xie et al.\ (2023) \cite{xie2023finma} & FinMA (Financial LLM) & GPT-4 level finance NLP; không hỗ trợ Vietnamese \\
 \hline
-12 & Xie et al.\ (2023) \cite{xie2023finma} & FinMA (Financial LLM) & GPT-4 level finance NLP; không hỗ trợ Vietnamese \\
+12 & Wu et al.\ (2023) \cite{wu2023bloomberggpt} & BloombergGPT & 50B params finance; không open-source đầy đủ \\
 \hline
-13 & Wu et al.\ (2023) \cite{wu2023bloomberggpt} & BloombergGPT & 50B params finance; không open-source đầy đủ \\
+13 & Wei et al.\ (2022) \cite{wei2022chain} & Chain-of-Thought Prompting & Cải thiện reasoning; không ổn định output format \\
 \hline
-14 & Wei et al.\ (2022) \cite{wei2022chain} & Chain-of-Thought Prompting & Cải thiện reasoning; không ổn định output format \\
+14 & Zhang et al.\ (2020) \cite{zhang2020bertscore} & BERTScore & Đánh giá NLG tốt hơn BLEU; cần GPU để tính \\
 \hline
-15 & Zhang et al.\ (2020) \cite{zhang2020bertscore} & BERTScore & Đánh giá NLG tốt hơn BLEU; cần GPU để tính \\
+15 & Kingma \& Welling (2014) \cite{kingma2014vae} & VAE & Latent space học được; reconstruction blur \\
 \hline
-16 & Kingma \& Welling (2014) \cite{kingma2014vae} & VAE & Latent space học được; reconstruction blur \\
-\hline
-17 & Vaswani et al.\ (2017) \cite{vaswani2017attention} & Transformer (self-attention) & Nền tảng mọi mô hình SOTA hiện đại \\
+16 & Vaswani et al.\ (2017) \cite{vaswani2017attention} & Transformer (self-attention) & Nền tảng mọi mô hình SOTA hiện đại \\
 \hline
 \end{tabularx}
 \end{table}
 
 \subsection{Nhận xét và khoảng trống nghiên cứu}
 
-Qua khảo sát 17+ công trình tiêu biểu, có thể rút ra nhận xét sau:
+Qua khảo sát 16 công trình tiêu biểu, có thể rút ra nhận xét sau:
 
 \begin{enumerate}
   \item \textbf{Phần lớn nghiên cứu AD chỉ tập trung một loại dữ liệu} -- hoặc tabular hoặc time-series -- chưa có hệ thống thống nhất xử lý cả hai loại với model router tự động.
@@ -157,4 +155,4 @@ Qua khảo sát 17+ công trình tiêu biểu, có thể rút ra nhận xét sau
 % -------------------------------------------
 \section{Tóm tắt chương}
 
-Chương 1 đã trình bày tổng quan về bài toán phát hiện bất thường -- từ định nghĩa, phân loại đến các hướng tiếp cận từ thống kê, ML cổ điển đến Deep Learning ensemble. Phần khảo sát NLP đã giới thiệu các kỹ thuật sinh báo cáo tự động và các LLM phù hợp fine-tune cho domain tiếng Việt. Bảng tổng hợp 17+ công trình liên quan chỉ ra ba khoảng trống nghiên cứu rõ ràng mà luận văn này hướng đến giải quyết. Chương 2 tiếp theo sẽ trình bày chi tiết cơ sở lý thuyết của các mô hình và công nghệ được sử dụng.
+Chương 1 đã trình bày tổng quan về bài toán phát hiện bất thường -- từ định nghĩa, phân loại đến các hướng tiếp cận từ thống kê, ML cổ điển đến Deep Learning ensemble. Phần khảo sát NLP đã giới thiệu các kỹ thuật sinh báo cáo tự động và các LLM phù hợp fine-tune cho domain tiếng Việt. Bảng tổng hợp 16 công trình liên quan chỉ ra ba khoảng trống nghiên cứu rõ ràng mà luận văn này hướng đến giải quyết. Chương 2 tiếp theo sẽ trình bày chi tiết cơ sở lý thuyết của các mô hình và công nghệ được sử dụng.
