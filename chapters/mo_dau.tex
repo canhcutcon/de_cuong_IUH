@@ -7,13 +7,13 @@
 
 \noindent\textbf{1. Đặt vấn đề}
 
-Trong thời đại chuyển đổi số, các doanh nghiệp bất động sản và tài chính Việt Nam lưu trữ hàng triệu giao dịch dưới dạng tệp CSV/Excel. Tuy nhiên, dữ liệu này thường chứa đựng các sai sót do nhập liệu thủ công, gian lận nghiệp vụ (fraud), hoặc lỗi hệ thống tích lũy qua nhiều năm. Quá trình rà soát thủ công không chỉ tốn kém nhân lực mà còn bỏ sót các bất thường có tính hệ thống.
+Trong thời đại chuyển đổi số, các doanh nghiệp lưu trữ hàng triệu giao dịch dưới dạng tệp CSV/Excel. Tuy nhiên, dữ liệu này thường chứa đựng các sai sót do nhập liệu thủ công, gian lận nghiệp vụ (fraud), hoặc lỗi hệ thống tích lũy qua nhiều năm. Quá trình rà soát thủ công không chỉ tốn kém nhân lực mà còn bỏ sót các bất thường có tính hệ thống.
 
 Về mặt lý luận, các phương pháp phát hiện bất thường (Anomaly Detection -- AD) truyền thống như rule-based hay Isolation Forest không nắm bắt được các mẫu tương tác phức tạp trong dữ liệu đa chiều. Mặc dù các mô hình Deep Learning (Autoencoder, BiLSTM, Transformer) đã đạt kết quả SOTA trên nhiều bộ dữ liệu chuẩn, chúng vẫn chưa được tích hợp thành hệ thống end-to-end hoàn chỉnh phục vụ nghiệp vụ BĐS thực tế tại Việt Nam.
 
 Luận văn này giải quyết ba khoảng trống nghiên cứu chính:
 \begin{enumerate}
-  \item Thiếu nền tảng \textbf{end-to-end} tích hợp multi-model (tabular + time-series) cho dữ liệu CSV ngữ cảnh tiếng Việt.
+  \item Thiếu nền tảng \textbf{end-to-end} tích hợp multi-model (tabular + time-series) cho dữ liệu CSV ngữ cảnh tiếng Việt/ tiếng Anh.
   \item Kết quả AD thông thường chỉ ra chỉ số dòng bất thường, \textbf{chưa sinh giải thích bằng ngôn ngữ tự nhiên} có thể hành động được cho người nghiệp vụ phi kỹ thuật.
   \item Thiếu nghiên cứu kết hợp \textbf{LLM fine-tune (LoRA)} sinh báo cáo phát hiện bất thường song ngữ Việt--Anh theo tiêu chuẩn nghiệp vụ.
 \end{enumerate}

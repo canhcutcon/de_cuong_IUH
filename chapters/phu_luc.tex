@@ -7,10 +7,13 @@
 
 Bảng A.1 tổng hợp siêu tham số của các mô hình AD trong luận văn.
 
-\begin{table}[h!]
-\centering
+\begin{center}
 \fontsize{11pt}{14pt}\selectfont
-\caption*{Bảng A.1. Siêu tham số các mô hình phát hiện bất thường}
+\textbf{Bảng A.1. Siêu tham số các mô hình phát hiện bất thường}
+\end{center}
+\vspace{-6pt}
+\noindent
+\fontsize{11pt}{14pt}\selectfont
 \begin{tabularx}{\textwidth}{|>{\bfseries}p{3.5cm}|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Mô hình} & \textbf{Cấu hình} \\
@@ -24,7 +27,6 @@ A11\_BiLSTM\_CLS & hidden\_size=64, num\_layers=2, dropout=0.3, window=8, stride
 TranAD & d\_model=64, nhead=4, num\_layers=3, dropout=0.1, alpha=0.5, epochs=50, batch=32 \\
 \hline
 \end{tabularx}
-\end{table}
 
 \section*{Phụ lục B: Mã nguồn chính}
 
@@ -122,10 +124,13 @@ Mức độ rủi ro: TRUNG BÌNH.
 
 Bảng D.1 mô tả schema chính của MySQL database trong hệ thống:
 
-\begin{table}[h!]
-\centering
+\begin{center}
 \fontsize{11pt}{13pt}\selectfont
-\caption*{Bảng D.1. Schema bảng \texttt{pipeline\_runs}}
+\textbf{Bảng D.1. Schema bảng \texttt{pipeline\_runs}}
+\end{center}
+\vspace{-6pt}
+\noindent
+\fontsize{11pt}{13pt}\selectfont
 \begin{tabularx}{\textwidth}{|>{\bfseries}p{3.5cm}|p{2.5cm}|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Cột} & \textbf{Kiểu dữ liệu} & \textbf{Mô tả} \\
@@ -149,4 +154,3 @@ created\_at & DATETIME & Thời điểm tạo pipeline \\
 completed\_at & DATETIME & Thời điểm hoàn thành \\
 \hline
 \end{tabularx}
-\end{table}

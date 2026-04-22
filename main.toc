@@ -69,5 +69,5 @@
 \contentsline {chapter}{KẾT LUẬN VÀ KIẾN NGHỊ}{25}{chapter*.14}%
 \contentsline {chapter}{DANH MỤC CÔNG TRÌNH ĐÃ CÔNG BỐ CỦA HỌC VIÊN}{27}{chapter*.15}%
 \contentsline {chapter}{PHỤ LỤC}{28}{appendix*.16}%
-\contentsline {chapter}{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}{32}{appendix*.19}%
+\contentsline {chapter}{LÝ LỊCH TRÍCH NGANG CỦA HỌC VIÊN}{31}{appendix*.17}%
 \contentsfinish 
