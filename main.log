@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  22 APR 2026 16:23
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.22)  23 APR 2026 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,13 +477,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 Package fontspec Info: 
 (fontspec)             Script 'Math' not explicitly supported within font 'TeX
@@ -510,13 +504,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -531,13 +519,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 Package fontspec Info: 
 (fontspec)             Font family 'TeXGyreTermesMath(0)' created for font
@@ -557,12 +539,7 @@ oadable: Metric (TFM) file or installed font not found.
                    relax 
 l.71 
      
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
+? 
 
 Package unicode-math Warning: The first font loaded by unicode-math must be an
 (unicode-math)                OpenType Math font (with script=math). If you
@@ -585,13 +562,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 Package fontspec Info: 
 (fontspec)             Script 'Math' not explicitly supported within font 'TeX
@@ -618,13 +589,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -639,13 +604,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -660,13 +619,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 ! Package fontspec Error: 
 (fontspec)                The font "TeX Gyre Termes Math" cannot be found;
@@ -681,13 +634,7 @@ For immediate help type H <return>.
                                                   
 l.71 
      
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
+? 
 
 Package fontspec Info: 
 (fontspec)             Font family 'TeXGyreTermesMath(1)' created for font
@@ -710,12 +657,7 @@ oadable: Metric (TFM) file or installed font not found.
                    relax 
 l.71 
      
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
+? 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
 (Font)              `operators' in the math version `normal' on input line 71.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -1237,15 +1179,6 @@ Underfull \vbox (badness 5091) has occurred while \output is active []
 [3]
 Chương 1.
 (./chapters/chuong1.tex
-
-Package natbib Warning: Citation `chandola2009anomaly' on page 4 undefined on i
-nput line 7.
-
-
-Package natbib Warning: Citation `chandola2009anomaly' on page 4 undefined on i
-nput line 11.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1258,129 +1191,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--52
  []
 
 
-Package natbib Warning: Citation `liu2008isolation' on page 5 undefined on inpu
-t line 52.
-
-
-Package natbib Warning: Citation `breunig2000lof' on page 5 undefined on input 
-line 52.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 52--52
 []|\TU/TimesNewRoman(0)/b/n/13 Deep
  []
 
 
-Package natbib Warning: Citation `sakurada2014anomaly' on page 5 undefined on i
-nput line 52.
-
-
-Package natbib Warning: Citation `kingma2014vae' on page 5 undefined on input l
-ine 52.
-
-
-Package natbib Warning: Citation `tuli2022tranad' on page 5 undefined on input 
-line 52.
-
-
-Package natbib Warning: Citation `lebret2016neural' on page 5 undefined on inpu
-t line 58.
-
-
-Package natbib Warning: Citation `wei2022chain' on page 5 undefined on input li
-ne 64.
-
-
 
 [5]
-
-Package natbib Warning: Citation `hu2022lora' on page 6 undefined on input line
- 65.
-
-
-Package natbib Warning: Citation `lewis2020rag' on page 6 undefined on input li
-ne 66.
-
-
-Package natbib Warning: Citation `qwen2023report' on page 6 undefined on input 
-line 73.
-
-
-Package natbib Warning: Citation `gemma2024' on page 6 undefined on input line 
-74.
-
-
-Package natbib Warning: Citation `nguyen2023phogpt' on page 6 undefined on inpu
-t line 75.
-
-
-Package natbib Warning: Citation `touvron2023llama' on page 6 undefined on inpu
-t line 76.
-
-
-Package natbib Warning: Citation `zong2018dagmm' on page 6 undefined on input l
-ine 131.
-
-
-Package natbib Warning: Citation `su2019omni' on page 6 undefined on input line
- 131.
-
-
-Package natbib Warning: Citation `munir2019deepant' on page 6 undefined on inpu
-t line 131.
-
-
-Package natbib Warning: Citation `schlegl2019anogan' on page 6 undefined on inp
-ut line 131.
-
-
-Package natbib Warning: Citation `audibert2020usad' on page 6 undefined on inpu
-t line 131.
-
-
-Package natbib Warning: Citation `tuli2022tranad' on page 6 undefined on input 
-line 131.
-
-
-Package natbib Warning: Citation `dai2022ganf' on page 6 undefined on input lin
-e 131.
-
-
-Package natbib Warning: Citation `chen2016xgboost' on page 6 undefined on input
- line 131.
-
-
-Package natbib Warning: Citation `hu2022lora' on page 6 undefined on input line
- 131.
-
-
-Package natbib Warning: Citation `lewis2020rag' on page 6 undefined on input li
-ne 131.
-
-
-Package natbib Warning: Citation `xie2023finma' on page 6 undefined on input li
-ne 131.
-
-
-Package natbib Warning: Citation `wu2023bloomberggpt' on page 6 undefined on in
-put line 131.
-
-
-Package natbib Warning: Citation `wei2022chain' on page 6 undefined on input li
-ne 131.
-
-
-Package natbib Warning: Citation `zhang2020bertscore' on page 6 undefined on in
-put line 131.
-
-
-Package natbib Warning: Citation `kingma2014vae' on page 6 undefined on input l
-ine 131.
-
-
-Package natbib Warning: Citation `vaswani2017attention' on page 6 undefined on 
-input line 131.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1396,11 +1213,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [8]
 Chương 2.
 (./chapters/chuong2.tex
-
-Package natbib Warning: Citation `bishop2006pattern' on page 9 undefined on inp
-ut line 9.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1408,14 +1220,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [9
 
 ]
-
-Package natbib Warning: Citation `chen2016xgboost' on page 10 undefined on inpu
-t line 49.
-
-
-Package natbib Warning: Citation `vincent2010stacked' on page 10 undefined on i
-nput line 60.
-
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
 (Font)              scaled to size 13.00139pt on input line 60.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
@@ -1432,46 +1236,11 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
 
 [10]
 
-Package natbib Warning: Citation `graves2005bilstm' on page 11 undefined on inp
-ut line 71.
-
-
-Package natbib Warning: Citation `tuli2022tranad' on page 11 undefined on input
- line 82.
-
-
-Package natbib Warning: Citation `schlegl2019anogan' on page 11 undefined on in
-put line 93.
-
-
-
 [11]
-
-Package natbib Warning: Citation `vaswani2017attention' on page 12 undefined on
- input line 118.
-
-
-Package natbib Warning: Citation `qwen2023report' on page 12 undefined on input
- line 130.
-
-
-Package natbib Warning: Citation `gemma2024' on page 12 undefined on input line
- 131.
-
-
-Overfull \hbox (14.79501pt too wide) in paragraph at lines 131--132
-[]\TU/TimesNewRoman(0)/b/n/13 Gemma-2B \TU/TimesNewRoman(0)/m/n/13 [\TU/TimesNe
-wRoman(0)/b/n/13 ? \TU/TimesNewRoman(0)/m/n/13 ]: Google DeepMind, kiến trúc de
-coder-only, sử dụng RoPE positional
+Overfull \hbox (19.12294pt too wide) in paragraph at lines 131--132
+[]\TU/TimesNewRoman(0)/b/n/13 Gemma-2B \TU/TimesNewRoman(0)/m/n/13 [[]]: Google
+ DeepMind, kiến trúc decoder-only, sử dụng RoPE positional
  []
-
-
-Package natbib Warning: Citation `xu2023peft' on page 12 undefined on input lin
-e 136.
-
-
-Package natbib Warning: Citation `hu2022lora' on page 12 undefined on input lin
-e 136.
 
 
 
@@ -1480,22 +1249,6 @@ Overfull \hbox (4.28636pt too wide) in paragraph at lines 149--150
 []\TU/TimesNewRoman(0)/b/n/13 Few-shot prompting: \TU/TimesNewRoman(0)/m/n/13 C
 ung cấp 2–3 ví dụ (anomaly results → report) trong context
  []
-
-
-Package natbib Warning: Citation `wei2022chain' on page 13 undefined on input l
-ine 150.
-
-
-Package natbib Warning: Citation `papineni2002bleu' on page 13 undefined on inp
-ut line 157.
-
-
-Package natbib Warning: Citation `lin2004rouge' on page 13 undefined on input l
-ine 158.
-
-
-Package natbib Warning: Citation `zhang2020bertscore' on page 13 undefined on i
-nput line 159.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1644,13 +1397,81 @@ Overfull \hbox (25.90533pt too wide) in paragraph at lines 6--10
 ising Autoencoder,” \TU/TimesNewRoman(0)/m/it/13 Proceedings
  []
 
-)
-No file main.bbl.
-
+) (./main.bbl
 
 [27
 
-] (./chapters/phu_luc.tex
+]
+
+[28
+
+]
+Underfull \hbox (badness 3068) in paragraph at lines 62--67
+[]\TU/TimesNewRoman(0)/m/n/13 Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fa
+bio Petroni, Vladimir
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 75--79
+[]\TU/TimesNewRoman(0)/m/n/13 Gemma Team, Thomas Mesnard, Cassidy Hardin, Rober
+t Dadashi, et al.
+ []
+
+
+Underfull \hbox (badness 5862) in paragraph at lines 81--85
+[]\TU/TimesNewRoman(0)/m/n/13 Dat Quoc Nguyen, Vu Thi Tran, et al.  PhoGPT: Gen
+erative pre-
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 81--85
+\TU/TimesNewRoman(0)/m/n/13 training for Vietnamese.  []$[][][][][] [] [] [] []
+[][][][] [] [][][] [] [][][] [] [][][][] [] [][][][][]$[], 2023.
+ []
+
+
+
+[29]
+Underfull \hbox (badness 1946) in paragraph at lines 121--126
+[]\TU/TimesNewRoman(0)/m/n/13 Julien Audibert, Pietro Michiardi, Frédéric Guyar
+d, Sébastien Marti, and
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 148--152
+[]\TU/TimesNewRoman(0)/m/n/13 Shijie Wu, Ozan Irsoy, Steven Lu, Vadim Dabravols
+ki, Mark Dredze,
+ []
+
+
+Underfull \hbox (badness 3758) in paragraph at lines 148--152
+\TU/TimesNewRoman(0)/m/n/13 BloombergGPT: A large language model for finance.  
+\TU/TimesNewRoman(0)/m/it/13 arXiv preprint
+ []
+
+
+Underfull \hbox (badness 4995) in paragraph at lines 172--177
+[]\TU/TimesNewRoman(0)/m/n/13 Pascal Vincent, Hugo Larochelle, Isabelle Lajoie,
+ Yoshua Bengio, and
+ []
+
+
+
+[30]
+Underfull \hbox (badness 3138) in paragraph at lines 185--190
+\TU/TimesNewRoman(0)/m/n/13 efficient fine-tuning methods for pretrained langua
+ge models: A critical
+ []
+
+
+Underfull \hbox (badness 4036) in paragraph at lines 185--190
+\TU/TimesNewRoman(0)/m/n/13 review and assessment.  []$[][][][][] [] [] [] [][]
+[][][] [] [][][] [] [][][] [] [][][][] [] [][][][][]$[], 2023.
+ []
+
+)
+
+[31] (./chapters/phu_luc.tex
 Underfull \hbox (badness 10000) in paragraph at lines 29--29
 []|\TU/TimesNewRoman(0)/b/n/11 A7_XGBoost-
  []
@@ -1662,11 +1483,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 
 
 
-[28
+[32
 
 ]
 
-[29]
+[33]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <11> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 129.
 
@@ -1681,7 +1502,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--544
 
 
 
-[30] (./chapters/ly_lich.tex
+[34] (./chapters/ly_lich.tex
 Overfull \hbox (28.45274pt too wide) in paragraph at lines 18--19
 [][] 
  []
@@ -1697,11 +1518,8 @@ Package caption Warning: Unused \captionsetup[figure] on input line 211.
 See the caption package documentation for explanation.
 
 
-Package natbib Warning: There were undefined citations.
 
-
-
-[31
+[35
 
 ] (./main.aux)
  ***********
@@ -1710,12 +1528,12 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 21691 strings out of 475366
- 398478 string characters out of 5762339
- 963485 words of memory out of 5000000
- 44303 multiletter control sequences out of 15000+600000
+ 21792 strings out of 475366
+ 400727 string characters out of 5762339
+ 963972 words of memory out of 5000000
+ 44401 multiletter control sequences out of 15000+600000
  569847 words of font info for 142 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  79i,15n,107p,660b,615s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (40 pages).
+Output written on main.pdf (44 pages).
